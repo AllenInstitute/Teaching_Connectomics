@@ -1,0 +1,10 @@
+---
+title: "Module 1 : Neuroanatomy and Introduction to Neuroglancer"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+---
+
+

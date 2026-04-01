@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Teaching Connectomics"
@@ -8,7 +9,12 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-
+    tools: 
+      - icon: github
+        menu:
+          - text: Tutorial Code
+            url:  https://github.com/AllenInstitute/Teaching_Connectomics
+  back-to-top-navigation: true
 format:
   html:
     theme:
