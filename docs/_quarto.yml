@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-
 website:
   title: "Teaching Connectomics"
   navbar:
@@ -22,6 +21,8 @@ format:
       - brand
     css: styles.css
     toc: true
+  pdf:
+    pdf-engine: 'pdflatex'
 
 
 

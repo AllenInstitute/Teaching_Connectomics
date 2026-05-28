@@ -1,5 +1,7 @@
 ---
 title: "Teaching Connectomics"
+format:
+  html: default
 ---
 
 This is the index landing page, written in markdown. Provide general information and links to other pages.
