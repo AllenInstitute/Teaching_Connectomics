@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 1 : Neuroanatomy and Introduction to Neuroglancer – Teaching Connectomics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Teaching Connectomics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./module-1.html" aria-current="page"> 
+<span class="menu-text">Module 1</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics">
+            Tutorial Code
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning Goals</a></li>
+  <li><a href="#background-and-introduction" id="toc-background-and-introduction" class="nav-link" data-scroll-target="#background-and-introduction">Background and Introduction</a></li>
+  <li><a href="#organization-of-the-visual-cortex" id="toc-organization-of-the-visual-cortex" class="nav-link" data-scroll-target="#organization-of-the-visual-cortex">Organization of the Visual Cortex</a></li>
+  <li><a href="#neuroanatomy-direction-terms" id="toc-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#neuroanatomy-direction-terms">Neuroanatomy Direction Terms</a></li>
+  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol">Protocol</a>
+  <ul class="collapse">
+  <li><a href="#describing-neuroanatomy-direction-terms" id="toc-describing-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#describing-neuroanatomy-direction-terms">1. Describing Neuroanatomy Direction Terms</a></li>
+  <li><a href="#visualizing-neuroanatomy-direction-terms" id="toc-visualizing-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#visualizing-neuroanatomy-direction-terms">2. Visualizing Neuroanatomy Direction Terms</a></li>
+  <li><a href="#layered-organization-of-visual-cortex" id="toc-layered-organization-of-visual-cortex" class="nav-link" data-scroll-target="#layered-organization-of-visual-cortex">3. Layered organization of visual cortex</a></li>
+  <li><a href="#visualizing-the-flow-of-information-through-the-visual-cortex" id="toc-visualizing-the-flow-of-information-through-the-visual-cortex" class="nav-link" data-scroll-target="#visualizing-the-flow-of-information-through-the-visual-cortex">4. Visualizing the flow of information through the visual cortex</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="module-1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 1 : Neuroanatomy and Introduction to Neuroglancer</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/microns_in_ccf.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform.</p>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
+<ul>
+<li>Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites<br>
+</li>
+<li>Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information<br>
+</li>
+<li>Navigate a connectomics data set within the NeuroGlancer platform</li>
+</ul>
+</section>
+<section id="background-and-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-introduction">Background and Introduction</h2>
+<p>In this module, you will use the Neuroglancer software to navigate an open-access data set that was created by the Machine Intelligence from Cortical Networks (MICrONS) program, which sought to use reverse engineer brain circuits to improve the ability of computers to recognize patterns. This dataset consists of a cubic millimeter of mouse visual cortex that was sliced into 28,000 serial sections (Figure 1). These slices were imaged using transmission electron microscopy, and the images were assembled into a three-dimensional volume. This dataset has allowed scientists to reconstruct three-dimensional models of neurons from the electron microscopy data and analyze patterns of synaptic connections between the neurons. In total, the dataset contains 200,000 cells and over 500 million synapses <span class="citation" data-cites="the_microns_consortium_functional_2025">(<a href="#ref-the_microns_consortium_functional_2025" role="doc-biblioref">The MICrONS Consortium et al. 2025</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/microns_volume_topdown.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. The position and orintation of the MICrONS dataset in the mouse brain. The lower panel shows a top view of the dataset with cortical area boundaries indicated by black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex)</figcaption>
+</figure>
+</div>
+</section>
+<section id="organization-of-the-visual-cortex" class="level2">
+<h2 class="anchored" data-anchor-id="organization-of-the-visual-cortex">Organization of the Visual Cortex</h2>
+<p>The primary visual cortex receives visual information from the dorsal lateral geniculate nucleus of the thalamus via thalamocortical axons. Neurons in the cortex are organized into columns and layers (Figure 2). In the visual cortex, columns consist of neurons through the depth of the cortex that share a visual receptive field and preferred stimulus properties, while layers consist of neurons that share similarities in their neuron type (e.g.&nbsp;excitatory versus inhibitory) and patterns of connectivity. In general, neurons in Layer 4 receive the majority of the synapses coming from the lateral geniculate nucleus, while excitatory Layer 3 neurons send axons out into other cortical areas. Excitatory neurons in Layers 5 and 6 send axons carrying feedback into lateral geniculate nucleus and other areas. About 20% of neurons in all layers are inhibitory interneurons that make local synaptic connections (i.e.&nbsp;don’t send out or receive synapses from other brain regions).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/human_visual_system.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>In general, neurons in Layer 4 receive the majority of the synapses coming from the lateral geniculate nucleus, while excitatory Layer 3 neurons send axons out into other cortical areas. Excitatory neurons in Layers 5 and 6 send axons carrying feedback into lateral geniculate nucleus and other areas. About 20% of neurons in all layers are inhibitory interneurons that make local synaptic connections (i.e.&nbsp;don’t send out or receive synapses from other brain regions).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/oberlander_cortical_column.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2. Organization of cortical neurons into columns and layers. Layer 1 is the most superficial layer, positioned at the cortical surface. Layer 6 is the deepest layer, positioned adjacent to the white matter.</figcaption>
+</figure>
+</div>
+</section>
+<section id="neuroanatomy-direction-terms" class="level2">
+<h2 class="anchored" data-anchor-id="neuroanatomy-direction-terms">Neuroanatomy Direction Terms</h2>
+<p>To work effectively with this neuroanatomical dataset, you will need to have a clear understanding of anatomical direction terms and how they relate to the nervous system of a rodent and to that of a human. The body axis and neuraxis of organisms with four or more legs, such as dogs or rodents, share the same plane. This differs from the human body, in which the neuroaxis is rotated 90° from the plane of the body axis (Figure X).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/body_axis_diagram.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. The body axis and neuraxis of dogs (and rodents) have the same planar organization, and terms that describe the body axis are conserved when describing the brain. Humans have a curved neuraxis. For example, dorsal parts of the body and spinal cord of humans are towards the back of the torso, while dorsal parts of the brain are towards the top of the head (image: adapted from https://en.wikipedia.org/wiki/Neuraxis).</figcaption>
+</figure>
+</div>
+<p>Because many parts of the vertebrate brain have a layered organization, scientists also use neuroanatomical direction terms that describe the positions of cells or cellular structures related to the layers of the brain.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/bekkers_pyramidal_layers.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclodia of Neuroscience and <span class="citation" data-cites="Bekkers_2011">(<a href="#ref-Bekkers_2011" role="doc-biblioref">Bekkers 2011</a>)</span>)</figcaption>
+</figure>
+</div>
+</section>
+<section id="protocol" class="level2">
+<h2 class="anchored" data-anchor-id="protocol">Protocol</h2>
+<p>The first section of this protocol will give you an opportunity to become familiar with anatomical direction terms and how they apply to the mouse nervous system.</p>
+<section id="describing-neuroanatomy-direction-terms" class="level3">
+<h3 class="anchored" data-anchor-id="describing-neuroanatomy-direction-terms">1. Describing Neuroanatomy Direction Terms</h3>
+<p><mark>Define the direction associated with each of the anatomical direction terms listed below:</mark></p>
+<ol type="a">
+<li>anterior –</li>
+<li>posterior –</li>
+<li>dorsal –</li>
+<li>ventral –<br>
+</li>
+<li>medial –</li>
+<li>lateral –</li>
+</ol>
+<p><mark>Compare the neuroanatomical direction terms in each of the following sets.</mark></p>
+<ol type="a">
+<li>Superficial versus Deep</li>
+<li>Basal versus Apical</li>
+</ol>
+</section>
+<section id="visualizing-neuroanatomy-direction-terms" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-neuroanatomy-direction-terms">2. Visualizing Neuroanatomy Direction Terms</h3>
+<p>We will use the NeuroGlancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.</p>
+<p>Access NeuroGlancer by clicking on the following link:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4793806474969088" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4793806474969088</a></p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may be prompted to provide a Google login. This should only be required the first time you access the site.</p>
+</div>
+</div>
+<p>You should see the following screen:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/microns_in_ccf_neuroglancer_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>MICrONS Terms of Service Error</p>
+<p>If the neuroglancer does not prompt it follow these steps:</p>
+<ol type="1">
+<li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your google authorized account</li>
+<li>Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer.</li>
+</ol>
+</div>
+</div>
+<p>The main viewing pane shows a three-dimensional model of the mouse brain (light gray shading). The visual cortex regions acquired by the MICrONS data set are shown as blue-green objects in the brain volume. The dimensions of the MICrONS data are indicated by the yellow and gray boxes located in the visual cortex.</p>
+<p>The boxes across the top of the main viewing pane are known as layer tabs. These allow the different visual elements in the main viewing pane to be selected or turned on and off. You can <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> the “ccf_outline” to turn the whole-brain volume element on and off in the viewing pane or <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the “AllenCCF” tab to turn the visual cortex elements on and off in the viewing pane.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/neuroglancer_ui_layers_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>To the left of the main viewing pane is a panel that lets you adjust the settings for each visual element. <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> any of the layer tabs will bring up its settings in the options panels on the right-hand side of the display.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="resources/neuroglancer_ui_seg_menu_1.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p>Visual elements in NeuroGlancer are described as segments. Every reconstructed neuron in the data set has a unique Segment ID. Now, you will add neuron segments to the viewer using their Segment IDs. First, <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on the <code>6seg65</code> layer tab to bring up a list of display options in the options panel. <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the Seg tab in the right-hand panel to select it. Segment IDs can be pasted into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="resources/neuroglancer_ui_seg_menu_2.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p>Paste the following Segment IDs into the text box one at a time and press Enter after each (Hint: You can also copy and paste the entire list at the same time):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">864691134885139194</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135938336309</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135441796936</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136521574801</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135684989623</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135693657023</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136123773222</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135617972371</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136031763387</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After each Segment ID is added, click the small eye icon to the left of the Segment ID when it shows up on the list. This will make a three-dimensional model of the neuron visible in the main viewing pane.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="resources/neuroglancer_ui_seg_menu_3.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p>Once you have added each of the neurons to the viewer, you will need to navigate the main viewing pane to see the neuron segments.</p>
+<ul>
+<li>You can rotate the view by <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> and dragging the mouse pointer</li>
+<li>You can slide the view by <kbd title="Shift-Left-Click" aria-hidden="true">Shift-Left-Click</kbd><span class="visually-hidden">Shift-Left-Click</span> and dragging your mouse pointer</li>
+<li>You can zoom the view in small increments by using the <kbd title="scroll-wheel" aria-hidden="true">scroll-wheel</kbd><span class="visually-hidden">scroll-wheel</span></li>
+<li>You can zoom the view in large increments by holding <kbd title="Ctrl" aria-hidden="true">Ctrl</kbd><span class="visually-hidden">Ctrl</span> and using the <kbd title="scroll-wheel" aria-hidden="true">scroll-wheel</kbd><span class="visually-hidden">scroll-wheel</span></li>
+<li>You can also <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on any of the segment IDs listed in the options panel to center the via on that neuron segment (if you are zoomed far out, this may not be obvious)</li>
+</ul>
+<p>Try to zoom in to the yellow and gray boxes so you can see the three-dimensional reconstructions of the neurons you have added. You should be able to see something like this in the main viewing pane.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/microns_in_ccf_neuroglancer_anterior_posterior.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>If you hover over any of the segment IDs listed in the options panel with your mouse pointer, the three-dimensional model of that neuron will also be highlighted in the viewing pane. This also works in reverse, if you hover your mouse pointer over any of the models in the viewing pane, the segment ID will be highlighted in the right-hand options panel.</p>
+<p>Now you will compare the neuroanatomical positions of the neurons you have added to the browser. You may have to rotate the view and/or zoom out and then back in to see the positions of the neurons relative to the rest of the brain. <mark>For each of the following pairs of cells, indicated which is anterior and which is posterior:</mark></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hint: None of the neurons have the same final four digits – so you can use those to search for each neuron in the list</p>
+</div>
+</div>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Anterior / Posterior</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691134885139194</code>, <code>864691135441796936</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135938336309</code>, <code>864691136521574801</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p><mark>For each of the following pairs of cells, indicate which is medial and which is lateral:</mark></p>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Medial / Lateral</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691135684989623</code>, <code>864691136123773222</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691136031763387</code>, <code>864691135693657023</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p><mark>For each of the following pairs of cells, indicate which is dorsal and which is ventral:</mark></p>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Dorsal / Ventral</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691135441796936</code>, <code>864691136521574801</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135693657023</code>, <code>864691135684989623</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+</section>
+<section id="layered-organization-of-visual-cortex" class="level3">
+<h3 class="anchored" data-anchor-id="layered-organization-of-visual-cortex">3. Layered organization of visual cortex</h3>
+<p>As described above, the visual cortex is divided into layers. Each layer contains specific types of neurons, each with their own shape, size, and pattern of connections. In this section, you will visualize and describe the neurons in different layers of the cortex.</p>
+<p>First, click on the following link to open a new NeuroGlancer window:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6518965183447040" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6518965183447040</a></p>
+</blockquote>
+<p>You should see something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/layers_neuroglancer_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ol type="1">
+<li>Green mesh = boundary between Layer 1 and Layer 2/3<br>
+</li>
+<li>Blue mesh = boundary between Layer 2/3 and Layer 4<br>
+</li>
+<li>Red mesh = boundary between Layer 4 and Layer 5</li>
+<li>Yellow mesh = boundary between Layer 5 and Layer 6</li>
+<li>Teal mesh = boundary between Layer 6 and white matter</li>
+</ol>
+<p>Now, you will again add neuron segments to the viewer using their Segment IDs. First, <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on the <code>2minnie65_public</code> layer tab to bring up a list of display options in the options panel. <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the Seg tab in the right-hand panel to select it. You will again be pasting segment IDs into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.</p>
+<p>Paste the following Segment IDs into the text box one at a time (Hint: You can also copy and paste the entire list at the same time):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">864691134885139194</span>  </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135938336309</span>  </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135441796936</span>  </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136521574801</span>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135684989623</span>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135693657023</span>  </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136123773222</span>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135617972371</span>  </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136031763387</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>As you did before, after each Segment ID is added, click the small eye icon to the left of the Segment ID when it shows up on the list. This will make a three-dimensional model of the neuron visible in the main viewing pane. You should see this after you have added and made visible all the neuron segments.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/layers_with_neurons_neuroglancer_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><mark>For each of the following pairs of cells, indicate which has its cell body in a more superficial layer and which has its cell body in a deeper layer:</mark></p>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Superficial / Deep</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691136123773222</code>, <code>864691136521574801</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135684989623</code>, <code>864691135693657023</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p><mark>For the following neurons, indicate which cortical layer the cell body is located in:</mark></p>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Cell Body Layer</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691135441796936</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135684989623</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691136123773222</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135938336309</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>Pyramidal neurons are the primary excitatory neurons that carry visual information within the visual cortex and out to other brain regions (Figure 5). Pyramidal cells typically have a single axon that may branch extensively and two distinct groups of dendrites that can be classified as apical and basal. Apical dendrites project towards the superficial layers of the cortex. Basal dendrites project outward from the cell body of the neuron.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/bekkers_pyramidal_crop.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5. A Layer 5 cortical pyramidal neuron. (after <span class="citation" data-cites="Bekkers_2011">(<a href="#ref-Bekkers_2011" role="doc-biblioref">Bekkers 2011</a>)</span>)</figcaption>
+</figure>
+</div>
+<p>In the right-options panel, click the eye icons to make only the 864691135441796936 neuron segment visible. Zoom and rotate the view in the main viewing pane until the neuron is oriented as follows</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/neuroglancer_pyramidal_assignment.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><mark>Take a screenshot of the neuron and use it to make a figure for your assignment. Label the figure to indicate the position of the cell body, axon, apical dendrite, and basal dendrite.</mark> (Note: In the image above, we have toggled off the layer boundaries.)</p>
+<p><br> <br></p>
+</section>
+<section id="visualizing-the-flow-of-information-through-the-visual-cortex" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-the-flow-of-information-through-the-visual-cortex">4. Visualizing the flow of information through the visual cortex</h3>
+<p>We will now look at how neurons are organized into columns and layers in order to begin to understand how the visual cortex is wired and how visual information flows through the brain. First, you should click on the following link:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968</a></p>
+</blockquote>
+<p>When this link opens, you should see the layer boundaries and several three-dimensional neuron models present in the main viewing pane. If you use your mouse to slide and rotate around these models, you will see that these neurons are organized into two groups. These represent cortical columns, groups of neurons that span all six cortical layers and that respond to stimuli with specific coordinates within the visual field. -Click &gt;}} on the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane. This will call up two sets of column boundaries (Figure 6). In this case, V1 indicates a column in the primary visual cortex and HVA indicates a column in a higher-order visual area, which is a cortical area that receives information coming from the primary visual cortex.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/v1_hva_column_neuroglancer.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 6. Visualization of the V1 (blue circles) and HVA (green circles) column boundaries.</figcaption>
+</figure>
+</div>
+<p>We also have visual aids that will help us see the boundaries between cortical regions. At this point, <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane to remove the column visualizations.</p>
+<p>Now click the “areameshes” tab to call up a visualization that shows the rough boundaries between primary visual cortex and higher-order visual cortical regions. In the picture below, the area to the left is primary visual cortex, while the areas to the right are higher-order visual cortex areas that receive information from primary visual cortex (Figure 7). You may need to rotate your view in the main viewing pane to view all of the region borders that are represented.</p>
+<p>For questions that follow, you can <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> the tabs above the main viewing pane to add or remove the column and boundary visualizations as needed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/layers_and_area_meshes_neuroglancer.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 7. Visualization of cortical region borders.</figcaption>
+</figure>
+</div>
+<p>For the next section, you may want to reset your NeuroGlancer window by clicking on the following link:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968</a></p>
+</blockquote>
+<p>We are now going to analyze the organization and connections of some cortical neurons. First, <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on the <code>2minnie65_public layer</code> tab above the main viewing pane. Then, <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the Seg tab at the top of the right-hand settings panel. In the bottom left, you should see a list of neuron Segment ID numbers corresponding to each of the neuron models seen in the main viewing pane. You can change the visibility of each neuron with <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the eye icon next to each Segment ID. You can change the color of each neuron by clicking the color swatch to the right of each Segment ID.</p>
+<p>For this final bit of data collection, you are asked to identify the brain region and layer that each neuron’s cell body is in. You are also asked to determine where the axon of each neuron project to and what the function of that neuron probably is. In the image and table below, there is an example of how these data were collected for the 864691134988722810 neuron.</p>
+<p>In the image, every neuron except for 864691134988722810 was made invisible (Figure 8). This allows us to observe that the cell body of this neuron is located in Layer 2/3 of the V1 column. So, we have indicated Primary Visual Cortex and Layer 2/3 in the table. We can see that the axons of this neuron travel to the HVA column. This means that this is cortico-cortical projection neuron carrying information from one cortical area to another. We have entered this in the table as well.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/neuroglancer_projection_neuron.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 8. Visualization of a cortico-cortical projection neuron.</figcaption>
+</figure>
+</div>
+<p><mark>You will now fill out the table for each other neuron.</mark> Here are some hints to consider:</p>
+<ul>
+<li>You may need to make some neurons not visible or change neuron colors in order to see what each neuron is doing<br>
+</li>
+<li>Each neuron will either be in Primary visual cortex or a Higher-order visual area.<br>
+</li>
+<li>Remember that the layer boundaries are described earlier in this document and that you are looking for the layer containing the cell body of the neuron</li>
+<li>You may need to distinguish axons from dendrites. For most neurons in this group, the easiest way to do this is to look for spines that signify dendrites (Figure 9). Axons will generally be smooth, rather than spiny.</li>
+<li>Neurons may target multiple areas. These include other columns as shown above. Other neurons may send axon branches into the white matter (below the most ventral layer boundary) or have branches that stay within the same column. For these cases, you could suggest that the neuron is targeting subcortical regions (for axons that enter the white matter) or local neurons (for neurons that branch within the same column).</li>
+<li>Neurons that send axons into other columns are cortico-cortical projection neurons. Neurons that send axons into subcortical regions can be proposed to be cortico-thalamic neurons. Neurons that branch locally can be proposed to be local interneurons.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/dendritic_spines.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 9. Dendritic Spines</figcaption>
+</figure>
+</div>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 21%">
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Neuron Name</strong></td>
+<td><strong>Brain Region</strong></td>
+<td><strong>Cell Body Layer</strong></td>
+<td><strong>Axon Target</strong></td>
+<td><strong>Proposed Function</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691134988722810</code></td>
+<td>Primary visual cortex</td>
+<td>Layer 2/3</td>
+<td>HVA Column</td>
+<td>Cortico-cortical projection</td>
+</tr>
+<tr class="odd">
+<td><code>864691135367058169</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691135508871945</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135584074360</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691135609594119</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691135753932237</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691135782544435</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691136008689326</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691136023889209</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>864691136134707851</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>864691136662432990</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+</section>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<p>You can explore the MICrONS dataset further at: <a href="https://www.microns-explorer.org/cortical-mm3">MICrONS-Explorer.org</a></p>
+</section>
+<section id="works-cited" class="level2">
+
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Works Cited</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Bekkers_2011" class="csl-entry" role="listitem">
+Bekkers, John M. 2011. <span>“Pyramidal Neurons.”</span> <em>Current Biology</em> 21 (24): R975–75. <a href="https://doi.org/10.1016/j.cub.2011.10.037">https://doi.org/10.1016/j.cub.2011.10.037</a>.
+</div>
+<div id="ref-the_microns_consortium_functional_2025" class="csl-entry" role="listitem">
+The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, et al. 2025. <span>“Functional Connectomics Spanning Multiple Areas of Mouse Visual Cortex.”</span> <em>Nature</em> 640 (8058): 435–47. <a href="https://doi.org/10.1038/s41586-025-08790-w">https://doi.org/10.1038/s41586-025-08790-w</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
