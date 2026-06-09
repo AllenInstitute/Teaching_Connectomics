@@ -8,6 +8,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: module-1.qmd
+        text: Module 1
     tools: 
       - icon: github
         menu:
@@ -23,6 +25,3 @@ format:
     toc: true
   pdf:
     pdf-engine: 'pdflatex'
-
-
-

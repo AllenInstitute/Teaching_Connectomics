@@ -4,4 +4,4 @@ format:
   html: default
 ---
 
-![MICrONS](resources/microns_in_ccf.png)
+![MICrONS](resources/microns_in_ccf.png) 
