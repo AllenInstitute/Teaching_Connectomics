@@ -24,4 +24,5 @@ format:
     css: styles.css
     toc: true
   pdf:
-    pdf-engine: 'pdflatex'
+    pdf-engine: 'lualatex'
+    
