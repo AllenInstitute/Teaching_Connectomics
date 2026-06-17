@@ -3,6 +3,12 @@ title: "Module 2: Ultrastructure and Cytology"
 format:
   html: 
     toc: true
+  pdf: 
+    toc: true
+    author: HIVE Educators
+    documentclass: report
+    geometry: margin=1in
+    mainfont: "Roboto"
 bibliography: references.bib
 ---
   

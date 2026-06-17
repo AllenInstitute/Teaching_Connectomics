@@ -40,9 +40,9 @@ Learning Goals:
 :::{.g-col-6}
 ![](resources/module_2_em_cover.png)
 
-<center> Online module </center>
+<center> [Online module](module-2.html) </center>
 
-<center> PDF Download </center>
+<center> [PDF Download](module-2.pdf) </center>
 
 :::
 
