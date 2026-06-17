@@ -1,0 +1,3489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Access MICrONS connectomics data Part II – Teaching Connectomics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Teaching Connectomics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Education Modules</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../code-tutorials.html"> 
+<span class="menu-text">Coding Tutorials</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics">
+            Tutorial Code
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#connectome-annotation-versioning-engine-cave" id="toc-connectome-annotation-versioning-engine-cave" class="nav-link active" data-scroll-target="#connectome-annotation-versioning-engine-cave">Connectome Annotation Versioning Engine (CAVE)</a>
+  <ul class="collapse">
+  <li><a href="#cave-account-setup" id="toc-cave-account-setup" class="nav-link" data-scroll-target="#cave-account-setup">CAVE account setup</a></li>
+  <li><a href="#initialize-caveclient-with-a-datastack" id="toc-initialize-caveclient-with-a-datastack" class="nav-link" data-scroll-target="#initialize-caveclient-with-a-datastack">Initialize CAVEclient with a datastack</a></li>
+  </ul></li>
+  <li><a href="#part-1-neuron-morphology-representing-neurons-as-skeletons-we-already-did-this-with-the-other-co-syne-notebook" id="toc-part-1-neuron-morphology-representing-neurons-as-skeletons-we-already-did-this-with-the-other-co-syne-notebook" class="nav-link" data-scroll-target="#part-1-neuron-morphology-representing-neurons-as-skeletons-we-already-did-this-with-the-other-co-syne-notebook">Part 1: Neuron morphology: representing neurons as skeletons ( we already did this with the other co-syne notebook)</a></li>
+  <li><a href="#part-2-annotation-tables-and-generally-useful-information" id="toc-part-2-annotation-tables-and-generally-useful-information" class="nav-link" data-scroll-target="#part-2-annotation-tables-and-generally-useful-information">Part 2: annotation tables and generally useful information</a>
+  <ul class="collapse">
+  <li><a href="#query-1-querying-cells-and-their-types" id="toc-query-1-querying-cells-and-their-types" class="nav-link" data-scroll-target="#query-1-querying-cells-and-their-types">Query 1: Querying cells and their types</a></li>
+  <li><a href="#query-2-synapses-and-connectivity-we-focus-on-this-in-the-first-notebook" id="toc-query-2-synapses-and-connectivity-we-focus-on-this-in-the-first-notebook" class="nav-link" data-scroll-target="#query-2-synapses-and-connectivity-we-focus-on-this-in-the-first-notebook">Query 2: synapses and connectivity ( we focus on this in the first notebook)</a></li>
+  </ul></li>
+  <li><a href="#pivot-the-input_connectivity-table-to-create-a-matrix" id="toc-pivot-the-input_connectivity-table-to-create-a-matrix" class="nav-link" data-scroll-target="#pivot-the-input_connectivity-table-to-create-a-matrix">Pivot the input_connectivity table to create a matrix</a></li>
+  <li><a href="#rows-will-be-pre_pt_root_id-and-the-single-column-will-be-post_pt_root_id" id="toc-rows-will-be-pre_pt_root_id-and-the-single-column-will-be-post_pt_root_id" class="nav-link" data-scroll-target="#rows-will-be-pre_pt_root_id-and-the-single-column-will-be-post_pt_root_id">Rows will be pre_pt_root_id and the single column will be post_pt_root_id</a></li>
+  <li><a href="#visualize-the-input-adjacency-matrix-as-a-heatmap" id="toc-visualize-the-input-adjacency-matrix-as-a-heatmap" class="nav-link" data-scroll-target="#visualize-the-input-adjacency-matrix-as-a-heatmap">Visualize the input adjacency matrix as a heatmap</a></li>
+  <li><a href="#advanced-neuroglancer" id="toc-advanced-neuroglancer" class="nav-link" data-scroll-target="#advanced-neuroglancer">Advanced Neuroglancer</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="06172026_colab_MICrONS_data_access_March_2026.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Access MICrONS connectomics data Part II</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The function of the nervous system arises out of a combination of the properties of individual neurons and the properties of how they are connected into a larger network. The central goal of <b>connectomics</b> is to produce complete maps of the connectivity of the nervous system with synaptic resolution and analyze them to better understand the organization, development, and function of the nervous system.</p>
+<p><b>Electron Microscopy (EM) data enables morphological reconstruction of neurons and resolution of their synaptic connectivity </b>. The MICrONS dataset is one of the largest volume EM datasets currently available, and spans all layers of mouse visual cortex. We will be using this dataset to query the connectivity between neurons in the visual cortex.</p>
+<p>Further details about the dataset are available at <a href="https://www.microns-explorer.org/">MICrONS Explorer</a>, and detailed data access examples at <a href="https://tutorial.microns-explorer.org/">MICrONS Tutorials</a>.</p>
+<p>For neuroglancer link, see: https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/layer5_thick_tufted.json</p>
+<h3 class="anchored">
+Workshop aims
+</h3>
+<ul>
+<li>
+Understand what are the major classes of cell types in cortex
+</li>
+<li>
+Understand the basics of how synaptic connectivity is measured in EM connectomics
+</li>
+<li>
+Look at the relationship between the structure of networks and cell type connectivity
+</li>
+</ul>
+<h4 class="anchored">
+This workshop will cover:
+</h4>
+<ol>
+<li>
+Reconstructions of individual neurons
+</li>
+<li>
+Connectivity of individual neurons
+</li>
+<li>
+Connectivity between cell types
+</li>
+</ol>
+<section id="connectome-annotation-versioning-engine-cave" class="level2">
+<h2 class="anchored" data-anchor-id="connectome-annotation-versioning-engine-cave">Connectome Annotation Versioning Engine (CAVE)</h2>
+<p>This tutorial walks through the key functions needed to access the MICrONS dataset programmatically and highlights key resources within it. While this tutorial is written for the MICrONS dataset specifically, the underlying technology (CAVE) is being used for multiple connectomics dataset. So, the interface presented here can be used to query them as well.</p>
+<p>The <strong>CAVEclient</strong> is a python library that facilitates communication with a CAVE system. For convenience, we also use the package <strong>skeleton_plot</strong> which handles rendering the precomputed skeletons.</p>
+<div id="1b9207d4-b0ce-4b8b-b391-c2bd79c2ebdb" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title For Colab: Run this cell once to install and load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q caveclient</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q skeleton_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="33e261f2-9baf-447b-8ecc-0b3ac70db0fe" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import packages</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="cave-account-setup" class="level3">
+<h3 class="anchored" data-anchor-id="cave-account-setup">CAVE account setup</h3>
+<p>In order to manage server traffic, every user needs to create a CAVE account and download a user token to access CAVE’s services programmatically. The CAVE infrastructure can be read about in more detail in the <a href="https://doi.org/10.1038/s41592-024-02426-z">MICrONS Nature Package</a>.</p>
+<p><strong>A Google account (or Google-enabled account) is required to create a CAVE account.</strong></p>
+<p>Go to: https://global.daf-apis.com/sticky_auth/settings/tokens to view a list of your existing tokens</p>
+<p>If you have never made a token before, accept the terms of service and generate a token. Then copy the hash string and paste below</p>
+<p>For Local environments</p>
+<pre><code># Token Generation and Setup (Local)
+CAVEclient.setup_token("https://global.daf-apis.com")
+
+client = CAVEclient(datastack_name='minnie65_public')
+</code></pre>
+<div id="a1a5ef57-db1d-4bdc-b0ee-1d718072a2fc" class="cell" data-cellview="form" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="239ca279-f541-4d99-c788-b69fd204a335" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># @title Initialize CAVE</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># @markdown Requires your unique user token. Input user token</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>user_token <span class="op">=</span> <span class="st">'5402c70e9a7a8cd8559439139fc2a6b2'</span> <span class="co"># @param {type: "string"}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  client.auth.save_token(token<span class="op">=</span>user_token, overwrite<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Initialize a client for the production datastack.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  client <span class="op">=</span> CAVEclient(datastack_name<span class="op">=</span><span class="st">'minnie65_public'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  cg <span class="op">=</span> client.chunkedgraph</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'Client initiation successful!'</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'Oops! Token does not work'</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'Go to: https://global.daf-apis.com/auth/api/v1/user/token to view a list of your existing tokens'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'If you have never made a token before: </span><span class="ch">\n</span><span class="st">  1) go here: https://minnie.microns-daf.com/materialize/views/datastack/minnie65_public to accept terms of service </span><span class="ch">\n</span><span class="st">  2) then go here https://global.daf-apis.com/auth/api/v1/create_token to create a new token.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Client initiation successful!</code></pre>
+</div>
+</div>
+</section>
+<section id="initialize-caveclient-with-a-datastack" class="level3">
+<h3 class="anchored" data-anchor-id="initialize-caveclient-with-a-datastack">Initialize CAVEclient with a datastack</h3>
+<p>Datasets in CAVE are organized as datastacks. These are a combination of an EM dataset, a segmentation and a set of annotations. The datastack for MICrONS public release is <code>minnie65_public</code>. When you instantiate your client with this datastack, it loads all relevant information to access it.</p>
+<div id="d76731ec-17b6-45a5-91bb-3b8fb4792d6a" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">"minnie65_public"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(datastack_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For each datastack, CAVE stores information about key data sources and parameters. These can be accessed through:</p>
+<div id="1b91e414-32da-4cf0-8e19-77cd7d100ae0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="860cad92-1294-46f2-e5ca-4360159c86d8" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>client.info.get_datastack_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>{'aligned_volume': {'id': 1,
+  'name': 'minnie65_phase3',
+  'display_name': 'Minnie65',
+  'description': "This is the second alignment of the IARPA 'minnie65' dataset, completed in the spring of 2020 that used the seamless approach.",
+  'image_source': 'precomputed://https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/em'},
+ 'segmentation_source': 'graphene://https://minnie.microns-daf.com/segmentation/table/minnie65_public',
+ 'skeleton_source': 'precomputed://middleauth+https://minnie.microns-daf.com/skeletoncache/api/v1/minnie65_public/precomputed/skeleton/',
+ 'analysis_database': None,
+ 'viewer_site': 'https://spelunker.cave-explorer.org/',
+ 'synapse_table': 'synapses_pni_2',
+ 'soma_table': 'nucleus_detection_v0',
+ 'local_server': 'https://minnie.microns-daf.com',
+ 'description': 'This is the publicly released version of the minnie65 volume and segmentation. ',
+ 'viewer_resolution_x': 4.0,
+ 'viewer_resolution_y': 4.0,
+ 'viewer_resolution_z': 40.0,
+ 'proofreading_status_table': None,
+ 'cell_identification_table': None,
+ 'proofreading_review_table': None}</code></pre>
+</div>
+</div>
+<p>For instance, the synapse table is defined as <code>synapses_pni_2</code> and the cell body table as <code>nucleus_detection_v0</code>.</p>
+</section>
+</section>
+<section id="part-1-neuron-morphology-representing-neurons-as-skeletons-we-already-did-this-with-the-other-co-syne-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-neuron-morphology-representing-neurons-as-skeletons-we-already-did-this-with-the-other-co-syne-notebook">Part 1: Neuron morphology: representing neurons as skeletons ( we already did this with the other co-syne notebook)</h2>
+<p>Often in thinking about neurons, you want to measure things along a linear dimension of a neuron.</p>
+<p>However, the segmentation and meshes are a complex 3D shape that makes this non-trivial. There are methods for reducing the shape of a segmented neuron down to a linear tree like structure usually referred to as a <strong>skeleton</strong>. We have precalculated skeletons for a large number of cells in the dataset, and make the skeleton generation available on our server, on demand.</p>
+<p><em>Note</em>: The meshes you see in Neuroglancer are available to download through the python client <code>cloud-volume</code>, and can be loaded for analysis and visualization in other tools. This is useful for some types of analysis (and for making beautiful renders of neurons), but we will not cover that in this course.</p>
+<p>Now we will select one neuron based on its <code>root_id</code>, the 18-digit number you see in neuroglancer, for example from: https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/layer5_thick_tufted.json</p>
+<p><em>Instructor modifications/additions: </em>You can ask students to try this with different root ids or defined list from Dash Apps to look at and discuss morphology. If you dont have a list then students can also query proofread list and plot some skeletons (but this would need them to define a list.</p>
+</section>
+<section id="part-2-annotation-tables-and-generally-useful-information" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-annotation-tables-and-generally-useful-information">Part 2: annotation tables and generally useful information</h2>
+<p>A datastack has a large number of tables that can be intimidating to traverse at first. CAVE provides several ways to find the tables you may want use. All database functions are under the <code>client.materialize</code> property. To see what tables are available, use the <code>get_tables function</code>:</p>
+<div id="c6a0d7c1-0ce1-4f4a-a171-f770c73209c2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="91a3d759-c9fa-4354-98bd-4b29482f27fe" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_tables()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>['synapses_pni_2',
+ 'nucleus_detection_v0',
+ 'vortex_manual_nodes_of_ranvier',
+ 'bodor_pt_target_proofread',
+ 'baylor_gnn_cell_type_fine_model_v2',
+ 'nucleus_alternative_points',
+ 'nucleus_functional_area_assignment',
+ 'coregistration_auto_phase3_fwd_apl_vess_combined_v2',
+ 'aibs_metamodel_mtypes_v661_v2_corrections',
+ 'vortex_thalamic_proofreading_status',
+ 'allen_column_mtypes_v2',
+ 'proofreading_status_and_strategy',
+ 'bodor_pt_cells',
+ 'aibs_metamodel_mtypes_v661_v2',
+ 'aibs_metamodel_celltypes_v661_corrections',
+ 'vortex_microglia_proofreading_status',
+ 'allen_v1_column_types_slanted_ref',
+ 'multi_input_spine_predictions_ssa',
+ 'aibs_column_nonneuronal_ref',
+ 'nucleus_ref_neuron_svm',
+ 'synapse_target_structure',
+ 'myelin_auto_tags_2points',
+ 'apl_functional_coreg_vess_fwd',
+ 'vortex_axon_backtrace_column',
+ 'cell_type_multifeature_combo',
+ 'vortex_compartment_targets',
+ 'baylor_log_reg_cell_type_coarse_v1',
+ 'vortex_synapse_reattachment',
+ 'coregistration_auto_phase3_fwd_v2',
+ 'synapse_target_predictions_ssa_v2',
+ 'gamlin_2023_mcs',
+ 'l5et_column',
+ 'pt_synapse_targets',
+ 'vortex_peptidergic_proofreading_status',
+ 'coregistration_manual_v4',
+ 'cg_cell_type_calls',
+ 'digital_twin_properties_bcm_coreg_v4',
+ 'synapse_spine_mapping_v2',
+ 'vortex_astrocyte_proofreading_status',
+ 'digital_twin_properties_bcm_coreg_auto_phase3_fwd_v2',
+ 'digital_twin_properties_bcm_coreg_apl_vess_fwd',
+ 'gamlin_2023_mcs_met_types',
+ 'vortex_manual_myelination_v0',
+ 'synapse_target_predictions_ssa',
+ 'aibs_metamodel_celltypes_v661']</code></pre>
+</div>
+</div>
+<section id="query-1-querying-cells-and-their-types" class="level3">
+<h3 class="anchored" data-anchor-id="query-1-querying-cells-and-their-types">Query 1: Querying cells and their types</h3>
+<p>The basic querying logic of CAVE is <code>client.materialize.query_table</code>. This accepts at least a table as parameter. Let’s query the table of all automatically segmented nuclei:</p>
+<div id="aa5d6f56-9aa4-4a9a-aeb5-b30b39425ec1" class="cell" data-scrolled="true" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="9f57d0e6-6290-4736-9d8b-3cbe56d0322f" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nucleus_table_name <span class="op">=</span> client.info.get_datastack_info()[<span class="st">"soma_table"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nucleus_df <span class="op">=</span> client.materialize.query_table(nucleus_table_name)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>nucleus_df.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="df-2692572a-0f0e-47a3-8fa5-1c50253fd4fe" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+<th data-quarto-table-cell-role="th">pt_position</th>
+<th data-quarto-table-cell-role="th">bb_start_position</th>
+<th data-quarto-table-cell-role="th">bb_end_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>730537</td>
+<td>2020-09-28 22:40:41.780734+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>32.307938</td>
+<td>0</td>
+<td>0</td>
+<td>[381312, 273984, 19993]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>373879</td>
+<td>2020-09-28 22:40:41.781788+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>229.045044</td>
+<td>96218056992431305</td>
+<td>864691136090135607</td>
+<td>[228816, 239776, 19593]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>601340</td>
+<td>2020-09-28 22:40:41.782714+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>426.138</td>
+<td>0</td>
+<td>0</td>
+<td>[340000, 279152, 20946]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>201858</td>
+<td>2020-09-28 22:40:41.783784+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>93.753838</td>
+<td>84955554103121097</td>
+<td>864691135373893678</td>
+<td>[146848, 213600, 26267]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>600774</td>
+<td>2020-09-28 22:40:41.785273+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>135.189789</td>
+<td>0</td>
+<td>0</td>
+<td>[339120, 276112, 19442]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+<td>[&lt;NA&gt;, &lt;NA&gt;, &lt;NA&gt;]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2692572a-0f0e-47a3-8fa5-1c50253fd4fe')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-2692572a-0f0e-47a3-8fa5-1c50253fd4fe button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-2692572a-0f0e-47a3-8fa5-1c50253fd4fe');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>Every annotation table has at least one position column (here: <code>pt_position</code>) which serves as anchor to the segmentation. These positions are automatically associated to the segmentation using <code>pt_root_id</code>s which can be thought of segment or cell IDs. Beyond positions and their associated IDs, every table stores metadata. For instance, the nucleus table contains the <code>volume</code> of each cell body.</p>
+<p>Every table has a description and metadata attached to it that describes how the data was generated, limitations of it, and papers to cite when using it:</p>
+<div id="75bf23d0-0efa-44eb-abc4-d1fb66187fda" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="46f7f2fb-7852-4694-9ff4-ed9eea71cb67" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_table_metadata(nucleus_table_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>{'id': 89398,
+ 'schema': 'nucleus_detection',
+ 'valid': True,
+ 'created': '2020-11-02T18:56:35.530100',
+ 'aligned_volume': 'minnie65_phase3',
+ 'table_name': 'nucleus_detection_v0',
+ 'schema_type': 'nucleus_detection',
+ 'user_id': '121',
+ 'description': 'A table of nuclei detections from a nucleus detection model developed by Shang Mu, Leila Elabbady, Gayathri Mahalingam and Forrest Collman. Pt is the centroid of the nucleus detection. id corresponds to the flat_segmentation_source segmentID. Only included nucleus detections of volume&gt;25 um^3, below which detections are false positives, though some false positives above that threshold remain. ',
+ 'notice_text': None,
+ 'reference_table': None,
+ 'flat_segmentation_source': 'precomputed://https://bossdb-open-data.s3.amazonaws.com/iarpa_microns/minnie/minnie65/nuclei',
+ 'write_permission': 'PRIVATE',
+ 'read_permission': 'PUBLIC',
+ 'last_modified': '2022-10-25T19:24:28.559914',
+ 'segmentation_source': '',
+ 'pcg_table_name': 'minnie3_v1',
+ 'last_updated': '2026-06-17T08:10:01.110142',
+ 'voxel_resolution': [4.0, 4.0, 40.0]}</code></pre>
+</div>
+</div>
+<section id="location-vs-depth" class="level4">
+<h4 class="anchored" data-anchor-id="location-vs-depth">Location vs depth</h4>
+<p>As a first analysis, we will plot the depth location vs the size of each cell nucleus. <code>query_table</code> has additional parameters to modify the results and standardize returns that make such an analysis easier. * Using <code>desired_resolution</code> the resolution of all position columns can be defined in nanometers. * Using <code>split_positions</code>, position columns are separate * Using <code>select_columns</code> returns only the columns you know you are interested in. Try uncommenting this line to make the table more readable</p>
+<div id="de2374e8-9159-4980-8346-396183dd3aaa" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:313}}" data-outputid="c8b222fc-056b-4f9b-f12a-d30231653408" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nucleus_df <span class="op">=</span> client.materialize.query_table(nucleus_table_name,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                            desired_resolution<span class="op">=</span>[<span class="dv">1000</span>, <span class="dv">1000</span>, <span class="dv">1000</span>], <span class="co"># returned in um</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                                            split_positions<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                            <span class="co"># select_columns=['id','pt_root_id','volume','pt_position']</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                                           )</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>nucleus_df.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="df-120e3072-cc0f-42d4-8951-3706b852b27b" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">pt_position_x</th>
+<th data-quarto-table-cell-role="th">pt_position_y</th>
+<th data-quarto-table-cell-role="th">pt_position_z</th>
+<th data-quarto-table-cell-role="th">bb_start_position_x</th>
+<th data-quarto-table-cell-role="th">bb_start_position_y</th>
+<th data-quarto-table-cell-role="th">bb_start_position_z</th>
+<th data-quarto-table-cell-role="th">bb_end_position_x</th>
+<th data-quarto-table-cell-role="th">bb_end_position_y</th>
+<th data-quarto-table-cell-role="th">bb_end_position_z</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>730537</td>
+<td>2020-09-28 22:40:41.780734+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>32.307938</td>
+<td>1525</td>
+<td>1095</td>
+<td>799</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>373879</td>
+<td>2020-09-28 22:40:41.781788+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>229.045044</td>
+<td>915</td>
+<td>959</td>
+<td>783</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>96218056992431305</td>
+<td>864691136090135607</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>601340</td>
+<td>2020-09-28 22:40:41.782714+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>426.138</td>
+<td>1360</td>
+<td>1116</td>
+<td>837</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>201858</td>
+<td>2020-09-28 22:40:41.783784+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>93.753838</td>
+<td>587</td>
+<td>854</td>
+<td>1050</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>84955554103121097</td>
+<td>864691135373893678</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>600774</td>
+<td>2020-09-28 22:40:41.785273+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>135.189789</td>
+<td>1356</td>
+<td>1104</td>
+<td>777</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-120e3072-cc0f-42d4-8951-3706b852b27b')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-120e3072-cc0f-42d4-8951-3706b852b27b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-120e3072-cc0f-42d4-8951-3706b852b27b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>The data is organized such that the <code>y</code> axis is roughly aligned with depth (there is a 5 degree tilt that can be adjusted with the <a href="https://github.com/CAVEconnectome/standard_transform">standard_transform</a> package; we will ignore that here for simplicity).</p>
+<p>The plot represents spatial organization of cell nuclei in the tissue</p>
+<div id="d90e81e7-be6a-44d5-9d5b-62e8fa709ab7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:971}}" data-outputid="403726af-e78d-4613-dfe1-f2518d2073ce" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ax.tick_params(labelsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>nucleus_df, x<span class="op">=</span><span class="st">"volume"</span>, y<span class="op">=</span><span class="st">"pt_position_y"</span>, size<span class="op">=</span><span class="dv">1</span>, edgecolor<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">.01</span>, color<span class="op">=</span><span class="st">"k"</span>, ax<span class="op">=</span>ax, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Volume ($</span><span class="er">\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Depth ($</span><span class="er">\</span><span class="st">mu m$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_1185/4161046026.py:5: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_xlabel("Volume ($\mu m^3$)", fontsize=16)
+/tmp/ipykernel_1185/4161046026.py:6: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_ylabel("Depth ($\mu m$)", fontsize=16)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cell-type-information" class="level4">
+<h4 class="anchored" data-anchor-id="cell-type-information">Cell type information</h4>
+<p>Identifying the putative ‘cell type’ from the EM morphology is a process that involves both manual and automatic classifications. Subsets of the dataset have been manually classified by anatomists at the Allen Institute, and these ground truth labels used to train and refine different automated ‘feature classifiers’ over time.</p>
+<p>The diversity of manual and automated cell type classifications available in the dataset reflect the fact that definitions of ‘cell types’ in the dataset is an active area of research and must be contextualized against the purpose and resolution of the cell-typing being performed.</p>
+<p><strong>Manual Cell Types (V1 Column)</strong></p>
+<p>A subset of nucleus detections in a 100 um column (n=2204) in VISp were manually classified by anatomists at the Allen Institute into categories of cell subclasses, first distinguishing cells into classes of non-neuronal, excitatory and inhibitory. Excitatory cells were separated into laminar sub-classes (L23, L4), 3 sub-types of layer 5 cells (ET, IT, NP) and 2 classes of layer 6 cells (IT, CT). Inhibitory cells were classified into Bipolar (BPC), Basket (BC), Martinotti (MC), or Unsure (Unsure). Those neuronal calls are available from the CAVEclient under the table name <code>allen_v1_column_types_slanted_ref</code> which references the nucleus id of the cell.</p>
+<p>Non-neuronal manual cells type calls enumerate astrocytes, microglia, pericytes, oligodendrocytes (oligo), and oligodendrocyte precursor cells (OPC), and area available in the table <code>aibs_column_nonneuronal_ref</code>.</p>
+<div id="1dd194ef-f754-461a-b7a2-6147cd5b5643" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:223}}" data-outputid="8cb65716-fea6-4abd-f499-789aed670d95" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>manual_ct_df <span class="op">=</span> client.materialize.query_table(<span class="st">"allen_v1_column_types_slanted_ref"</span>,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                                              desired_resolution<span class="op">=</span>[<span class="dv">1000</span>, <span class="dv">1000</span>, <span class="dv">1000</span>],</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                              split_positions<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                              merge_reference<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(manual_ct_df))</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>manual_ct_df.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1357</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div id="df-52456337-44f4-4e6f-94cb-acf2fc48afb0" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>2023-03-18 14:13:21.577622+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>298945</td>
+<td>aibs_coarse_excitatory</td>
+<td>5P-IT</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>2023-03-18 14:13:21.578408+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>294715</td>
+<td>aibs_coarse_excitatory</td>
+<td>23P</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>2023-03-18 14:13:21.579093+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>264649</td>
+<td>aibs_coarse_inhibitory</td>
+<td>MC</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>2023-03-18 14:13:21.579790+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>294489</td>
+<td>aibs_coarse_excitatory</td>
+<td>23P</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>2023-03-18 14:13:21.580463+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>292708</td>
+<td>aibs_coarse_excitatory</td>
+<td>23P</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-52456337-44f4-4e6f-94cb-acf2fc48afb0')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-52456337-44f4-4e6f-94cb-acf2fc48afb0 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-52456337-44f4-4e6f-94cb-acf2fc48afb0');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p><strong>Automated Cell Type classification (Soma-nucleus model)</strong></p>
+<p>Models were trained based upon the manual Column Neuron labels, as described in <a href="https://www.nature.com/articles/s41586-024-07765-7">Elabbady et al.&nbsp;Nature 2025</a>. Each nucleus was analyzed for a variety of features, and a model trained on and independent dataset to distinguish neurons from non-neuronal detections. Non-neuron detections include both glial cells and false positive detections. The nucleus segmentation detected 171,818 connected components of nucleus objects, this model detected 82K neurons. Evaluation of this model on 1,316 cells in the volume shows the model has a recall of 99.6% for neurons, and a precision of 96.9%. All nucleus detections and the results of this model can be queried and linked to the cellular segmentation using the CAVEclient with the table name nucleus_neuron_svm.</p>
+<p>Combining those features with the nucleus features we trained a hierachical model on the manual labels to predict cell-classes and sub-classes across a large number of neurons. This is available as CAVE table <code>aibs_metamodel_celltypes_v661</code>.</p>
+<div id="cd5d0b20-93b6-484b-ba2d-109237a912d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:223}}" data-outputid="2cc73de0-4bd8-4e4b-9f75-4719bcd1807d" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ct_df <span class="op">=</span> client.materialize.query_table(<span class="st">"aibs_metamodel_celltypes_v661"</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                                       desired_resolution<span class="op">=</span>[<span class="dv">1000</span>, <span class="dv">1000</span>, <span class="dv">1000</span>],</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                       split_positions<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                       merge_reference<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                      )</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(ct_df))</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ct_df.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>94014</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="df-eacea0e0-c124-4b25-bb39-c94bed36b0b9" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>36916</td>
+<td>2023-12-19 22:47:18.659864+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>336365</td>
+<td>excitatory_neuron</td>
+<td>5P-IT</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1070</td>
+<td>2023-12-19 22:38:00.472115+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>110648</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>1099</td>
+<td>2023-12-19 22:38:00.898837+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>112071</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>13259</td>
+<td>2023-12-19 22:41:14.417986+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>197927</td>
+<td>nonneuron</td>
+<td>oligo</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>13271</td>
+<td>2023-12-19 22:41:14.685474+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>198087</td>
+<td>nonneuron</td>
+<td>astrocyte</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-eacea0e0-c124-4b25-bb39-c94bed36b0b9')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-eacea0e0-c124-4b25-bb39-c94bed36b0b9 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-eacea0e0-c124-4b25-bb39-c94bed36b0b9');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>Reference annotations contain <code>target_id</code> to merge them onto the table they target (here: the nucleus table). But do not worry, CAVE automatically merges them onto their target table by default (<code>merge_reference=True</code>):</p>
+<div id="8dc76bf0-63d6-4002-923c-89ac3978771a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:342}}" data-outputid="9b2611ac-36e5-40c8-e4e2-d8afad8a99e0" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ct_df <span class="op">=</span> client.materialize.query_table(<span class="st">"aibs_metamodel_celltypes_v661"</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                                       desired_resolution<span class="op">=</span>[<span class="dv">1000</span>, <span class="dv">1000</span>, <span class="dv">1000</span>],</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                                       split_positions<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                                       merge_reference<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="co"># select_columns=['target_id','pt_root_id','volume','pt_position','cell_type','classification_system']</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                                      )</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># remove segments with multiple cell bodies</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>ct_df <span class="op">=</span> ct_df.drop_duplicates(<span class="st">"pt_root_id"</span>, keep<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>ct_df.head(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div id="df-80fb5bee-52dc-4f67-bffd-fdd3aef451b2" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">target_id</th>
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th">id_ref</th>
+<th data-quarto-table-cell-role="th">created_ref</th>
+<th data-quarto-table-cell-role="th">valid_ref</th>
+<th data-quarto-table-cell-role="th">volume</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pt_position_y</th>
+<th data-quarto-table-cell-role="th">pt_position_z</th>
+<th data-quarto-table-cell-role="th">bb_start_position_x</th>
+<th data-quarto-table-cell-role="th">bb_start_position_y</th>
+<th data-quarto-table-cell-role="th">bb_start_position_z</th>
+<th data-quarto-table-cell-role="th">bb_end_position_x</th>
+<th data-quarto-table-cell-role="th">bb_end_position_y</th>
+<th data-quarto-table-cell-role="th">bb_end_position_z</th>
+<th data-quarto-table-cell-role="th">pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pt_root_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>36916</td>
+<td>2023-12-19 22:47:18.659864+00:00</td>
+<td>True</td>
+<td>336365</td>
+<td>excitatory_neuron</td>
+<td>5P-IT</td>
+<td>336365</td>
+<td>2020-09-28 22:42:48.966292+00:00</td>
+<td>True</td>
+<td>272.48819</td>
+<td>...</td>
+<td>723</td>
+<td>1083</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>93606511657924288</td>
+<td>864691136274724621</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1070</td>
+<td>2023-12-19 22:38:00.472115+00:00</td>
+<td>True</td>
+<td>110648</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+<td>110648</td>
+<td>2020-09-28 22:45:09.650639+00:00</td>
+<td>True</td>
+<td>328.533447</td>
+<td>...</td>
+<td>518</td>
+<td>1016</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>79385153184885329</td>
+<td>864691135489403194</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>1099</td>
+<td>2023-12-19 22:38:00.898837+00:00</td>
+<td>True</td>
+<td>112071</td>
+<td>excitatory_neuron</td>
+<td>23P</td>
+<td>112071</td>
+<td>2020-09-28 22:43:34.088785+00:00</td>
+<td>True</td>
+<td>272.929413</td>
+<td>...</td>
+<td>597</td>
+<td>623</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>79035988248401958</td>
+<td>864691136147292311</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>13259</td>
+<td>2023-12-19 22:41:14.417986+00:00</td>
+<td>True</td>
+<td>197927</td>
+<td>nonneuron</td>
+<td>oligo</td>
+<td>197927</td>
+<td>2020-09-28 22:43:10.652649+00:00</td>
+<td>True</td>
+<td>91.308853</td>
+<td>...</td>
+<td>744</td>
+<td>1058</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>84529699506051734</td>
+<td>864691135655940290</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>13271</td>
+<td>2023-12-19 22:41:14.685474+00:00</td>
+<td>True</td>
+<td>198087</td>
+<td>nonneuron</td>
+<td>astrocyte</td>
+<td>198087</td>
+<td>2020-09-28 22:41:36.677186+00:00</td>
+<td>True</td>
+<td>161.74498</td>
+<td>...</td>
+<td>763</td>
+<td>1094</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>&lt;NA&gt;</td>
+<td>83756261929388963</td>
+<td>864691135809440972</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 21 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-80fb5bee-52dc-4f67-bffd-fdd3aef451b2')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-80fb5bee-52dc-4f67-bffd-fdd3aef451b2 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-80fb5bee-52dc-4f67-bffd-fdd3aef451b2');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>The reference table added two additional data columns: <code>classification_system</code> and <code>cell_type</code>. The <code>classification_system</code> divides the cells into excitatitory and inhibitory neurons as well as non-neuronal cells. <code>cell_type</code> provides lower level cell annotations.</p>
+<div id="566d41bb-2488-4a27-835d-6656ed1efbbc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:209}}" data-outputid="a54cc940-c242-45b1-cf3e-0012b321801d" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ct_df[<span class="st">"classification_system"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">classification_system</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">excitatory_neuron</th>
+<td>63810</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">nonneuron</th>
+<td>18761</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">inhibitory_neuron</th>
+<td>7863</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><label><b>dtype:</b> Int64</label>
+</div>
+</div>
+<div id="360e978a-f6a8-4d9c-9da3-1e77a0441bdd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:617}}" data-outputid="b159b33d-2a38-4e3f-a7fa-374a14879544" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ct_df[<span class="st">"cell_type"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">cell_type</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">23P</th>
+<td>19656</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4P</th>
+<td>14728</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6P-IT</th>
+<td>11641</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5P-IT</th>
+<td>7899</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">astrocyte</th>
+<td>7133</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">oligo</th>
+<td>6902</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6P-CT</th>
+<td>6761</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">BC</th>
+<td>3319</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">MC</th>
+<td>2439</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">microglia</th>
+<td>2410</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">5P-ET</th>
+<td>2167</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">BPC</th>
+<td>1484</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">OPC</th>
+<td>1471</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5P-NP</th>
+<td>958</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">pericyte</th>
+<td>845</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">NGC</th>
+<td>621</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><label><b>dtype:</b> Int64</label>
+</div>
+</div>
+</section>
+<section id="location-vs-depth-cell-type" class="level4">
+<h4 class="anchored" data-anchor-id="location-vs-depth-cell-type">Location vs depth + Cell type</h4>
+<p>Because the cell type table contains the information about the nuclei, we can use it to plot the locations of all cell bodies as well and label them by type.</p>
+<div id="5dac8f0a-f964-4536-9eff-7b02d0c392dd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:971}}" data-outputid="4e13fd84-d577-435f-c992-3625d396bccf" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ax.tick_params(labelsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>ct_df, x<span class="op">=</span><span class="st">"volume"</span>, y<span class="op">=</span><span class="st">"pt_position_y"</span>, s<span class="op">=</span><span class="dv">20</span>, edgecolor<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">.1</span>, color<span class="op">=</span><span class="st">"k"</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                legend<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"classification_system"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Volume ($</span><span class="er">\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Depth ($</span><span class="er">\</span><span class="st">mu m$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_1185/4211805773.py:6: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_xlabel("Volume ($\mu m^3$)", fontsize=16)
+/tmp/ipykernel_1185/4211805773.py:7: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_ylabel("Depth ($\mu m$)", fontsize=16)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-17-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Student Task 1:Can you create a volume vs depth plot based on cell types?</strong> Hint: Read the code block above.</p>
+<div id="g6WTB4JjMbfg" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:971}}" data-outputid="e1dfd044-f892-4d42-cca4-4a0773f30d08" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>ax.tick_params(labelsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>ct_df, x<span class="op">=</span><span class="st">"volume"</span>, y<span class="op">=</span><span class="st">"pt_position_y"</span>, s<span class="op">=</span><span class="dv">20</span>, edgecolor<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">.1</span>, color<span class="op">=</span><span class="st">"k"</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>                legend<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"cell_type"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Volume ($</span><span class="er">\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Depth ($</span><span class="er">\</span><span class="st">mu m$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_1185/1013495817.py:6: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_xlabel("Volume ($\mu m^3$)", fontsize=16)
+/tmp/ipykernel_1185/1013495817.py:7: SyntaxWarning: invalid escape sequence '\m'
+  ax.set_ylabel("Depth ($\mu m$)", fontsize=16)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-18-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Student Task 2:Can you create a volume vs depth plot for a single cell types?</strong> Hint: Read the code block above.</p>
+<div id="H2yZL2olDnt5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:832}}" data-outputid="25146710-cda7-45dc-fbec-e82b82478176" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>ax.tick_params(labelsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>ct_df_filtered <span class="op">=</span> ct_df[ct_df[<span class="st">'cell_type'</span>].isin([<span class="st">'23P'</span>, <span class="st">'OPC'</span>])]</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>ct_df_filtered, x<span class="op">=</span><span class="st">"volume"</span>, y<span class="op">=</span><span class="st">"pt_position_y"</span>, s<span class="op">=</span><span class="dv">20</span>, edgecolor<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">.1</span>, color<span class="op">=</span><span class="st">"k"</span>, ax<span class="op">=</span>ax,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                legend<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"cell_type"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Volume ($</span><span class="ch">\\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Depth ($</span><span class="ch">\\</span><span class="st">mu m$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Student Task 3: Can you plot these data to look for distribution of inhibitory and excitatory cell types?</strong></p>
+<div id="g6WTB4jMbfg" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:737}}" data-outputid="6a5de1b8-cb3f-4f29-9beb-d3c8e13efea0" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter ct_df for excitatory and inhibitory cells</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>excitatory_cells_df <span class="op">=</span> ct_df[ct_df[<span class="st">'classification_system'</span>] <span class="op">==</span> <span class="st">'excitatory_neuron'</span>]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>inhibitory_cells_df <span class="op">=</span> ct_df[ct_df[<span class="st">'classification_system'</span>] <span class="op">==</span> <span class="st">'inhibitory_neuron'</span>]</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create subplots (1 row, 2 columns)</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">6</span>), dpi<span class="op">=</span><span class="dv">150</span>, sharey<span class="op">=</span><span class="va">True</span>) <span class="co"># sharey ensures both plots have the same y-axis scale</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for excitatory cells</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>excitatory_cells_df,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"volume"</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"pt_position_y"</span>,</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">.1</span>,</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"red"</span>, <span class="co"># Assign a distinct color for excitatory cells</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>],</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">False</span> <span class="co"># No need for legend as cell type is in title</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].invert_yaxis()</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Volume ($</span><span class="er">\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Depth ($</span><span class="er">\</span><span class="st">mu m$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Excitatory Neurons (Volume vs. Depth)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].tick_params(labelsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot for inhibitory cells</span></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>inhibitory_cells_df,</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"volume"</span>,</span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"pt_position_y"</span>,</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">.1</span>,</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"blue"</span>, <span class="co"># Assign a distinct color for inhibitory cells</span></span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>],</span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">False</span> <span class="co"># No need for legend as cell type is in title</span></span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].invert_yaxis()</span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Volume ($</span><span class="er">\</span><span class="st">mu m^3$)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">""</span>) <span class="co"># y-label is shared, so make it empty for the second plot</span></span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">500</span>)</span>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Inhibitory Neurons (Volume vs. Depth)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].tick_params(labelsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a>plt.tight_layout() <span class="co"># Adjusts subplot params for a tight layout</span></span>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;&gt;:24: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:25: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:43: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:24: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:25: SyntaxWarning: invalid escape sequence '\m'
+&lt;&gt;:43: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_1185/1215511890.py:24: SyntaxWarning: invalid escape sequence '\m'
+  axes[0].set_xlabel("Volume ($\mu m^3$)", fontsize=16)
+/tmp/ipykernel_1185/1215511890.py:25: SyntaxWarning: invalid escape sequence '\m'
+  axes[0].set_ylabel("Depth ($\mu m$)", fontsize=16)
+/tmp/ipykernel_1185/1215511890.py:43: SyntaxWarning: invalid escape sequence '\m'
+  axes[1].set_xlabel("Volume ($\mu m^3$)", fontsize=16)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-20-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="query-2-synapses-and-connectivity-we-focus-on-this-in-the-first-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="query-2-synapses-and-connectivity-we-focus-on-this-in-the-first-notebook">Query 2: synapses and connectivity ( we focus on this in the first notebook)</h3>
+<p>While synapses are stored as any other table in the database, in this case <code>synapses_pni_2</code>, this table is much larger than any other table at more than 337 million rows:</p>
+<div id="81c7c51b-5664-47f3-a8f2-fe51739ce17e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8795e9ca-356f-4c50-effb-163736e817d1" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>client.materialize.get_annotation_count(<span class="st">'synapses_pni_2'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>337312429</code></pre>
+</div>
+</div>
+<p>While we can query the synapse table directly, this is generally not recommended. It is too large to query all at once. CAVE limits to queries to 500,000 rows at once and will display a warning when that happens. Here, we demonstrate this with the limit set to 10:</p>
+<div id="a0a657e8-709e-410c-8c2d-a64f6fce987c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:574}}" data-outputid="4168630b-a0f5-457f-9af4-96dd2cf1a5c0" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>synapse_table_name <span class="op">=</span> client.info.get_datastack_info()[<span class="st">"synapse_table"</span>]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>syn_df <span class="op">=</span> client.materialize.query_table(synapse_table_name, limit<span class="op">=</span><span class="dv">10</span>, desired_resolution<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], split_positions<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>syn_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING:caveclient.base:201 - "Limited query to 10 rows</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<div id="df-8b6fa758-46d5-4b99-a13d-69c023935c72" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">pre_pt_position_x</th>
+<th data-quarto-table-cell-role="th">pre_pt_position_y</th>
+<th data-quarto-table-cell-role="th">pre_pt_position_z</th>
+<th data-quarto-table-cell-role="th">post_pt_position_x</th>
+<th data-quarto-table-cell-role="th">post_pt_position_y</th>
+<th data-quarto-table-cell-role="th">post_pt_position_z</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position_x</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position_y</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position_z</th>
+<th data-quarto-table-cell-role="th">size</th>
+<th data-quarto-table-cell-role="th">pre_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>4456</td>
+<td>2020-11-04 13:02:08.388988+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>211448</td>
+<td>409744</td>
+<td>801440</td>
+<td>211448</td>
+<td>409744</td>
+<td>801440</td>
+<td>211612</td>
+<td>410172</td>
+<td>801400</td>
+<td>2956.0</td>
+<td>72063160986635724</td>
+<td>864691135533713769</td>
+<td>72063160986635724</td>
+<td>864691135533713769</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>4503</td>
+<td>2020-11-04 12:09:33.286834+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>212456</td>
+<td>408032</td>
+<td>800360</td>
+<td>212456</td>
+<td>408032</td>
+<td>800360</td>
+<td>212168</td>
+<td>408088</td>
+<td>800400</td>
+<td>344.0</td>
+<td>72063092267156962</td>
+<td>864691135087527094</td>
+<td>72063092267156962</td>
+<td>864691135087527094</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>4508</td>
+<td>2020-11-04 13:02:13.024144+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>212448</td>
+<td>411696</td>
+<td>801440</td>
+<td>212448</td>
+<td>411696</td>
+<td>801440</td>
+<td>212224</td>
+<td>411800</td>
+<td>801560</td>
+<td>344.0</td>
+<td>72063229706111827</td>
+<td>864691135533713769</td>
+<td>72063229706111827</td>
+<td>864691135533713769</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4568</td>
+<td>2020-11-04 13:44:08.085705+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213392</td>
+<td>415448</td>
+<td>802920</td>
+<td>213392</td>
+<td>415448</td>
+<td>802920</td>
+<td>213096</td>
+<td>415176</td>
+<td>802880</td>
+<td>13816.0</td>
+<td>72133735889250131</td>
+<td>864691134530418554</td>
+<td>72133735889250131</td>
+<td>864691134530418554</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>4581</td>
+<td>2020-11-04 07:29:12.917622+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213552</td>
+<td>417184</td>
+<td>800800</td>
+<td>213552</td>
+<td>417184</td>
+<td>800800</td>
+<td>213240</td>
+<td>417080</td>
+<td>801080</td>
+<td>10436.0</td>
+<td>72133804608718799</td>
+<td>864691134745062676</td>
+<td>72133804608718799</td>
+<td>864691134745062676</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>4582</td>
+<td>2020-11-04 13:02:17.694701+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>212880</td>
+<td>409120</td>
+<td>801440</td>
+<td>212880</td>
+<td>409120</td>
+<td>801440</td>
+<td>213016</td>
+<td>408832</td>
+<td>801520</td>
+<td>1344.0</td>
+<td>72063160986636743</td>
+<td>864691135533713769</td>
+<td>72063160986636743</td>
+<td>864691135533713769</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>4588</td>
+<td>2020-11-04 12:20:12.290593+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213200</td>
+<td>421120</td>
+<td>805520</td>
+<td>213200</td>
+<td>421120</td>
+<td>805520</td>
+<td>213064</td>
+<td>421000</td>
+<td>805600</td>
+<td>7128.0</td>
+<td>72133942047682150</td>
+<td>864691134609767690</td>
+<td>72133942047682150</td>
+<td>864691134609767690</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>4590</td>
+<td>2020-11-04 13:20:01.875310+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213504</td>
+<td>406440</td>
+<td>805160</td>
+<td>213504</td>
+<td>406440</td>
+<td>805160</td>
+<td>213336</td>
+<td>406596</td>
+<td>805200</td>
+<td>6572.0</td>
+<td>72133461011344162</td>
+<td>864691135091400630</td>
+<td>72133461011344162</td>
+<td>864691135091400630</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>4606</td>
+<td>2020-11-04 07:24:39.038223+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213384</td>
+<td>413792</td>
+<td>800800</td>
+<td>213384</td>
+<td>413792</td>
+<td>800800</td>
+<td>213256</td>
+<td>413976</td>
+<td>801040</td>
+<td>2100.0</td>
+<td>72133667169766499</td>
+<td>864691134609872906</td>
+<td>72133667169766499</td>
+<td>864691134609872906</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>4611</td>
+<td>2020-11-04 07:24:37.800341+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>213336</td>
+<td>415304</td>
+<td>800960</td>
+<td>213336</td>
+<td>415304</td>
+<td>800960</td>
+<td>213192</td>
+<td>415604</td>
+<td>800960</td>
+<td>492.0</td>
+<td>72133735889243887</td>
+<td>864691134609872906</td>
+<td>72133735889243887</td>
+<td>864691134609872906</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8b6fa758-46d5-4b99-a13d-69c023935c72')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-8b6fa758-46d5-4b99-a13d-69c023935c72 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-8b6fa758-46d5-4b99-a13d-69c023935c72');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_18aca196-bbf2-46fa-9a6d-1a0e390329f6">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('syn_df')" title="Generate code using this dataframe." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"></path>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_18aca196-bbf2-46fa-9a6d-1a0e390329f6 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('syn_df');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<p>Instead, you have several options for querying cells of interest:</p>
+<ul>
+<li>Specifying the <code>pre_ids</code></li>
+<li>Specifying the <code>post_ids</code></li>
+<li>Searching within a <code>bounding_box</code></li>
+<li>Using a combination of the above to iterate through large numbers of neurons</li>
+</ul>
+<section id="query-synapses-given-pt_root_id-of-interest" class="level4">
+<h4 class="anchored" data-anchor-id="query-synapses-given-pt_root_id-of-interest">Query synapses given <code>pt_root_id</code> of interest</h4>
+<p>The <code>synapse_query</code> function allows you to query the synapse table in a more convenient way than most other tables. In particular, the <code>pre_ids</code> and <code>post_ids</code> let you specify which root id (or collection of root ids) you want to query, with pre_ids indicating the collection of <strong>presynaptic neurons</strong> and post_ids the collection of <strong>postsynaptic neurons</strong>.</p>
+<p>Using both <code>pre_ids</code> and <code>post_ids</code> in one call is effectively a logical AND, returning only those synapses from neurons in the list of <code>pre_ids</code> that target neurons in the list of <code>post_ids</code>.</p>
+<p>Let’s look at our example cell from before:</p>
+<div id="b946acd9-abaf-447f-8727-1a70f2a651ea" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:365}}" data-outputid="09530dd6-e885-4aab-a081-9d2f34bdf6ea" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick example cell</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>root_id <span class="op">=</span> <span class="dv">864691135572530981</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query synapse table with synapse_query()</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>input_syn_df <span class="op">=</span> client.materialize.synapse_query(post_ids<span class="op">=</span>root_id)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of input synapses for </span><span class="sc">{</span>root_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(input_syn_df)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>input_syn_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total number of input synapses for 864691135572530981: 7135</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.12/dist-packages/caveclient/materializationengine.py:1744: RuntimeWarning: Engine has switched to 'python' because numexpr does not support extension array dtypes. Please set your engine to python manually.
+  return df.query("pre_pt_root_id!=post_pt_root_id")</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<div id="df-c98bb81c-ffc7-4cdc-a86e-27b4a3c51669" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">size</th>
+<th data-quarto-table-cell-role="th">pre_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_position</th>
+<th data-quarto-table-cell-role="th">post_pt_position</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>456611088</td>
+<td>2020-11-04 06:48:59.326085+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>5140.0</td>
+<td>113239596703504810</td>
+<td>864691135479280180</td>
+<td>113239596703516355</td>
+<td>864691135572530981</td>
+<td>[352662, 182250, 21256]</td>
+<td>[352700, 182240, 21263]</td>
+<td>[352668, 182240, 21257]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>415745273</td>
+<td>2020-11-04 06:48:59.036865+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>14532.0</td>
+<td>110214290325399938</td>
+<td>864691135761573174</td>
+<td>110214290325398722</td>
+<td>864691135572530981</td>
+<td>[330584, 186192, 20184]</td>
+<td>[330508, 186140, 20186]</td>
+<td>[330530, 186164, 20184]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>461382317</td>
+<td>2020-11-04 06:49:11.546047+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>424.0</td>
+<td>114016607357442246</td>
+<td>864691136359281271</td>
+<td>114016607357447165</td>
+<td>864691135572530981</td>
+<td>[358370, 204474, 17891]</td>
+<td>[358422, 204472, 17897]</td>
+<td>[358376, 204448, 17898]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>453650601</td>
+<td>2020-11-04 06:49:11.014137+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>4312.0</td>
+<td>113239734075106385</td>
+<td>864691136207175091</td>
+<td>113239734075097000</td>
+<td>864691135572530981</td>
+<td>[352322, 183200, 20539]</td>
+<td>[352414, 183226, 20534]</td>
+<td>[352398, 183246, 20534]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>425855837</td>
+<td>2020-11-04 06:49:08.606602+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>7784.0</td>
+<td>111270646121891164</td>
+<td>864691135884370840</td>
+<td>111270646121907774</td>
+<td>864691135572530981</td>
+<td>[338014, 192640, 20294]</td>
+<td>[338110, 192602, 20309]</td>
+<td>[338117, 192649, 20302]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c98bb81c-ffc7-4cdc-a86e-27b4a3c51669')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-c98bb81c-ffc7-4cdc-a86e-27b4a3c51669 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-c98bb81c-ffc7-4cdc-a86e-27b4a3c51669');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>Getting the outputs of the cell is similar, except we use the argument <code>pre_ids</code></p>
+<div id="269c44c1-d05e-4bb4-8662-45ce230c99e3" class="cell" data-tags="[&quot;remove-stderr&quot;]" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:365}}" data-outputid="e3c9955c-4b31-4820-9a64-58d148c1819b" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query synapse table with synapse_query()</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>output_syn_df <span class="op">=</span> client.materialize.synapse_query(pre_ids<span class="op">=</span>root_id)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total number of output synapses for </span><span class="sc">{</span>root_id<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(output_syn_df)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>output_syn_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total number of output synapses for 864691135572530981: 443</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.12/dist-packages/caveclient/materializationengine.py:1744: RuntimeWarning: Engine has switched to 'python' because numexpr does not support extension array dtypes. Please set your engine to python manually.
+  return df.query("pre_pt_root_id!=post_pt_root_id")</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<div id="df-baa76f35-8853-4691-a290-cf80da3ecdff" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">created</th>
+<th data-quarto-table-cell-role="th">superceded_id</th>
+<th data-quarto-table-cell-role="th">valid</th>
+<th data-quarto-table-cell-role="th">size</th>
+<th data-quarto-table-cell-role="th">pre_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_supervoxel_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th">pre_pt_position</th>
+<th data-quarto-table-cell-role="th">post_pt_position</th>
+<th data-quarto-table-cell-role="th">ctr_pt_position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>395248437</td>
+<td>2020-11-04 06:48:59.876707+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>9532.0</td>
+<td>108524685221986350</td>
+<td>864691135572530981</td>
+<td>108524685221977287</td>
+<td>864691135490110266</td>
+<td>[318184, 180454, 25315]</td>
+<td>[318286, 180522, 25305]</td>
+<td>[318246, 180518, 25311]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>440616430</td>
+<td>2020-11-04 06:49:10.903020+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>4432.0</td>
+<td>112185646021939898</td>
+<td>864691135572530981</td>
+<td>112185646021939884</td>
+<td>864691134992343215</td>
+<td>[344966, 194038, 20972]</td>
+<td>[344942, 194054, 20975]</td>
+<td>[344934, 194048, 20971]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>439592768</td>
+<td>2020-11-04 06:49:11.156743+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>576.0</td>
+<td>112183034412923018</td>
+<td>864691135572530981</td>
+<td>112183034412912746</td>
+<td>864691136423679279</td>
+<td>[344800, 174436, 18504]</td>
+<td>[344704, 174410, 18491]</td>
+<td>[344778, 174374, 18497]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>454114788</td>
+<td>2020-11-04 06:49:46.278849+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>2356.0</td>
+<td>113309415020761559</td>
+<td>864691135572530981</td>
+<td>113379783764920953</td>
+<td>864691135043239167</td>
+<td>[353300, 178366, 16119]</td>
+<td>[353334, 178320, 16124]</td>
+<td>[353326, 178320, 16120]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>429055494</td>
+<td>2020-11-04 06:53:24.912290+00:00</td>
+<td>&lt;NA&gt;</td>
+<td>True</td>
+<td>16296.0</td>
+<td>110989034444418846</td>
+<td>864691135572530981</td>
+<td>110989034444425675</td>
+<td>864691135774556861</td>
+<td>[336166, 191682, 25914]</td>
+<td>[336260, 191558, 25917]</td>
+<td>[336184, 191638, 25915]</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-baa76f35-8853-4691-a290-cf80da3ecdff')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-baa76f35-8853-4691-a290-cf80da3ecdff button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-baa76f35-8853-4691-a290-cf80da3ecdff');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+<p>Note that synapse queries always return the list of every synapse between the neurons in the query, even if there are multiple synapses between the same pair of neurons.</p>
+<p>A common pattern to generate a list of connections between unique pairs of neurons is to group by the root ids of the presynaptic and postsynaptic neurons and then count the number of synapses between them. For example, use <code>pandas.groupby()</code> to get the number of synapses from this neuron onto every other neuron:</p>
+<div id="8b7c9aa1-a7ed-4e06-babf-8986b3cce81b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:2242}}" data-outputid="c8416c67-c06b-4189-b535-785d1251ffcb">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get count of synapses between presynaptic and postsynaptic partners</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>output_connectivity <span class="op">=</span> (output_syn_df.groupby([<span class="st">'pre_pt_root_id'</span>, <span class="st">'post_pt_root_id'</span>])</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a> .count()[[<span class="st">'id'</span>]]</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a> .rename(columns<span class="op">=</span>{<span class="st">'id'</span>: <span class="st">'syn_count'</span>})</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a> .sort_values( by<span class="op">=</span><span class="st">'syn_count'</span>, ascending<span class="op">=</span><span class="va">False</span>,)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>output_connectivity</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the 'id' part here is just a way to quickly extract one column. This could be any of the remaining column names,</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="co"># but `id` is often convenient because it is common to all tables.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<div id="df-02a9b6f1-9482-4a73-a982-fba8d2b2e08f" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">syn_count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th rowspan="11" data-quarto-table-cell-role="th" data-valign="top">864691135572530981</th>
+<th data-quarto-table-cell-role="th">864691136051830771</th>
+<td>12</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691135918652336</th>
+<td>7</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135468408402</th>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691136741629020</th>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135593547307</th>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135477016488</th>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691135476861096</th>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135475582784</th>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691135474714944</th>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135508907273</th>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>368 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-02a9b6f1-9482-4a73-a982-fba8d2b2e08f')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-02a9b6f1-9482-4a73-a982-fba8d2b2e08f button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-02a9b6f1-9482-4a73-a982-fba8d2b2e08f');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_031f1a5e-2a10-4f5d-9d52-c57a23422d53">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('output_connectivity')" title="Generate code using this dataframe." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"></path>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_031f1a5e-2a10-4f5d-9d52-c57a23422d53 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('output_connectivity');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<p><strong>Student task 4: Can you create a dataframe/list of inputs to this specific neuron?</strong></p>
+<div id="-i5lHFKtDn67" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:455}}" data-outputid="453f3c30-73cf-41a8-b830-4f664c7b30cb">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get count of synapses between presynaptic partners</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>input_connectivity <span class="op">=</span> (input_syn_df.groupby([<span class="st">'pre_pt_root_id'</span>, <span class="st">'post_pt_root_id'</span>])</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a> .count()[[<span class="st">'id'</span>]]</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a> .rename(columns<span class="op">=</span>{<span class="st">'id'</span>: <span class="st">'syn_count'</span>})</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a> .sort_values( by<span class="op">=</span><span class="st">'syn_count'</span>, ascending<span class="op">=</span><span class="va">False</span>,)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>output_connectivity</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the 'id' part here is just a way to quickly extract one column. This could be any of the remaining column names,</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co"># but `id` is often convenient because it is common to all tables.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<div id="df-4dcb6b59-ecf4-4515-b88e-6a6e4eff8444" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">syn_count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">pre_pt_root_id</th>
+<th data-quarto-table-cell-role="th">post_pt_root_id</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135918652336</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>14</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691136928672735</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>9</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135014295128</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>8</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691136010645411</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>7</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135748190397</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135461776068</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691135461755415</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135461674692</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">864691135461359895</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">864691135464551732</th>
+<th data-quarto-table-cell-role="th">864691135572530981</th>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>6446 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-4dcb6b59-ecf4-4515-b88e-6a6e4eff8444')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-4dcb6b59-ecf4-4515-b88e-6a6e4eff8444 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-4dcb6b59-ecf4-4515-b88e-6a6e4eff8444');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_76be97ca-3506-4a7a-b576-8723ef8c376f">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('output_connectivity')" title="Generate code using this dataframe." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"></path>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_76be97ca-3506-4a7a-b576-8723ef8c376f button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('output_connectivity');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="pivot-the-input_connectivity-table-to-create-a-matrix" class="level1">
+<h1>Pivot the input_connectivity table to create a matrix</h1>
+</section>
+<section id="rows-will-be-pre_pt_root_id-and-the-single-column-will-be-post_pt_root_id" class="level1">
+<h1>Rows will be pre_pt_root_id and the single column will be post_pt_root_id</h1>
+<p>input_adj_mat = input_connectivity.pivot_table(index=“pre_pt_root_id”, columns=“post_pt_root_id”, values=“syn_count”, aggfunc=‘sum’).fillna(0)</p>
+</section>
+<section id="visualize-the-input-adjacency-matrix-as-a-heatmap" class="level1">
+<h1>Visualize the input adjacency matrix as a heatmap</h1>
+<p>fig, ax = plt.subplots(figsize=(8, 10), dpi=150) sns.heatmap(input_adj_mat, cmap=“viridis”, xticklabels=[root_id], # Only one column: the target root_id yticklabels=False, # Too many y-labels to display meaningfully cbar_kws={‘label’: ‘Synapse Count’}, ax=ax, square=False # Not a square matrix, so no need for square aspect ) ax.set_ylabel(“Presynaptic Root ID”) ax.set_xlabel(“Postsynaptic Root ID”) ax.set_title(f”Adjacency Plot: Inputs to Neuron {root_id}“) plt.show()</p>
+<section id="plot-output-target-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="plot-output-target-distribution">Plot output target distribution</h4>
+<p>Taking this connectivity information from one neuron, <strong>quantify the synapses it makes onto all cell types</strong>. This is the same process that happens to make the Dash App plots.</p>
+<p>Note: here we work with only <em>unique</em> connections, even where there is more than one synapse between them</p>
+<div id="42c4d07d-d0ef-423e-ae87-9ac62af28f8d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:869}}" data-outputid="56176cd8-7f02-42de-c158-0f13e3e57ca3" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, find the unique postsynaptic partners</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>unique_postsyn_partners <span class="op">=</span> output_syn_df.post_pt_root_id.unique()</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the cell types of the postsynaptic partners</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>ct_postsyn_partners <span class="op">=</span> ct_df.loc[ct_df.pt_root_id.isin(unique_postsyn_partners)]</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a bar plot of the connections to the postsynaptic cell types</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>ct_summary <span class="op">=</span> (pd.DataFrame(ct_postsyn_partners.value_counts(<span class="st">'cell_type'</span>))</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>              .sort_values(<span class="st">'cell_type'</span>)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>              .reset_index()</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>sns.barplot(ct_summary, x<span class="op">=</span><span class="st">'cell_type'</span>, y<span class="op">=</span><span class="st">'count'</span>, hue<span class="op">=</span><span class="st">'cell_type'</span>, palette<span class="op">=</span><span class="st">'tab20'</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels to the bars</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, r <span class="kw">in</span> ct_summary.iterrows():</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>    ax.text(i, r[<span class="st">'count'</span>]<span class="op">-</span><span class="fl">.1</span>, <span class="bu">round</span>(r[<span class="st">'count'</span>], <span class="dv">2</span>),</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'white'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'top'</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count of unique connections'</span>, fontsize <span class="op">=</span> <span class="dv">12</span>, labelpad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Cell Type, Postsynaptic (all cells)'</span>, fontsize <span class="op">=</span> <span class="dv">12</span>, labelpad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=-</span><span class="dv">30</span>, ha<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>sns.despine()</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Student task 5: Can you create a similar graph for inputs? Copy-paste is allowed and encouraged</strong></p>
+<div id="fkQiszCUFPtf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:869}}" data-outputid="0fef075a-0ea2-41e5-ad8d-cc0dd5bd3369" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, find the unique postsynaptic partners</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>unique_presyn_partners <span class="op">=</span> input_syn_df.pre_pt_root_id.unique()</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Select the cell types of the postsynaptic partners</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>ct_presyn_partners <span class="op">=</span> ct_df.loc[ct_df.pt_root_id.isin(unique_presyn_partners)]</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a bar plot of the connections to the postsynaptic cell types</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>ct_summary <span class="op">=</span> (pd.DataFrame(ct_presyn_partners.value_counts(<span class="st">'cell_type'</span>))</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>              .sort_values(<span class="st">'cell_type'</span>)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>              .reset_index()</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>),dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>sns.barplot(ct_summary, x<span class="op">=</span><span class="st">'cell_type'</span>, y<span class="op">=</span><span class="st">'count'</span>, hue<span class="op">=</span><span class="st">'cell_type'</span>, palette<span class="op">=</span><span class="st">'tab20'</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels to the bars</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, r <span class="kw">in</span> ct_summary.iterrows():</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>    ax.text(i, r[<span class="st">'count'</span>]<span class="op">-</span><span class="fl">.1</span>, <span class="bu">round</span>(r[<span class="st">'count'</span>], <span class="dv">2</span>),</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'white'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'top'</span>)</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count of unique connections'</span>, fontsize <span class="op">=</span> <span class="dv">12</span>, labelpad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Cell Type, Postsynaptic (all cells)'</span>, fontsize <span class="op">=</span> <span class="dv">12</span>, labelpad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=-</span><span class="dv">30</span>, ha<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>sns.despine()</span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06172026_colab_MICrONS_data_access_March_2026_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="advanced-neuroglancer" class="level1">
+<h1>Advanced Neuroglancer</h1>
+<p>You can actually overlay many of these properties in neuroglancer, including:</p>
+<ul>
+<li>Skeletons: https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6025750544121856</li>
+<li>Nucleus segmentation: https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4846103861133312</li>
+<li>Cell Types: https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5505896963637248</li>
+<li>Proofreading Status: https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5626062229733376</li>
+<li>Synapses: https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6395755509055488</li>
+</ul>
+<p>And any combination thereof. Tip: drag layers between diferent neuroglancer windows to view overlaid</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

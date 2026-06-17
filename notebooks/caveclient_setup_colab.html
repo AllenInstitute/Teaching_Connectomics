@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Teaching Connectomics</title>
+<title>Setup a persistent token for CAVE authentication – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Teaching Connectomics</span>
     </a>
   </div>
@@ -93,15 +128,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Education Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code-tutorials.html"> 
+    <a class="nav-link" href="../code-tutorials.html"> 
 <span class="menu-text">Coding Tutorials</span></a>
   </li>  
 </ul>
@@ -130,20 +165,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#education-modules" id="toc-education-modules" class="nav-link active" data-scroll-target="#education-modules">Education Modules:</a>
-  <ul class="collapse">
-  <li><a href="#module-1-neuroanatomy-and-introduction-to-neuroglancer" id="toc-module-1-neuroanatomy-and-introduction-to-neuroglancer" class="nav-link" data-scroll-target="#module-1-neuroanatomy-and-introduction-to-neuroglancer">Module 1 : Neuroanatomy and Introduction to Neuroglancer</a></li>
-  <li><a href="#module-2-ultrastructure-and-cytology" id="toc-module-2-ultrastructure-and-cytology" class="nav-link" data-scroll-target="#module-2-ultrastructure-and-cytology">Module 2 : Ultrastructure and Cytology</a></li>
-  </ul></li>
+  <li><a href="#set-up-your-cave-access" id="toc-set-up-your-cave-access" class="nav-link active" data-scroll-target="#set-up-your-cave-access">1. Set up your CAVE access</a></li>
+  <li><a href="#confirm-cave-access" id="toc-confirm-cave-access" class="nav-link" data-scroll-target="#confirm-cave-access">2. Confirm CAVE access</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="caveclient_setup_colab.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching Connectomics</h1>
+<h1 class="title">Setup a persistent token for CAVE authentication</h1>
 </div>
 
 
@@ -160,52 +192,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="education-modules" class="level2">
-<h2 class="anchored" data-anchor-id="education-modules">Education Modules:</h2>
-<section id="module-1-neuroanatomy-and-introduction-to-neuroglancer" class="level3">
-<h3 class="anchored" data-anchor-id="module-1-neuroanatomy-and-introduction-to-neuroglancer">Module 1 : Neuroanatomy and Introduction to Neuroglancer</h3>
-<div class="grid">
-<div class="g-col-6">
-<p><img src="resources/microns_in_ccf.png" class="img-fluid"></p>
-<center>
-<a href="module-1.html">Online module</a>
-</center>
-<center>
-<a href="module-1.pdf">PDF Download</a>
-</center>
+<p><strong>This is written for a Google Colab notebook.</strong> If you are running this tutorial locally with Jupyter or VScode, consider the alternative notebook: <a href="https://alleninstitute.github.io/Teaching_Connectomics/caveclient-setup-local.html">Local CAVEclient Setup</a></p>
+<p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
+<p>The CAVEclient is the main way to programmatically access the MICrONS data using Python. In particular, the CAVEclient provides an interface to query the CAVE database for annotations such as synapses, as well as to get a variety of other kinds of information.</p>
+<p>This notebook adds your Connectome Annotation Versioning Engine (CAVE) access token to you Google Colab ‘Secrets’ panel. Once you have setup a CAVE token in this way, you can access CAVE in any other colab notebook with the following:</p>
+<pre><code>from google.colab import userdata
+import caveclient
+client = caveclient.CAVEclient('minnie65_public',
+                               auth_token=userdata.get('CAVE_TOKEN'))</code></pre>
+<p>The first time you run a notebook, you will be prompted the to grant it access to you ‘Secrets’</p>
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:8020,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1768002926173,&quot;user&quot;:{&quot;displayName&quot;:&quot;Bethanny Danskin&quot;,&quot;userId&quot;:&quot;04115761517282472840&quot;},&quot;user_tz&quot;:480}}" data-outputid="3351a905-bf95-42d1-def8-2f21ed8346ae" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>uv pip install caveclient</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> userdata</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">"minnie65_public"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>server_address<span class="op">=</span><span class="st">'https://global.daf-apis.com/'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<div class="ansi-escaped-output">
+<pre>Using Python 3.12.12 environment at: /usr
+
+Resolved <span style="font-weight:bold;opacity:0.7">36 packages</span> in 656ms
+
+Prepared <span style="font-weight:bold;opacity:0.7">2 packages</span> in 727ms
+
+Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 114ms
+
+ <span class="ansi-green-fg">+</span> <span class="ansi-bold">caveclient</span>==8.0.1
+
+ <span class="ansi-green-fg">+</span> <span class="ansi-bold">jedi</span>==0.19.2
+</pre>
 </div>
-<div class="g-col-6">
-<p>In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform.</p>
-<p>Learning Goals:</p>
-<ul>
-<li>Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites<br>
-</li>
-<li>Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information<br>
-</li>
-<li>Navigate a connectomics data set within the NeuroGlancer platform</li>
-</ul>
 </div>
 </div>
+<section id="set-up-your-cave-access" class="level1">
+<h1>1. Set up your CAVE access</h1>
+<ol type="1">
+<li>Check to ensure you have accepted <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept">MICrONS Terms of Service</a></li>
+<li>Visit <a href="https://global.daf-apis.com//sticky_auth/settings/tokens" class="uri">https://global.daf-apis.com//sticky_auth/settings/tokens</a></li>
+<li>Copy a “token” if one exists, or create a new one (upper right corner) if none are listed. Just copy the long alphanumeric part, not the quote marks.</li>
+<li>Click the Key icon along the left of the page. Click + Add new secret.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resources/colab_set_token.png" class="img-fluid figure-img"></p>
+<figcaption>Access Colab ‘Secrets’ panel and set your CAVE_TOKEN</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Set the Name of the token to CAVE_TOKEN and paste the token as the Value.</li>
+<li>Toggle “Notebook access” along the left side to be on.</li>
+</ol>
 </section>
-<section id="module-2-ultrastructure-and-cytology" class="level3">
-<h3 class="anchored" data-anchor-id="module-2-ultrastructure-and-cytology">Module 2 : Ultrastructure and Cytology</h3>
-<div class="grid">
-<div class="g-col-6">
-<p><img src="resources/module_2_em_cover.png" class="img-fluid"></p>
-<center>
-<a href="module-2.html">Online module</a>
-</center>
-<center>
-<a href="module-2.pdf">PDF Download</a>
-</center>
+<section id="confirm-cave-access" class="level1">
+<h1>2. Confirm CAVE access</h1>
+<p>Run the following cell. Click the link that is shown, and click through with your Google login credentials that you used previously when generating your token. You may need to accept a terms of service for the dataset.</p>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:185,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1768003424042,&quot;user&quot;:{&quot;displayName&quot;:&quot;Bethanny Danskin&quot;,&quot;userId&quot;:&quot;04115761517282472840&quot;},&quot;user_tz&quot;:480}}" data-outputid="ced2bc4f-92ad-48ac-854a-7c4b1c69535d" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gclient <span class="op">=</span> CAVEclient(server_address<span class="op">=</span>server_address, auth_token<span class="op">=</span>userdata.get(<span class="st">'CAVE_TOKEN'</span>), global_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>info_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>gclient<span class="sc">.</span>server_address<span class="sc">}</span><span class="ss">info/datastack/</span><span class="sc">{</span>datastack_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  datastack_name<span class="op">=</span>datastack_name,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  server_address<span class="op">=</span>server_address,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  auth_token<span class="op">=</span>userdata.get(<span class="st">'CAVE_TOKEN'</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">isinstance</span>(client.info.get_datastack_info(), <span class="bu">dict</span>):</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"All set up! You can also access:</span><span class="ch">\n</span><span class="st">"</span>, info_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Please go to:
+ https://global.daf-apis.com/info/datastack/minnie65_public</code></pre>
 </div>
-<div class="g-col-6">
-<p>In this ultrastructure and cytology module, students delve into the intricate world of cellular structure at the nanoscale level. Neurons are specialized brain cells that are made up of cellular structures such as axons, dendrites, and cell bodies, but they also contain more general cellular organelles, like endoplasmic reticulum, that carry out the basic function of all cells. These structures and organelles work together to facilitate information flow and functionality throughout the nervous system. In this laboratory module, students will learn about the structural features of neurons, and how to identify them in electron microscopy data sets.</p>
 </div>
-</div>
+<p>If you you see a page loading that shows “Datastack:” a description and several service links, you should be all set up!</p>
+<p>If you get a <code>HTTPError: 401 Client Error: UNAUTHORIZED for url</code> error, re-enter your token in Step 5 above</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

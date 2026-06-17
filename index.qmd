@@ -1,0 +1,55 @@
+---
+title: "Teaching Connectomics"
+format:
+  html: default
+---
+
+## Education Modules:
+
+
+
+### Module 1 : Neuroanatomy and Introduction to Neuroglancer
+::::{.grid}
+
+:::{.g-col-6}
+![](resources/microns_in_ccf.png)
+
+<center> [Online module](module-1.html) </center>
+
+<center> [PDF Download](module-1.pdf) </center>
+
+:::
+
+:::{.g-col-6}
+
+In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform. 
+
+Learning Goals:
+
+* Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites  
+* Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information  
+* Navigate a connectomics data set within the NeuroGlancer platform 
+:::
+
+::::
+
+
+### Module 2 : Ultrastructure and Cytology
+::::{.grid}
+
+:::{.g-col-6}
+![](resources/module_2_em_cover.png)
+
+<center> [Online module](module-2.html) </center>
+
+<center> [PDF Download](module-2.pdf) </center>
+
+:::
+
+:::{.g-col-6}
+
+In this ultrastructure and cytology module, students delve into the intricate world of cellular structure at the nanoscale level. Neurons are specialized brain cells that are made up of cellular structures such as axons, dendrites, and cell bodies, but they also contain more general cellular organelles, like endoplasmic reticulum, that carry out the basic function of all cells. These structures and organelles work together to facilitate information flow and functionality throughout the nervous system. In this laboratory module, students will learn about the structural features of neurons, and how to identify them in electron microscopy data sets.  
+
+:::
+
+::::

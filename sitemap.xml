@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient_setup_colab.html</loc>
+    <lastmod>2026-06-17T20:07:22.803Z</lastmod>
+  </url>
+  <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-2.html</loc>
     <lastmod>2026-06-17T02:07:04.670Z</lastmod>
   </url>
@@ -10,10 +14,18 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/about.html</loc>
-    <lastmod>2026-06-09T01:25:20.853Z</lastmod>
+    <lastmod>2026-06-17T21:02:22.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/code-tutorials.html</loc>
+    <lastmod>2026-06-17T20:07:25.654Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-1.html</loc>
-    <lastmod>2026-06-17T00:25:49.207Z</lastmod>
+    <lastmod>2026-06-17T02:11:14.555Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html</loc>
+    <lastmod>2026-06-17T20:03:05.466Z</lastmod>
   </url>
 </urlset>

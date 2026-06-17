@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Teaching Connectomics</title>
+<title>Coding Tutorials – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -97,11 +97,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Education Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code-tutorials.html"> 
+    <a class="nav-link active" href="./code-tutorials.html" aria-current="page"> 
 <span class="menu-text">Coding Tutorials</span></a>
   </li>  
 </ul>
@@ -130,10 +130,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#education-modules" id="toc-education-modules" class="nav-link active" data-scroll-target="#education-modules">Education Modules:</a>
+  <li><a href="#coding-modules" id="toc-coding-modules" class="nav-link active" data-scroll-target="#coding-modules">Coding Modules:</a>
   <ul class="collapse">
-  <li><a href="#module-1-neuroanatomy-and-introduction-to-neuroglancer" id="toc-module-1-neuroanatomy-and-introduction-to-neuroglancer" class="nav-link" data-scroll-target="#module-1-neuroanatomy-and-introduction-to-neuroglancer">Module 1 : Neuroanatomy and Introduction to Neuroglancer</a></li>
-  <li><a href="#module-2-ultrastructure-and-cytology" id="toc-module-2-ultrastructure-and-cytology" class="nav-link" data-scroll-target="#module-2-ultrastructure-and-cytology">Module 2 : Ultrastructure and Cytology</a></li>
+  <li><a href="#setting-up-data-access" id="toc-setting-up-data-access" class="nav-link" data-scroll-target="#setting-up-data-access">Setting up data access</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -143,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching Connectomics</h1>
+<h1 class="title">Coding Tutorials</h1>
 </div>
 
 
@@ -160,47 +159,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="education-modules" class="level2">
-<h2 class="anchored" data-anchor-id="education-modules">Education Modules:</h2>
-<section id="module-1-neuroanatomy-and-introduction-to-neuroglancer" class="level3">
-<h3 class="anchored" data-anchor-id="module-1-neuroanatomy-and-introduction-to-neuroglancer">Module 1 : Neuroanatomy and Introduction to Neuroglancer</h3>
-<div class="grid">
-<div class="g-col-6">
-<p><img src="resources/microns_in_ccf.png" class="img-fluid"></p>
-<center>
-<a href="module-1.html">Online module</a>
-</center>
-<center>
-<a href="module-1.pdf">PDF Download</a>
-</center>
+<section id="coding-modules" class="level2">
+<h2 class="anchored" data-anchor-id="coding-modules">Coding Modules:</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/proofreading_annotating_analysis.png" class="img-fluid figure-img"></p>
+<figcaption>Connectome Annotation Versioning Engine (CAVE) a computational infrastructure developed to manage, proofread, and analyze large connetomic datasets efficiently and collaboratively</figcaption>
+</figure>
 </div>
-<div class="g-col-6">
-<p>In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform.</p>
-<p>Learning Goals:</p>
+<p>The MICrONS dataset, spanning one cubic millimeter of mouse cortex, is comprised of petabytes of data from electron microscopy images at nanometer resolution, dense segmentation of 200,000 brain cells, half a billion synapses, and hundreds of thousands of other annotations to label the data.</p>
+<p>To enable systematic analysis without downloading hundreds of gigabytes of data, users can selectively access cloud-based data programmatically through a collection of open source Python clients.</p>
+<p>This collection of Ipython Notebooks introduces data access to the <strong>Connectome Annotation Versioning Engin (CAVE).</strong></p>
+<section id="setting-up-data-access" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-data-access">Setting up data access</h3>
+<p>These notebooks are foundational for accessing the data, but only need to be completed once per user. There are two options:</p>
 <ul>
-<li>Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites<br>
-</li>
-<li>Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information<br>
-</li>
-<li>Navigate a connectomics data set within the NeuroGlancer platform</li>
+<li><strong>Cloud Access</strong>, for setting up access in Google Colab</li>
+<li><strong>Local Analysis</strong> setting up access for running on a local machine or JupyterHub. We recommend Cloud Access for intitial instruction and in-class work. Local analysis may be better for independent study and ongoing work.</li>
 </ul>
-</div>
-</div>
-</section>
-<section id="module-2-ultrastructure-and-cytology" class="level3">
-<h3 class="anchored" data-anchor-id="module-2-ultrastructure-and-cytology">Module 2 : Ultrastructure and Cytology</h3>
 <div class="grid">
 <div class="g-col-6">
-<p><img src="resources/module_2_em_cover.png" class="img-fluid"></p>
+<p><strong>Cloud Access with Google Colab</strong></p>
 <center>
-<a href="module-2.html">Online module</a>
-</center>
-<center>
-<a href="module-2.pdf">PDF Download</a>
+<a href="https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/docs/notebooks/caveclient_setup_colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid"></a>
 </center>
 </div>
 <div class="g-col-6">
-<p>In this ultrastructure and cytology module, students delve into the intricate world of cellular structure at the nanoscale level. Neurons are specialized brain cells that are made up of cellular structures such as axons, dendrites, and cell bodies, but they also contain more general cellular organelles, like endoplasmic reticulum, that carry out the basic function of all cells. These structures and organelles work together to facilitate information flow and functionality throughout the nervous system. In this laboratory module, students will learn about the structural features of neurons, and how to identify them in electron microscopy data sets.</p>
+<p><strong>Local setup notebook</strong></p>
+<center>
+<a href="./notebooks/caveclient-setup-local.html">Ipython Notebooks</a>
+</center>
 </div>
 </div>
 
