@@ -5,19 +5,17 @@ website:
   title: "Teaching Connectomics"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - about.qmd
-      - href: module-1.qmd
-        text: Module 1
-      - href: module-2.qmd
-        text: Module 1
+      - href: index.qmd
+        text: Education Modules
+      - code-tutorials.qmd
     tools: 
       - icon: github
         menu:
           - text: Tutorial Code
             url:  https://github.com/AllenInstitute/Teaching_Connectomics
   back-to-top-navigation: true
+  
 format:
   html:
     theme:
@@ -26,5 +24,4 @@ format:
     css: styles.css
     toc: true
   pdf:
-    pdf-engine: 'lualatex'
-    
+    pdf-engine: 'lualatex'    
