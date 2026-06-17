@@ -160,6 +160,10 @@ div.csl-indent {
     <a class="nav-link active" href="./module-1.html" aria-current="page"> 
 <span class="menu-text">Module 1</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./module-2.html"> 
+<span class="menu-text">Module 1</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -345,7 +349,7 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <p>MICrONS Terms of Service Error</p>
-<p>If the neuroglancer does not prompt it follow these steps:</p>
+<p>If the neuroglancer does not render, follow these steps:</p>
 <ol type="1">
 <li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your google authorized account</li>
 <li>Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer.</li>
@@ -831,7 +835,7 @@ The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, et al. 2025. <span>â€
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/Teaching_Connectomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

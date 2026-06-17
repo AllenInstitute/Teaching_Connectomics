@@ -1,1 +1,28 @@
 /* css styles */
+
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+
+/* all formats */
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+      size: a4 portrait;
+      counter-increment: page;
+      @bottom-center {
+        content: counter(page)
+      }
+  }
+  .no-print {
+      display: none;
+  }
+  .print-only {
+      display: block;
+  }
+
+}

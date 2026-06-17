@@ -104,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./module-1.html"> 
 <span class="menu-text">Module 1</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./module-2.html"> 
+<span class="menu-text">Module 1</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -193,10 +197,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="g-col-6">
 <p><img src="resources/module_2_em_cover.png" class="img-fluid"></p>
 <center>
-Online module
+<a href="module-2.html">Online module</a>
 </center>
 <center>
-PDF Download
+<a href="module-2.pdf">PDF Download</a>
 </center>
 </div>
 <div class="g-col-6">
@@ -282,7 +286,7 @@ PDF Download
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/Teaching_Connectomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
