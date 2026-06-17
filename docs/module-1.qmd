@@ -85,7 +85,7 @@ We will use the NeuroGlancer browser to observe how these neuroanatomical direct
 
 Access NeuroGlancer by clicking on the following link:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/4793806474969088>
+> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736>
 
 
 :::{.callout-tip}
