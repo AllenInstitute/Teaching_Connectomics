@@ -25,4 +25,3 @@ format:
     toc: true
   pdf:
     pdf-engine: 'lualatex'
-    

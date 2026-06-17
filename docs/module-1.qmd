@@ -99,7 +99,7 @@ You should see the following screen:
 :::{.callout-caution}
 MICrONS Terms of Service Error
 
-If the neuroglancer does not prompt it follow these steps:
+If the neuroglancer does not render, follow these steps:
 
 1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
 2)	Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer. 
