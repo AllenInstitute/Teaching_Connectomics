@@ -4,4 +4,25 @@ format:
   html: default
 ---
 
-![MICrONS](resources/microns_in_ccf.png) 
+## Open connectomics data for learning neuroscience
+
+![MICrONS volume within the mouse common coordinate framework](resources/microns_in_ccf.png){width=500}
+
+This educational material teaches neuroscience concepts using the mouse visual cortex connectome in the MICrONS open access dataset. Neuroscience concepts will come to life through the exploration of the 3D dataset starting with neuroanatomy and diving into ultrastructure and identification of cell types, and analysis of synaptic connectivity.
+
+This instructional material is intended for students at the undergraduate level working in a standard computer lab. While there are coding tutorials, no coding experience is required or expected.
+
+## Program: Center for whole mouse brain connectomics using **high-throughput integrated volumetric electron microscopy (HIVE)**.
+
+### Contributor List:
+
+| Ken Colodner. Mount Holyoke College.
+| Andrew Bellemer. Appalachian State University.
+| Divya Sitaraman. California State University, East Bay.
+| Bethanny Danskin. Allen Institute/Brain/Connectomics.
+
+### Acknowledgements
+
+This curriculum was developed, and workshop was funded in part, by the BRAIN Initiative through the CONNECTS program through the National Institute of Neurological Disorders and Stroke (NINDS) of the National Institutes of Health under the HIVE grant-Award number UM1NS132253 including subawards to Ken Colodner (Mt Holyoke), Andrew Bellemer (Appalachian State) and Divya Sitaraman (CSU East Bay).
+
+
