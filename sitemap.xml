@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient_setup_colab.html</loc>
-    <lastmod>2026-06-17T20:07:22.803Z</lastmod>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/microns_data_access_education.html</loc>
+    <lastmod>2026-06-18T02:23:25.454Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-2.html</loc>
-    <lastmod>2026-06-17T02:07:04.670Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/index.html</loc>
-    <lastmod>2026-06-17T02:06:36.567Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/about.html</loc>
-    <lastmod>2026-06-17T21:02:22.862Z</lastmod>
-  </url>
-  <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/code-tutorials.html</loc>
-    <lastmod>2026-06-17T20:07:25.654Z</lastmod>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html</loc>
+    <lastmod>2026-06-17T20:03:05.466Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-1.html</loc>
     <lastmod>2026-06-17T02:11:14.555Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html</loc>
-    <lastmod>2026-06-17T20:03:05.466Z</lastmod>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/code-tutorials.html</loc>
+    <lastmod>2026-06-18T02:26:47.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/about.html</loc>
+    <lastmod>2026-06-17T21:02:22.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/index.html</loc>
+    <lastmod>2026-06-17T02:06:36.567Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-2.html</loc>
+    <lastmod>2026-06-17T02:07:04.670Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient_setup_colab.html</loc>
+    <lastmod>2026-06-17T21:14:31.392Z</lastmod>
   </url>
 </urlset>

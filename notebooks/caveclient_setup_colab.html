@@ -192,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>This is written for a Google Colab notebook.</strong> If you are running this tutorial locally with Jupyter or VScode, consider the alternative notebook: <a href="https://alleninstitute.github.io/Teaching_Connectomics/caveclient-setup-local.html">Local CAVEclient Setup</a></p>
+<p><strong>This is written for a Google Colab notebook.</strong> If you are running this tutorial locally with Jupyter or VScode, consider the alternative notebook: <a href="https://alleninstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html">Local CAVEclient Setup</a></p>
 <p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
 <p>The CAVEclient is the main way to programmatically access the MICrONS data using Python. In particular, the CAVEclient provides an interface to query the CAVE database for annotations such as synapses, as well as to get a variety of other kinds of information.</p>
 <p>This notebook adds your Connectome Annotation Versioning Engine (CAVE) access token to you Google Colab ‘Secrets’ panel. Once you have setup a CAVE token in this way, you can access CAVE in any other colab notebook with the following:</p>
@@ -201,7 +201,7 @@ import caveclient
 client = caveclient.CAVEclient('minnie65_public',
                                auth_token=userdata.get('CAVE_TOKEN'))</code></pre>
 <p>The first time you run a notebook, you will be prompted the to grant it access to you ‘Secrets’</p>
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:8020,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1768002926173,&quot;user&quot;:{&quot;displayName&quot;:&quot;Bethanny Danskin&quot;,&quot;userId&quot;:&quot;04115761517282472840&quot;},&quot;user_tz&quot;:480}}" data-outputid="3351a905-bf95-42d1-def8-2f21ed8346ae" data-execution_count="1">
+<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="08070df4-3caf-4dce-cae9-50a488d40722" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>uv pip install caveclient</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
@@ -211,17 +211,17 @@ client = caveclient.CAVEclient('minnie65_public',
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>server_address<span class="op">=</span><span class="st">'https://global.daf-apis.com/'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre>Using Python 3.12.12 environment at: /usr
+<pre>Using Python 3.12.13 environment at: /usr
 
-Resolved <span style="font-weight:bold;opacity:0.7">36 packages</span> in 656ms
+Resolved <span style="font-weight:bold;opacity:0.7">36 packages</span> in 1.70s
 
-Prepared <span style="font-weight:bold;opacity:0.7">2 packages</span> in 727ms
+Prepared <span style="font-weight:bold;opacity:0.7">2 packages</span> in 1.63s
 
-Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 114ms
+Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 90ms
 
- <span class="ansi-green-fg">+</span> <span class="ansi-bold">caveclient</span>==8.0.1
+ <span class="ansi-green-fg">+</span> <span class="ansi-bold">caveclient</span>==8.1.0
 
- <span class="ansi-green-fg">+</span> <span class="ansi-bold">jedi</span>==0.19.2
+ <span class="ansi-green-fg">+</span> <span class="ansi-bold">jedi</span>==0.20.0
 </pre>
 </div>
 </div>
@@ -236,7 +236,7 @@ Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 114ms
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../resources/colab_set_token.png" class="img-fluid figure-img"></p>
+<p><img src="https://github.com/AllenInstitute/Teaching_Connectomics/blob/main/docs/resources/colab_set_token.png?raw=1" class="img-fluid figure-img"></p>
 <figcaption>Access Colab ‘Secrets’ panel and set your CAVE_TOKEN</figcaption>
 </figure>
 </div>
@@ -248,7 +248,7 @@ Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 114ms
 <section id="confirm-cave-access" class="level1">
 <h1>2. Confirm CAVE access</h1>
 <p>Run the following cell. Click the link that is shown, and click through with your Google login credentials that you used previously when generating your token. You may need to accept a terms of service for the dataset.</p>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:185,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1768003424042,&quot;user&quot;:{&quot;displayName&quot;:&quot;Bethanny Danskin&quot;,&quot;userId&quot;:&quot;04115761517282472840&quot;},&quot;user_tz&quot;:480}}" data-outputid="ced2bc4f-92ad-48ac-854a-7c4b1c69535d" data-execution_count="12">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ced2bc4f-92ad-48ac-854a-7c4b1c69535d">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gclient <span class="op">=</span> CAVEclient(server_address<span class="op">=</span>server_address, auth_token<span class="op">=</span>userdata.get(<span class="st">'CAVE_TOKEN'</span>), global_only<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>info_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>gclient<span class="sc">.</span>server_address<span class="sc">}</span><span class="ss">info/datastack/</span><span class="sc">{</span>datastack_name<span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
