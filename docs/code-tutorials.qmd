@@ -43,3 +43,33 @@ These notebooks are foundational for accessing the data, but only need to be com
 ::::
 
 
+### Introduction to MICrONS
+
+These notebooks introduce core concepts of analysis for connectivity, cell typing, and morphology.There are two options
+
+* **Cloud Access**, for setting up access in Google Colab
+* **Local Analysis** setting up access for running on a local machine or JupyterHub. We recommend Cloud Access for intitial instruction and in-class work. Local analysis may be better for independent study and ongoing work.
+
+::::{.grid}
+
+:::{.g-col-6}
+
+**Cloud Access with Google Colab**
+
+<center> [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/notebooks/microns_data_access_education.ipynb) </center>
+
+<center> This is will run in the browser. Go to File > Save to Drive to keep a working copy. </center>
+
+:::
+
+:::{.g-col-6}
+
+**Local setup notebook**
+
+<center> [Ipython Notebooks](notebooks/microns_data_access_education.ipynb) </center>
+
+<center> This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu. </center>
+
+:::
+
+::::
