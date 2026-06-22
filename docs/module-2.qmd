@@ -35,7 +35,7 @@ After completing this module you will be able to:
 
 Neurons are polarized cells in the brain that contain specialized processes such as axons and dendrites that extend from a central cell body (Figure 1). This polarization allows for information, in the form of graded electrical potentials, to be carried from postsynaptic synapses on the dendrites towards the cell body to initiate action potentials at the axon hillock. Action potentials will then be carried along the axon towards the axon terminals to evoke neurotransmitter release. All of these parts of a neuron (axons, dendrites, cell body, synapses) can be observed in electron micrographs of the nervous system. Because these different structures have specialized functions that contribute in different ways to neuronal signaling, they also differ in their structures and contents. In this lab, you will learn how to identify different neuronal structures, and consider the ways that their content reflect different functions.
 
-![Figure 1. (A) Schematic representation of the cell body, dendrites, and axon of a neuron. (B) Representation of a neuron’s interactions with other nervous system cell types. Source: Luo, 2016 ](resources/luo_neuron_schematic.png) 
+![Figure 1. (A) Schematic representation of the cell body, dendrites, and axon of a neuron. (B) Representation of a neuron’s interactions with other nervous system cell types. Source: [@Luo2016principles] ](resources/luo_neuron_schematic.png) 
 
 
 ### Organelles and Neuronal Ultrastructure
@@ -43,9 +43,9 @@ Neurons are polarized cells in the brain that contain specialized processes such
 Using electron microscopy, we can observe and identify the organelles that support the function of a neuron. These organelles may include: the nucleus, which houses DNA and is the site of transcription and RNA processing; the endoplasmic reticulum, which is a site of protein synthesis and folding; and mitochondria, the so-called powerhouses of the cell. We can also identify other organelles and cell structures such as the cytoskeleton, in addition to features that define a synapse. In this lab section, you will identify these and other structures and consider their contributions to neuronal function.
 
 
-## Protocol
+## Laboratory Module
 
-### Navigating NeuroGlancer panels
+### Navigating Neuroglancer panels
 
 We will be working within the NeuroGlancer browser to identify ultrastructural features within the electron micrographic dataset. You can access NeuroGlancer by clicking on this link or by copying and pasting the following text into your browser:
 
@@ -290,7 +290,7 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 Now that we have explored the organelles and features of neurons, let’s focus on the ultrastructure of the primary site of communication between neurons and other brain cells: the synapse.  In Figure 5, we can see the contents of the pre- and postsynaptic sides of chemical and electrical synapses. We can see organelles such as mitochondria, which provide energy for neurotransmitter release, and synaptic vesicles, which are membrane-bound packets that contain neurotransmitter molecules. We can also see structures like the synaptic cleft that separates the sides of a chemical synapse, and the tight junctions between the sides of an electrical synapse.
 
-![Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: Luo, 2016](resources/luo_synapses.png)
+![Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: [@Luo2016principles] ](resources/luo_synapses.png)
 
 In electron microscopy, synapses are identified by the presence of synaptic vesicles and pre- and postsynaptic densities (see image below where the blue arrows are pointing to presynaptic vesicles and the yellow arrowheads are pointing to the postsynaptic densities. The synaptic cleft (the space between the pre- and postsynaptic neurons can sometimes be difficult to visualize. 
 
@@ -331,6 +331,11 @@ Now, it is your turn to find some interesting structures within the dataset. Exp
 Paste that link here:
 
 URL: 
+
+## Additional Resources
+
+You can explore the MICrONS dataset further at:
+[MICrONS-Explorer.org](https://www.microns-explorer.org/cortical-mm3)
 
 ## Additional Resources
 

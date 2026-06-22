@@ -58,7 +58,7 @@ Because many parts of the vertebrate brain have a layered organization, scientis
 ![Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclodia of Neuroscience and [@Bekkers_2011])](resources/bekkers_pyramidal_layers.png)
 
 
-## Protocol
+## Laboratory Module
 
 The first section of this protocol will give you an opportunity to become familiar with anatomical direction terms and how they apply to the mouse nervous system.
 
