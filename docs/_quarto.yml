@@ -23,5 +23,6 @@ format:
       - brand
     css: styles.css
     toc: true
+    link-external-newwindow: true
   pdf:
-    pdf-engine: 'lualatex'    
+    pdf-engine: 'lualatex' 

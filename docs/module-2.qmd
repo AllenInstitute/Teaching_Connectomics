@@ -332,10 +332,8 @@ Paste that link here:
 
 URL: 
 
-## Additional Resources
-
-You can explore the MICrONS dataset further at:
-[MICrONS-Explorer.org](https://www.microns-explorer.org/cortical-mm3)
+<br>
+<br>
 
 ## Additional Resources
 
