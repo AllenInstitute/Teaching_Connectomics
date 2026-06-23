@@ -153,7 +153,7 @@ Pyramidal neurons, like the one you are looking at, are typically excitatory neu
 
 To visualize the output synapses that this pyramidal neuron makes, where the green neuron is the presynaptic partner, you can deselect the synapses, where it is postsynaptic (the ones you have been visualizing), and select the synapses that this neuron sends out. Right click on the `synapse_target_predictions_ssa` layer and then deselect the "post" box and select the "pre" box in the panel on the right (again, this will take ~1 minute to load)
 
-![](resources/module_3_neuroglancer_5.png){fig-align="center"}
+![](resources/module_3_neuroglancer_5.png){fig-align="right"}
 
 You should now see something like this:
 
@@ -223,7 +223,7 @@ Now, let’s find out the identity of the presynaptic neuron that synapses onto 
 
 Copy the segment ID of this neuron by clicking on this button here: 
 
-![](resources/module_3_neuroglancer_10.png){fig-align="center"}
+![](resources/module_3_neuroglancer_10.png){fig-align="right"}
 
 And, then go back to the Dash Apps Table Viewer and select `aibs_metamodel_celltypes_v661` to access the cell type table: 
 

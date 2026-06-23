@@ -240,9 +240,9 @@ After you get a sense for what microtubules looks like, it is your turn to find 
 
 Neurons also contain a less well-known organelle called a primary cilia. While the primary cilia was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment. 
 
-Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling (Sheu et al., 2022). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.
+Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling ([@Sheu_2022]). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.
 
-![Figure 3. Two types of cilia in the brain. (A) Motile cilia are found on ependymal cells that line the ventricles. These cilia sense and monitor chemicals within the cerebral spinal fluid (CSF), and they are also moved by CSF flow. (B) Primary cilia are found on neuronal soma, and this extension is a neuronal sensor that is not thought to move much. Source: Lee and Gleeson, 2011.](resources/lee_gleeson_cilia.png)
+![Figure 3. Two types of cilia in the brain. (A) Motile cilia are found on ependymal cells that line the ventricles. These cilia sense and monitor chemicals within the cerebral spinal fluid (CSF), and they are also moved by CSF flow. (B) Primary cilia are found on neuronal soma, and this extension is a neuronal sensor that is not thought to move much. Adapted from [@Lee2011] ](resources/lee_gleeson_cilia.png)
 
 Primary cilia are difficult to identify within the raw EM image viewer. They are easier to identify within the segmentation panel by zooming into the cell body and rotating the segmented neuron (see image below, blue arrows).
 
@@ -324,7 +324,7 @@ Now, it is your turn to find some interesting structures within the dataset. Exp
 
 [Find three interesting structures in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}  (within the synapse layer panel) ]{.mark} . For each interesting structure, add “interesting structure to the description field for each annotation.
 
-![](resources/neuroglancer_ui_share_annotation.png){fig-align="center"}
+![](resources/neuroglancer_ui_share_annotation.png){fig-align="right"}
 
 [When you have completed the search for interesting structures, click “Share” to generate a link]{.mark} that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.
 
