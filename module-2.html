@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="HIVE Educators">
 
 <title>Module 2: Ultrastructure and Cytology – Teaching Connectomics</title>
 <style>
@@ -182,6 +183,12 @@ div.csl-indent {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>HIVE Educators </p>
+          </div>
+  </div>
     
   
     
@@ -205,7 +212,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
 <p>After completing this module you will be able to:</p>
 <ul>
-<li>Engage with the electron micrograph browser of NeuroGlancer and associated layers and panels.</li>
+<li>Engage with the electron micrograph browser of Neuroglancer and associated layers and panels.</li>
 <li>Identify organelles such as nuclei, mitochondria, and endoplasmic reticulum in electron microscopy data sets. Additionally, you will be able to identify synaptic ultrastructural features such as vesicles, postsynaptic densities, and synaptic clefts.</li>
 <li>Explain and discuss how specific organelles and ultrastructure contribute to the specialized functions of axons, dendrites, cell bodies, and synapses.</li>
 </ul>
@@ -231,7 +238,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="laboratory-module">Laboratory Module</h2>
 <section id="navigating-neuroglancer-panels" class="level3">
 <h3 class="anchored" data-anchor-id="navigating-neuroglancer-panels">Navigating Neuroglancer panels</h3>
-<p>We will be working within the NeuroGlancer browser to identify ultrastructural features within the electron micrographic dataset. You can access NeuroGlancer by clicking on this link or by copying and pasting the following text into your browser:</p>
+<p>We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:</p>
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568</a></p>
 </blockquote>
@@ -265,10 +272,10 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <p>MICrONS Terms of Service Error</p>
-<p>If the neuroglancer does not render, follow these steps:</p>
+<p>If the Neuroglancer does not render, follow these steps:</p>
 <ol type="1">
 <li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your google authorized account</li>
-<li>Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer.</li>
+<li>Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer.</li>
 </ol>
 </div>
 </div>
@@ -286,7 +293,7 @@ Tip
 <p>In the left-most panel, you are looking directly into the nucleus of a neuron, and the middle panel shows you the morphology of that neuron reconstructed in its entirety.</p>
 </div>
 </div>
-<p>In NeuroGlancer, the middle panel displays the 3D segmentation of the neurons and glial cells that are clicked on within the raw EM images. The neuron you are looking at is a pyramidal neuron within visual cortex. Notice the elaborate dendritic arbor (with one long apical dendrite), and a thin axon that extends out from the bottom of the soma.</p>
+<p>In Neuroglancer, the middle panel displays the 3D segmentation of the neurons and glial cells that are clicked on within the raw EM images. The neuron you are looking at is a pyramidal neuron within visual cortex. Notice the elaborate dendritic arbor (with one long apical dendrite), and a thin axon that extends out from the bottom of the soma.</p>
 <p>Notice the boxes across the top of the main EM viewing panel. These are called <strong>layer</strong> tabs, and the <code>img</code> tab is the raw EM image panel:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -385,7 +392,9 @@ Tip
 <p><img src="resources/neuroglancer_2D_UI_5_scale_bar.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<div class="task">
 <p>Now, it’s your turn to find some nuclei in the data set. Scan around the raw EM image viewer by <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> dragging (move in xy), <kbd title="scroll-wheel" aria-hidden="true">scroll-wheel</kbd><span class="visually-hidden">scroll-wheel</span> (move in z), <kbd title="Ctrl+scroll-wheel" aria-hidden="true">Ctrl+scroll-wheel</kbd><span class="visually-hidden">Ctrl+scroll-wheel</span>(zoom), and identify three additional nuclei in the dataset. You can annotate these structures yourself by clicking on the point annotator in the Annotations tab on the right, and then holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> clicking on the raw EM image. This will make an annotation point on the structure you click on, and you will see a new annotation will be added to the annotation panel on the right.</p>
+</div>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
 <p><img src="resources/neuroglancer_ui_annotation_menu_1.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
@@ -438,7 +447,9 @@ Tip
 </div>
 </div>
 <p>After you get a sense for what mitochondria look like, it is your turn to find some more.</p>
-<p><mark>Find three more mitochondria in the dataset, click on the point annotation tool and hold <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> on the raw EM image, and add an annotation point to the mitochondria you have found.</mark> Then, add an estimation of its size in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more mitochondria in the dataset, click on the point annotation tool and hold <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> on the raw EM image, and add an annotation point to the mitochondria you have found. Then, add an estimation of its size in the description field for each annotation.</p>
+</div>
 </section>
 <section id="c.-smooth-er" class="level4">
 <h4 class="anchored" data-anchor-id="c.-smooth-er">C. Smooth ER</h4>
@@ -457,7 +468,9 @@ Tip
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the smooth ER annotations in the Annotations panel.</p>
 <p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the annotations to center the smooth ER in the image viewer. Zoom in and out to get a sense for where this organelle is found. It is typically found within the soma of neurons, adjacent to the nucleus.</p>
 <p>After you get a sense for what smooth ER looks like, it is your turn to find some more.</p>
-<p><mark>Find three more smooth ER in the dataset, and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and place that estimation in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more smooth ER in the dataset, and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and place that estimation in the description field for each annotation.</p>
+</div>
 </section>
 <section id="d.-golgi-apparatus" class="level4">
 <h4 class="anchored" data-anchor-id="d.-golgi-apparatus">D. Golgi apparatus</h4>
@@ -476,7 +489,9 @@ Tip
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the golgi apparatus annotations in the Annotations panel.</p>
 <p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the golgi apparatus annotations to center the golgi apparatus in the image viewer. Zoom in and out to get a sense for where this organelle is found. It is also typically found within the soma of neurons, adjacent to the nucleus.</p>
 <p>After you get a sense for what golgi apparatus looks like, it is your turn to find some more.</p>
-<p><mark>Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and plaFor each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. For each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation.</p>
+</div>
 </section>
 <section id="e.-microtubules" class="level4">
 <h4 class="anchored" data-anchor-id="e.-microtubules">E. Microtubules</h4>
@@ -495,12 +510,14 @@ Tip
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the microtubules annotations in the Annotations panel.</p>
 <p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the microtubules annotations to center the microtubules in the image viewer. Zoom in and out to get a sense for where this organelle is found. They are most easily located in axons that have been sectioned in transverse.</p>
 <p>After you get a sense for what microtubules looks like, it is your turn to find some more.</p>
-<p><mark>Find three more microtubules in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . It is difficult to measure the size of microtubules, as they are typically ~25nm in diameter, so for this each microtubule, provide the width of the axon that the microtubules are found in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more microtubules in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. It is difficult to measure the size of microtubules, as they are typically ~25nm in diameter, so for each microtubule, provide the width of the axon that the microtubules are found in the description field for each annotation.</p>
+</div>
 </section>
 <section id="f.-primary-cilia" class="level4">
 <h4 class="anchored" data-anchor-id="f.-primary-cilia">F. Primary Cilia</h4>
-<p>Neurons also contain a less well-known organelle called a primary cilia. While the primary cilia was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment.</p>
-<p>Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling (<span class="citation" data-cites="Sheu_2022">(<a href="#ref-Sheu_2022" role="doc-biblioref"><span class="nocase">Sheu et al.</span> 2022</a>)</span>). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.</p>
+<p>Neurons also contain a less well-known organelle called a primary cilium. While the primary cilium was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment.</p>
+<p>Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilium, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling (<span class="citation" data-cites="Sheu_2022">(<a href="#ref-Sheu_2022" role="doc-biblioref"><span class="nocase">Sheu et al.</span> 2022</a>)</span>). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/lee_gleeson_cilia.png" class="img-fluid figure-img"></p>
@@ -520,15 +537,17 @@ Tip
 </figure>
 </div>
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the cilia annotations in the Annotations panel.</p>
-<p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the cilia annotations to center the microtubules in the image viewer. Zoom in and out to get a sense for where this structure is found. They are most easily located by zooming in and rotating within the segmentation panel.</p>
-<p>After you get a sense for what primary cilia looks like, it is your turn to find some more. You will most likely have to find cell bodies in the EM panel, <kbd title="double-left-click" aria-hidden="true">double-left-click</kbd><span class="visually-hidden">double-left-click</span> on them to populate these neurons in the segmentation/3D viewer, and then zoom into these neuronal cell bodies to find the cilia.</p>
+<p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the cilia annotations to center the cilia in the image viewer. Zoom in and out to get a sense for where this structure is found. They are most easily located by zooming in and rotating within the segmentation panel.</p>
+<p>After you get a sense for what a primary cilium looks like, it is your turn to find some more. You will most likely have to find cell bodies in the EM panel, <kbd title="double-left-click" aria-hidden="true">double-left-click</kbd><span class="visually-hidden">double-left-click</span> on them to populate these neurons in the segmentation/3D viewer, and then zoom into these neuronal cell bodies to find the cilia.</p>
 <p>It is difficult to measure the length of cilia using the raw EM panel. To activate a scale bar in the 3D/segmentation viewer, toggle the “orthographic” view with <kbd title="o" aria-hidden="true">o</kbd><span class="visually-hidden">o</span> . This will flatten the 3D panel and allow you to better estimate the size of the cilia. Click <kbd title="o" aria-hidden="true">o</kbd><span class="visually-hidden">o</span> again to revert back to the default projection 3D viewer, without the scale bar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/EM_cilia_orthographic.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><mark>Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . For each cilia, you should determine the approximate length of the cilia, and place that estimation in the description field for each primary cilia annotation.</p>
+<div class="task">
+<p>Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. For each cilium, you should determine the approximate length of the cilium, and place that estimation in the description field for each primary cilium annotation.</p>
+</div>
 </section>
 <section id="g.-myelinated-axons" class="level4">
 <h4 class="anchored" data-anchor-id="g.-myelinated-axons">G. Myelinated axons</h4>
@@ -554,7 +573,9 @@ Tip
 </div>
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the Myelinated axon annotations in the Annotations panel.</p>
 <p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the Myelinated axons annotations to center them in the image viewer to get a sense for what they look like. Try zooming in and out of the raw electron microscopic image to get a sense for how the myelinated axons are visualized in this dataset.</p>
-<p><mark>Find three more myelinated axons in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . For each axon, determine the approximate diameter of the axon (including the myelin sheath), and place that estimation in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more myelinated axons in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. For each axon, determine the approximate diameter of the axon (including the myelin sheath), and place that estimation in the description field for each annotation.</p>
+</div>
 </section>
 <section id="h.-synapses" class="level4">
 <h4 class="anchored" data-anchor-id="h.-synapses">H. Synapses</h4>
@@ -562,7 +583,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/luo_synapses.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: <span class="citation" data-cites="Luo2016principles">(<a href="#ref-Luo2016principles" role="doc-biblioref">Luo 2016</a>)</span></figcaption>
+<figcaption>Figure 5. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: <span class="citation" data-cites="Luo2016principles">(<a href="#ref-Luo2016principles" role="doc-biblioref">Luo 2016</a>)</span></figcaption>
 </figure>
 </div>
 <p>In electron microscopy, synapses are identified by the presence of synaptic vesicles and pre- and postsynaptic densities (see image below where the blue arrows are pointing to presynaptic vesicles and the yellow arrowheads are pointing to the postsynaptic densities. The synaptic cleft (the space between the pre- and postsynaptic neurons can sometimes be difficult to visualize.</p>
@@ -585,25 +606,31 @@ Tip
 </div>
 <p>Then <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on that same layer tab to activate the Synapse annotations in the Annotations panel.</p>
 <p><kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on each of the Synapse annotations to center them in the image viewer to get a sense for what they look like. Try zooming in and out of the raw electron microscopic image to get a sense for how the synapses are visualized in this dataset.</p>
-<p>Then <kbd title="double-left-click" aria-hidden="true">double-left-click</kbd><span class="visually-hidden">double-left-click</span>} on the raw electron microscopic image to activate the pre and postsynaptic neurons in the volumetric 3D panel. Synapse-1 is shown below:</p>
+<p>Then <kbd title="double-left-click" aria-hidden="true">double-left-click</kbd><span class="visually-hidden">double-left-click</span> on the raw electron microscopic image to activate the pre and postsynaptic neurons in the volumetric 3D panel. Synapse-1 is shown below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/EM_synapse_mesh_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>Rotate the 3D panel to get a sense for what a synapse looks like in 3D.</p>
-<p><mark>Find three more synapses in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span></mark> . For each synapse determine the approximate width of the pre- and post-synaptic contact, and place that estimation in the description field for each annotation.</p>
+<div class="task">
+<p>Find three more synapses in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span>. For each synapse, determine the approximate width of the pre- and post-synaptic contact, and place that estimation in the description field for each annotation.</p>
+</div>
 </section>
 <section id="i.-interesting-structures" class="level4">
 <h4 class="anchored" data-anchor-id="i.-interesting-structures">I. Interesting structures</h4>
 <p>Now, it is your turn to find some interesting structures within the dataset. Explore the raw EM images and identify three structures that seem interesting to you. Center the structure within your viewer.</p>
-<p><mark>Find three interesting structures in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> (within the synapse layer panel)</mark> . For each interesting structure, add “interesting structure to the description field for each annotation.</p>
+<div class="task">
+<p>Find three interesting structures in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> (within the synapse layer panel). For each interesting structure, add “interesting structure” to the description field for each annotation.</p>
+</div>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
 <p><img src="resources/neuroglancer_ui_share_annotation.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
 </figure>
 </div>
-<p><mark>When you have completed the search for interesting structures, click “Share” to generate a link</mark> that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.</p>
+<div class="task">
+<p>When you have completed the search for interesting structures, click “Share” to generate a link that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.</p>
+</div>
 <p>Paste that link here:</p>
 <p>URL:</p>
 <p><br> <br></p>

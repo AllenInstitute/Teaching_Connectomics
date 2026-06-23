@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="HIVE Educators">
 
-<title>Module 1 : Neuroanatomy and Introduction to Neuroglancer – Teaching Connectomics</title>
+<title>Module 1: Neuroanatomy and Introduction to Neuroglancer – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -208,13 +209,19 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 1 : Neuroanatomy and Introduction to Neuroglancer</h1>
+<h1 class="title">Module 1: Neuroanatomy and Introduction to Neuroglancer</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>HIVE Educators </p>
+          </div>
+  </div>
     
   
     
@@ -232,7 +239,7 @@ div.csl-indent {
 </div>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform.</p>
+<p>In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the Neuroglancer platform.</p>
 </section>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
@@ -241,7 +248,7 @@ div.csl-indent {
 </li>
 <li>Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information<br>
 </li>
-<li>Navigate a connectomics data set within the NeuroGlancer platform</li>
+<li>Navigate a connectomics data set within the Neuroglancer platform</li>
 </ul>
 </section>
 <section id="background-and-introduction" class="level2">
@@ -250,7 +257,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/microns_volume_topdown.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1. The position and orintation of the MICrONS dataset in the mouse brain. The lower panel shows a top view of the dataset with cortical area boundaries indicated by black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex)</figcaption>
+<figcaption>Figure 1. The position and orientation of the MICrONS dataset in the mouse brain. The lower panel shows a top view of the dataset with cortical area boundaries indicated by black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex)</figcaption>
 </figure>
 </div>
 </section>
@@ -262,7 +269,6 @@ div.csl-indent {
 <p><img src="resources/human_visual_system.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>In general, neurons in Layer 4 receive the majority of the synapses coming from the lateral geniculate nucleus, while excitatory Layer 3 neurons send axons out into other cortical areas. Excitatory neurons in Layers 5 and 6 send axons carrying feedback into lateral geniculate nucleus and other areas. About 20% of neurons in all layers are inhibitory interneurons that make local synaptic connections (i.e.&nbsp;don’t send out or receive synapses from other brain regions).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/oberlander_cortical_column.png" class="img-fluid figure-img"></p>
@@ -272,7 +278,7 @@ div.csl-indent {
 </section>
 <section id="neuroanatomy-direction-terms" class="level2">
 <h2 class="anchored" data-anchor-id="neuroanatomy-direction-terms">Neuroanatomy Direction Terms</h2>
-<p>To work effectively with this neuroanatomical dataset, you will need to have a clear understanding of anatomical direction terms and how they relate to the nervous system of a rodent and to that of a human. The body axis and neuraxis of organisms with four or more legs, such as dogs or rodents, share the same plane. This differs from the human body, in which the neuroaxis is rotated 90° from the plane of the body axis (Figure X).</p>
+<p>To work effectively with this neuroanatomical dataset, you will need to have a clear understanding of anatomical direction terms and how they relate to the nervous system of a rodent and to that of a human. The body axis and neuraxis of organisms with four or more legs, such as dogs or rodents, share the same plane. This differs from the human body, in which the neuroaxis is rotated 90° from the plane of the body axis (Figure 3).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/body_axis_diagram.png" class="img-fluid figure-img"></p>
@@ -283,7 +289,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/bekkers_pyramidal_layers.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclodia of Neuroscience and <span class="citation" data-cites="Bekkers_2011">(<a href="#ref-Bekkers_2011" role="doc-biblioref">Bekkers 2011</a>)</span>)</figcaption>
+<figcaption>Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclopedia of Neuroscience and <span class="citation" data-cites="Bekkers_2011">(<a href="#ref-Bekkers_2011" role="doc-biblioref">Bekkers 2011</a>)</span>)</figcaption>
 </figure>
 </div>
 </section>
@@ -292,7 +298,9 @@ div.csl-indent {
 <p>The first section of this protocol will give you an opportunity to become familiar with anatomical direction terms and how they apply to the mouse nervous system.</p>
 <section id="describing-neuroanatomy-direction-terms" class="level3">
 <h3 class="anchored" data-anchor-id="describing-neuroanatomy-direction-terms">1. Describing Neuroanatomy Direction Terms</h3>
-<p><mark>Define the direction associated with each of the anatomical direction terms listed below:</mark></p>
+<div class="task">
+<p>Define the direction associated with each of the anatomical direction terms listed below:</p>
+</div>
 <ol type="a">
 <li>anterior –</li>
 <li>posterior –</li>
@@ -302,7 +310,9 @@ div.csl-indent {
 <li>medial –</li>
 <li>lateral –</li>
 </ol>
-<p><mark>Compare the neuroanatomical direction terms in each of the following sets.</mark></p>
+<div class="task">
+<p>Compare the neuroanatomical direction terms in each of the following sets.</p>
+</div>
 <ol type="a">
 <li>Superficial versus Deep</li>
 <li>Basal versus Apical</li>
@@ -310,8 +320,8 @@ div.csl-indent {
 </section>
 <section id="visualizing-neuroanatomy-direction-terms" class="level3">
 <h3 class="anchored" data-anchor-id="visualizing-neuroanatomy-direction-terms">2. Visualizing Neuroanatomy Direction Terms</h3>
-<p>We will use the NeuroGlancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.</p>
-<p>Access NeuroGlancer by clicking on the following link:</p>
+<p>We will use the Neuroglancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.</p>
+<p>Access Neuroglancer by clicking on the following link:</p>
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736</a></p>
 </blockquote>
@@ -345,10 +355,10 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <p>MICrONS Terms of Service Error</p>
-<p>If the neuroglancer does not render, follow these steps:</p>
+<p>If the Neuroglancer does not render, follow these steps:</p>
 <ol type="1">
 <li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your google authorized account</li>
-<li>Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer.</li>
+<li>Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer.</li>
 </ol>
 </div>
 </div>
@@ -365,7 +375,7 @@ Caution
 <p><img src="resources/neuroglancer_ui_seg_menu_1.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
 </figure>
 </div>
-<p>Visual elements in NeuroGlancer are described as segments. Every reconstructed neuron in the data set has a unique Segment ID. Now, you will add neuron segments to the viewer using their Segment IDs. First, <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on the <code>6seg65</code> layer tab to bring up a list of display options in the options panel. <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the Seg tab in the right-hand panel to select it. Segment IDs can be pasted into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.</p>
+<p>Visual elements in Neuroglancer are described as segments. Every reconstructed neuron in the data set has a unique Segment ID. Now, you will add neuron segments to the viewer using their Segment IDs. First, <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on the <code>6seg65</code> layer tab to bring up a list of display options in the options panel. <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the Seg tab in the right-hand panel to select it. Segment IDs can be pasted into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.</p>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
 <p><img src="resources/neuroglancer_ui_seg_menu_2.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
@@ -393,7 +403,7 @@ Caution
 <li>You can slide the view by <kbd title="Shift-Left-Click" aria-hidden="true">Shift-Left-Click</kbd><span class="visually-hidden">Shift-Left-Click</span> and dragging your mouse pointer</li>
 <li>You can zoom the view in small increments by using the <kbd title="scroll-wheel" aria-hidden="true">scroll-wheel</kbd><span class="visually-hidden">scroll-wheel</span></li>
 <li>You can zoom the view in large increments by holding <kbd title="Ctrl" aria-hidden="true">Ctrl</kbd><span class="visually-hidden">Ctrl</span> and using the <kbd title="scroll-wheel" aria-hidden="true">scroll-wheel</kbd><span class="visually-hidden">scroll-wheel</span></li>
-<li>You can also <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on any of the segment IDs listed in the options panel to center the via on that neuron segment (if you are zoomed far out, this may not be obvious)</li>
+<li>You can also <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> on any of the segment IDs listed in the options panel to center the view on that neuron segment (if you are zoomed far out, this may not be obvious)</li>
 </ul>
 <p>Try to zoom in to the yellow and gray boxes so you can see the three-dimensional reconstructions of the neurons you have added. You should be able to see something like this in the main viewing pane.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -402,7 +412,10 @@ Caution
 </figure>
 </div>
 <p>If you hover over any of the segment IDs listed in the options panel with your mouse pointer, the three-dimensional model of that neuron will also be highlighted in the viewing pane. This also works in reverse, if you hover your mouse pointer over any of the models in the viewing pane, the segment ID will be highlighted in the right-hand options panel.</p>
-<p>Now you will compare the neuroanatomical positions of the neurons you have added to the browser. You may have to rotate the view and/or zoom out and then back in to see the positions of the neurons relative to the rest of the brain. <mark>For each of the following pairs of cells, indicated which is anterior and which is posterior:</mark></p>
+<p>Now you will compare the neuroanatomical positions of the neurons you have added to the browser. You may have to rotate the view and/or zoom out and then back in to see the positions of the neurons relative to the rest of the brain.</p>
+<div class="task">
+<p>For each of the following pairs of cells, indicate which is anterior and which is posterior:</p>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -437,7 +450,9 @@ Tip
 </tbody>
 </table>
 <p><br> <br></p>
-<p><mark>For each of the following pairs of cells, indicate which is medial and which is lateral:</mark></p>
+<div class="task">
+<p>For each of the following pairs of cells, indicate which is medial and which is lateral:</p>
+</div>
 <table class="table-bordered caption-top table">
 <colgroup>
 <col style="width: 60%">
@@ -459,7 +474,9 @@ Tip
 </tbody>
 </table>
 <p><br> <br></p>
-<p><mark>For each of the following pairs of cells, indicate which is dorsal and which is ventral:</mark></p>
+<div class="task">
+<p>For each of the following pairs of cells, indicate which is dorsal and which is ventral:</p>
+</div>
 <table class="table-bordered caption-top table">
 <colgroup>
 <col style="width: 60%">
@@ -485,7 +502,7 @@ Tip
 <section id="layered-organization-of-visual-cortex" class="level3">
 <h3 class="anchored" data-anchor-id="layered-organization-of-visual-cortex">3. Layered organization of visual cortex</h3>
 <p>As described above, the visual cortex is divided into layers. Each layer contains specific types of neurons, each with their own shape, size, and pattern of connections. In this section, you will visualize and describe the neurons in different layers of the cortex.</p>
-<p>First, click on the following link to open a new NeuroGlancer window:</p>
+<p>First, click on the following link to open a new Neuroglancer window:</p>
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6518965183447040" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6518965183447040</a></p>
 </blockquote>
@@ -521,7 +538,9 @@ Tip
 <p><img src="resources/layers_with_neurons_neuroglancer_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><mark>For each of the following pairs of cells, indicate which has its cell body in a more superficial layer and which has its cell body in a deeper layer:</mark></p>
+<div class="task">
+<p>For each of the following pairs of cells, indicate which has its cell body in a more superficial layer and which has its cell body in a deeper layer:</p>
+</div>
 <table class="table-bordered caption-top table">
 <colgroup>
 <col style="width: 60%">
@@ -543,7 +562,9 @@ Tip
 </tbody>
 </table>
 <p><br> <br></p>
-<p><mark>For the following neurons, indicate which cortical layer the cell body is located in:</mark></p>
+<div class="task">
+<p>For the following neurons, indicate which cortical layer the cell body is located in:</p>
+</div>
 <table class="table-bordered caption-top table">
 <colgroup>
 <col style="width: 40%">
@@ -586,7 +607,10 @@ Tip
 <p><img src="resources/neuroglancer_pyramidal_assignment.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><mark>Take a screenshot of the neuron and use it to make a figure for your assignment. Label the figure to indicate the position of the cell body, axon, apical dendrite, and basal dendrite.</mark> (Note: In the image above, we have toggled off the layer boundaries.)</p>
+<div class="task">
+<p>Take a screenshot of the neuron and use it to make a figure for your assignment. Label the figure to indicate the position of the cell body, axon, apical dendrite, and basal dendrite.</p>
+</div>
+<p>(Note: In the image above, we have toggled off the layer boundaries.)</p>
 <p><br> <br></p>
 </section>
 <section id="visualizing-the-flow-of-information-through-the-visual-cortex" class="level3">
@@ -595,7 +619,7 @@ Tip
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968</a></p>
 </blockquote>
-<p>When this link opens, you should see the layer boundaries and several three-dimensional neuron models present in the main viewing pane. If you use your mouse to slide and rotate around these models, you will see that these neurons are organized into two groups. These represent cortical columns, groups of neurons that span all six cortical layers and that respond to stimuli with specific coordinates within the visual field. -Click &gt;}} on the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane. This will call up two sets of column boundaries (Figure 6). In this case, V1 indicates a column in the primary visual cortex and HVA indicates a column in a higher-order visual area, which is a cortical area that receives information coming from the primary visual cortex.</p>
+<p>When this link opens, you should see the layer boundaries and several three-dimensional neuron models present in the main viewing pane. If you use your mouse to slide and rotate around these models, you will see that these neurons are organized into two groups. These represent cortical columns, groups of neurons that span all six cortical layers and that respond to stimuli with specific coordinates within the visual field. Now, <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane. This will call up two sets of column boundaries (Figure 6). In this case, V1 indicates a column in the primary visual cortex and HVA indicates a column in a higher-order visual area, which is a cortical area that receives information coming from the primary visual cortex.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/v1_hva_column_neuroglancer.png" class="img-fluid figure-img"></p>
@@ -611,7 +635,7 @@ Tip
 <figcaption>Figure 7. Visualization of cortical region borders.</figcaption>
 </figure>
 </div>
-<p>For the next section, you may want to reset your NeuroGlancer window by clicking on the following link:</p>
+<p>For the next section, you may want to reset your Neuroglancer window by clicking on the following link:</p>
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968</a></p>
 </blockquote>
@@ -624,13 +648,14 @@ Tip
 <figcaption>Figure 8. Visualization of a cortico-cortical projection neuron.</figcaption>
 </figure>
 </div>
-<p><mark>You will now fill out the table for each other neuron.</mark> Here are some hints to consider:</p>
+<div class="task">
+<p>You will now fill out the table for each other neuron.</p>
+</div>
+<p>Here are some hints to consider:</p>
 <ul>
-<li>You may need to make some neurons not visible or change neuron colors in order to see what each neuron is doing<br>
-</li>
-<li>Each neuron will either be in Primary visual cortex or a Higher-order visual area.<br>
-</li>
-<li>Remember that the layer boundaries are described earlier in this document and that you are looking for the layer containing the cell body of the neuron</li>
+<li>You may need to make some neurons not visible or change neuron colors in order to see what each neuron is doing</li>
+<li>Each neuron will either be in Primary visual cortex or a Higher-order visual area.</li>
+<li>Remember that the layer boundaries are described earlier in this document and that you are looking for the layer containing the cell body of the neuron.</li>
 <li>You may need to distinguish axons from dendrites. For most neurons in this group, the easiest way to do this is to look for spines that signify dendrites (Figure 9). Axons will generally be smooth, rather than spiny.</li>
 <li>Neurons may target multiple areas. These include other columns as shown above. Other neurons may send axon branches into the white matter (below the most ventral layer boundary) or have branches that stay within the same column. For these cases, you could suggest that the neuron is targeting subcortical regions (for axons that enter the white matter) or local neurons (for neurons that branch within the same column).</li>
 <li>Neurons that send axons into other columns are cortico-cortical projection neurons. Neurons that send axons into subcortical regions can be proposed to be cortico-thalamic neurons. Neurons that branch locally can be proposed to be local interneurons.</li>
@@ -643,11 +668,11 @@ Tip
 </div>
 <table class="table-bordered caption-top table">
 <colgroup>
-<col style="width: 18%">
+<col style="width: 40%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
 <col style="width: 21%">
-<col style="width: 19%">
-<col style="width: 15%">
-<col style="width: 27%">
 </colgroup>
 <tbody>
 <tr class="odd">
