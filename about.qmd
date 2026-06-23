@@ -1,7 +1,0 @@
----
-title: "About"
-format:
-  html: default
----
-
-![MICrONS](resources/microns_in_ccf.png) 

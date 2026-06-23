@@ -134,6 +134,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#module-1-neuroanatomy-and-introduction-to-neuroglancer" id="toc-module-1-neuroanatomy-and-introduction-to-neuroglancer" class="nav-link" data-scroll-target="#module-1-neuroanatomy-and-introduction-to-neuroglancer">Module 1 : Neuroanatomy and Introduction to Neuroglancer</a></li>
   <li><a href="#module-2-ultrastructure-and-cytology" id="toc-module-2-ultrastructure-and-cytology" class="nav-link" data-scroll-target="#module-2-ultrastructure-and-cytology">Module 2 : Ultrastructure and Cytology</a></li>
+  <li><a href="#module-3-dendritic-spines-and-synaptic-integration" id="toc-module-3-dendritic-spines-and-synaptic-integration" class="nav-link" data-scroll-target="#module-3-dendritic-spines-and-synaptic-integration">Module 3: Dendritic Spines and Synaptic Integration</a></li>
+  <li><a href="#module-4-neuron-types-and-dash-apps" id="toc-module-4-neuron-types-and-dash-apps" class="nav-link" data-scroll-target="#module-4-neuron-types-and-dash-apps">Module 4: Neuron Types and Dash Apps</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -201,6 +203,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="g-col-6">
 <p>In this ultrastructure and cytology module, students delve into the intricate world of cellular structure at the nanoscale level. Neurons are specialized brain cells that are made up of cellular structures such as axons, dendrites, and cell bodies, but they also contain more general cellular organelles, like endoplasmic reticulum, that carry out the basic function of all cells. These structures and organelles work together to facilitate information flow and functionality throughout the nervous system. In this laboratory module, students will learn about the structural features of neurons, and how to identify them in electron microscopy data sets.</p>
+</div>
+</div>
+</section>
+<section id="module-3-dendritic-spines-and-synaptic-integration" class="level3">
+<h3 class="anchored" data-anchor-id="module-3-dendritic-spines-and-synaptic-integration">Module 3: Dendritic Spines and Synaptic Integration</h3>
+<div class="grid">
+<div class="g-col-6">
+<p><img src="resources/module_3_spines_cover.png" class="img-fluid"></p>
+<center>
+<a href="module-3.html">Online module</a>
+</center>
+</div>
+<div class="g-col-6">
+<p>This laboratory module introduces students to the structure-function relationship of dendritic spines using large-scale volumetric electron microscopy (EM) data. Students will use Neuroglancer to explore the MICrONS EM dataset, allowing them to identify and classify dendritic spines, in addition to examining how dendritic spine morphology varies across synapses. Through guided analysis, this module emphasizes how differences in spine shape, size, and connectivity relate to synaptic strength and circuit connectivity, providing hands-on experience with modern connectomics tools and quantitative neuroanatomy.</p>
+</div>
+</div>
+</section>
+<section id="module-4-neuron-types-and-dash-apps" class="level3">
+<h3 class="anchored" data-anchor-id="module-4-neuron-types-and-dash-apps">Module 4: Neuron Types and Dash Apps</h3>
+<div class="grid">
+<div class="g-col-6">
+<p><img src="resources/module_2_em_cover.png" class="img-fluid"></p>
+<center>
+<a href="module-4.html">Online module</a>
+</center>
+</div>
+<div class="g-col-6">
+<p>This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the NeuroGlancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.</p>
 </div>
 </div>
 
@@ -296,6 +326,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

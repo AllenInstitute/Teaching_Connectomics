@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 4: Neuron Types and Dash Apps – Teaching Connectomics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Teaching Connectomics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Education Modules</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./code-tutorials.html"> 
+<span class="menu-text">Coding Tutorials</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics">
+            Tutorial Code
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning Goals</a></li>
+  <li><a href="#background-and-introduction" id="toc-background-and-introduction" class="nav-link" data-scroll-target="#background-and-introduction">Background and Introduction</a>
+  <ul class="collapse">
+  <li><a href="#neuron-types" id="toc-neuron-types" class="nav-link" data-scroll-target="#neuron-types">Neuron Types</a></li>
+  <li><a href="#classification-of-neurons-in-visual-cortex" id="toc-classification-of-neurons-in-visual-cortex" class="nav-link" data-scroll-target="#classification-of-neurons-in-visual-cortex">Classification of Neurons in Visual Cortex</a></li>
+  <li><a href="#dash-apps" id="toc-dash-apps" class="nav-link" data-scroll-target="#dash-apps">Dash Apps</a></li>
+  </ul></li>
+  <li><a href="#laboratory-module" id="toc-laboratory-module" class="nav-link" data-scroll-target="#laboratory-module">Laboratory Module</a>
+  <ul class="collapse">
+  <li><a href="#table-viewer-dash-app" id="toc-table-viewer-dash-app" class="nav-link" data-scroll-target="#table-viewer-dash-app">Table Viewer Dash App</a></li>
+  </ul></li>
+  <li><a href="#cell-type-exploration" id="toc-cell-type-exploration" class="nav-link" data-scroll-target="#cell-type-exploration">Cell Type Exploration</a>
+  <ul class="collapse">
+  <li><a href="#more-cell-type-exploration" id="toc-more-cell-type-exploration" class="nav-link" data-scroll-target="#more-cell-type-exploration">More Cell Type Exploration</a></li>
+  </ul></li>
+  <li><a href="#connectivity-viewer-dash-app" id="toc-connectivity-viewer-dash-app" class="nav-link" data-scroll-target="#connectivity-viewer-dash-app">Connectivity Viewer Dash App</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 4: Neuron Types and Dash Apps</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5853606858194944"><img src="resources/module_4_celltypes_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<figcaption>Click the image to view the cells in Neuroglancer.</figcaption>
+</figure>
+</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the NeuroGlancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.</p>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
+<p>After completing this module, you will be able to:</p>
+<ul>
+<li>Use Dash Apps associated with the MICrONS dataset to navigate and search lists of neurons based on their cell type, connectivity, and other properties.</li>
+<li>Identify and discuss the properties of different types of neurons that populate the mouse visual cortex.</li>
+<li>Explore patterns of synaptic connectivity between different types of cortical neurons.</li>
+<li>Consider the features that are commonly used to subdivide neurons into different types.</li>
+</ul>
+</section>
+<section id="background-and-introduction" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-introduction">Background and Introduction</h2>
+<section id="neuron-types" class="level3">
+<h3 class="anchored" data-anchor-id="neuron-types">Neuron Types</h3>
+<p>The vertebrate brain contains dozens of types of neurons that can be classified based on their neurotransmitter type, morphology, location, and connectivity. These features often directly impact the roles of specific neurons in nervous system function. Pyramidal cells are the primary excitatory output neurons of visual cortex and may be identified based on their use of glutamate as a neurotransmitter, pyramidal morphology, spiny dendrites, and long-range axonal projections. These cells may be further subdivided based on their location within cortical layers and specific patterns of connectivity.</p>
+<p>The visual cortex contains numerous types of inhibitory interneurons that all share the same neurotransmitter (GABA), but may differ radically in terms of morphology, connectivity, and circuit function (Figure 1). In this module, we will focus our attention specifically on Basket Cells (BC) and Chandelier Cells (ChC), which make inhibitory synapses onto the cell bodies and axon initial segments of target cells. This allows them to strongly influence action potential firing in their target neurons.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/basket_and_chandelier_jiang.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Inhibitory neuron types of mouse primary visual cortex. Basket and Chandelier cells are indicated by dashed outlines. Adapted from <span class="citation" data-cites="Jiang_2015">(<a href="#ref-Jiang_2015" role="doc-biblioref">Jiang et al. 2015</a>)</span></figcaption>
+</figure>
+</div>
+<p>Basket Cells and Chandelier Cells are interesting examples of cells that might look very similar to the casual observer. Both are inhibitory interneurons that inhibit pyramidal cells and that have highly branched axon and dendrite arbors surrounding their cell body. However, a closer analysis of these neurons reveals interesting differences between the two types. For example, they differ in their synaptic targeting of Pyramidal Cells – Basket Cells make many inhibitory synapses on the cell bodies of Pyramidal Cells, while Chandelier Cells general target axon initial segments. It is also the case that the dendritic and axonal arbors of Basket Cells often overlap in space, while the arbors of Chandelier Cells are spatially distinct (Figure 2). This is one example of how subtle similarities and differences between neuron types can make cell classification a challenging problem</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/basket_and_chandelier_fino.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2. Morphological and synaptic targeting of Basket and Chandelier Cells. Adapted from <span class="citation" data-cites="Fino_2013">(<a href="#ref-Fino_2013" role="doc-biblioref">Fino et al. 2013</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="classification-of-neurons-in-visual-cortex" class="level3">
+<h3 class="anchored" data-anchor-id="classification-of-neurons-in-visual-cortex">Classification of Neurons in Visual Cortex</h3>
+<p>Massive connectomics datasets, such as the MICrONS dataset, provide huge amounts of information with which to classify and analyze neuron types. In a recent study, researchers were able to classify multiple cell types of visual cortex by analyzing their nuclei and perisomatic regions (i.e.&nbsp;the areas around the cell body) (Elabaddy et al., 2025) (Figure 3). Using this approach, researchers were able to predict the cell type of all of the cells in the dataset with a high level of accuracy and reliability.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/perisomatic_features_elabbady.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. Nuclei and perisomatic features used in the classification of cell types in the MICrONS dataset (Elabaddy et al., 2025)</figcaption>
+</figure>
+</div>
+</section>
+<section id="dash-apps" class="level3">
+<h3 class="anchored" data-anchor-id="dash-apps">Dash Apps</h3>
+<p>The entire MICrONS dataset can be queried through the use of Dash Apps, which allow scientists to search for neurons based on their location, type, and connectivity. These tools allow for larger scale analysis of the dataset and generation of hypotheses related to neuronal cell types and their connectivity.</p>
+</section>
+</section>
+<section id="laboratory-module" class="level2">
+<h2 class="anchored" data-anchor-id="laboratory-module">Laboratory Module</h2>
+<section id="table-viewer-dash-app" class="level3">
+<h3 class="anchored" data-anchor-id="table-viewer-dash-app">Table Viewer Dash App</h3>
+<p>For this lab we will be working with Dash Apps associated with the MICrONS dataset. The Dash Apps allow the database of cells and synapses to be searched and sorted based on attributes such as their predicted cell type, position, and synaptic connections. We will look at two Dash Apps today. One is called the Table Viewer, which allows us to generate a sortable list of cells based on specific features. The other is called the Connectivity Viewer, which will generate a list of cells based on their synaptic connectivity.</p>
+<p>We will use the Table Viewer first. You can access it by clicking the following link: <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22">Table Viewer</a></p>
+<p>You can also cut and paste the following URL into your browser: &gt; <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22" class="uri">https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may be prompted to provide a Google login. Please login with your e-mail address.</p>
+</div>
+</div>
+<p>Once logged in, you should see the following screen:</p>
+<p><img src="resources/module_4_dash_ui_1.png" class="img-fluid"></p>
+<p>The panel at the top left will allow us to choose the table of cells that we wish to generate.</p>
+<ul>
+<li><strong>Annotation Table</strong> selection box allows us to choose the attributes we want to see in our table.<br>
+</li>
+<li><strong>Materialization</strong> selection box allows us to choose a specific version of the dataset - this is particularly important for a dataset that is being rapidly updated.</li>
+<li><strong>Cell IDs</strong> box allows us to search for specific neurons.</li>
+<li><strong>Value Search</strong> box allows us to search for specific data points that have been attached to the neuron.</li>
+</ul>
+<p>For now, please select <code>aibs_metamodel_celltypes_v661</code> in the Annotation Table selection box and then click the “Submit” button. After the app processes this request (&lt;1 minute), it will return a giant table of cell Root IDs and the predicted cell type for each.</p>
+<p>Predicted cell types are listed in the “cell_type” column, while the broader classification of the cell is listed in the “classification_system” column. You can left-click on the heading of any of these columns to sort the table based on the data in that column. All of the cell types in this table were predicted using a machine-learning algorithm that analyzed features of the cell body in electron microscopy data <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span> .</p>
+</section>
+</section>
+<section id="cell-type-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="cell-type-exploration">Cell Type Exploration</h2>
+<p>Now we can pull some cells out of the table that we created in the previous section and see what they look like in Neuroglancer. In a separate browser tab or window, you can navigate to the following link: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448">Neuroglancer</a></p>
+<p>You can also cut and paste the following URL into your browser:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448</a></p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may be prompted to provide a Google login. Please login with your e-mail address.</p>
+</div>
+</div>
+<p>You should now see a familiar NeuroGlancer window. In the right panel, you will see a space where you can paste a Root ID.</p>
+<p><img src="resources/module_4_neuroglancer_ui_1.png" class="img-fluid"></p>
+<p>You can now navigate back to your previous Table Viewer tab or window. In the table you can left-click on a Root ID box to highlight it and then right-click on it to Copy the Root ID (Note: You can also use CTRL-C to do this). You can then bring that copied Root ID back to the NeuroGlancer window and paste it into the “Enter ID…” space. This will populate the segments list with your Root ID. You can click the eye icon next to the Root ID to make it visible in the viewer. If you have entered the Root ID for a neuron, you can also left-click the “synapse_target_predictions” tab above the EM window to add dots wherever the selected neuron is making a presynaptic terminal.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="resources/module_3_neuroglancer_3.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p><mark>Student Task #1: please find five Root IDs in the Table Viewer, each representing a different cell type. One at a time, enter each into the NeuroGgancer browser and observe the morphology and synapse distribution of the cell.</mark> (You may find some Root IDs for which a morphology mesh and/or synapses do not appear in the browser. If this happens, please switch to a different Root ID. The cause of this is constant updates to the dataset that sometimes lead to the browser and database being unsynchronized.)</p>
+<p>Is the cell highly branched or relatively unbranched? Is it large or small? Does it have dendritic spines? Does it make many synapses or just a handful? Are those synapses nearby to the cell body or distant?</p>
+<p>For each of your five cells, enter the Root ID, Cell Type, and notes into the following table.</p>
+<table class="table-bordered caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 32%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Root ID</strong></td>
+<td><strong>Cell Type</strong></td>
+<td><strong>Notes (e.g.&nbsp;morphology, size, synapse distribution) </strong></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>Also take a screenshot of each of the five cells you selected and include them in this submission.</p>
+<p>For your reference, these are some of the cell types that you may encounter in the table viewer:</p>
+<ul>
+<li><strong>Pyramidal cells:</strong> These are the major excitatory neurons of the cortex. They are always indicated by the cortical layer that they occur in and the letter “P” (e.g.&nbsp;23P, 4P, 5P-IT).</li>
+<li><strong>Inhibitory interneurons:</strong> These are given abbreviated names in the table. You will see Basket Cells (BC), Bipolar Cells (BPC), Martinotti Cells (MC), and Neurogliaform Cells (NGC).</li>
+<li><strong>Non-neural cells:</strong> You may see astrocytes (neural support cells), microglia (brain immune cells), and oligodendrocytes (myelinating cells).</li>
+</ul>
+<section id="more-cell-type-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="more-cell-type-exploration">More Cell Type Exploration</h3>
+<p>All of the cell-type classifications that we have worked with thus far have been based on computer algorithm predictions that used perisomatic features (the electron microscope data in and around the cell body) as their starting point. Thus, it is interesting to consider that these predictions do not use the typical data that researchers have used to classify neurons for decades (e.g.&nbsp;morphology, gene expression, electrophysiological data). With this in mind, it would be interesting to see how well the algorithm performed by comparing some neurons that it classified into the same category.</p>
+<section id="cortico-cortical" class="level4">
+<h4 class="anchored" data-anchor-id="cortico-cortical">Cortico-cortical</h4>
+<p>First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a NeuroGlancer window containing a selection of Layer 2 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976">Layer 2 Pyramidal Cells</a></p>
+<p>You can also cut and paste the following URL into your browser:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976</a></p>
+</blockquote>
+<p>Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="resources/module_4_neuroglancer_ui_2.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
+</figure>
+</div>
+<p><mark>Student task #2: How do the neurons compare to one another in terms of morphology and position?</mark> Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?</p>
+</section>
+<section id="corticothalamic" class="level4">
+<h4 class="anchored" data-anchor-id="corticothalamic">Corticothalamic</h4>
+<p>Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a NeuroGlancer window containing a selection of Layer 6 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312">Layer 6 Pyramidal Cells</a></p>
+<p>You can also cut and paste the following URL into your browser:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312</a></p>
+</blockquote>
+<p>As you did before, take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.</p>
+<p><mark>Student task #3: How do the neurons compare to one another in terms of morphology and position?</mark> Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?</p>
+</section>
+<section id="inhibitory-interneurons" class="level4">
+<h4 class="anchored" data-anchor-id="inhibitory-interneurons">Inhibitory interneurons</h4>
+<p>Finally, we will look at some inhibitory cell populations in the dataset. The following NeuroGlancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432">Basket and Chandelier Cells</a></p>
+<p>You can also cut and paste the following URL into your browser:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432</a></p>
+</blockquote>
+<p>This NeuroGlancer instance contains seven neurons. The neurons with Root IDs that end in 504, 411, 618, and 745 are Basket Cells. The neurons with Root IDs that end in 294, 364, and 598 are Chandelier Cells (these are invisible by default, but you can make them visible by clicking the eye icon).</p>
+<p>Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time. Consider comparing the Basket Cells to other Basket Cells and Chandelier Cells to other Chandelier Cells. Then compare Basket Cells to Chandelier Cells.</p>
+<p><mark>Student task #4: Can you find differences in the morphology of Basket Cells and Chandelier Cells? How do these cell types seem to differ from one another? Are there ways in which they are similar?</mark> (You can ignore differences in cell body position)</p>
+</section>
+</section>
+</section>
+<section id="connectivity-viewer-dash-app" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity-viewer-dash-app">Connectivity Viewer Dash App</h2>
+<p>Next we are going to use the <strong>Connectivity Viewer Dash App</strong> to try to understand how Basket Cells and Chandelier Cells differ in their patterns of synaptic connections. The Connectivity Viewer Dash App allows us to query a neuron’s Root ID and gather information about all of the neurons it is synaptically connected to. You can navigate to the Connectivity Viewer Dash App using the following link: <a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/connectivity/?datastack=%22minnie65_public%22">Connectivity Viewer</a></p>
+<p>You can also cut and paste the following URL into your browser:</p>
+<blockquote class="blockquote">
+<p><a href="https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/connectivity/?datastack=%22minnie65_public%22" class="uri">https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/connectivity/?datastack=%22minnie65_public%22</a></p>
+</blockquote>
+<p>After you have followed the link, you should see a screen that looks like this:</p>
+<p><img src="resources/module_4_dash_ui_2.png" class="img-fluid"></p>
+<ul>
+<li><strong>Cell ID</strong> box at the top left will allow us to input the Root ID for a neuron that we wish to analyze.</li>
+<li><strong>Table selection</strong> box will allow us to select the attributes that we want to include in the data output. It works just like the Annotation Table selection box in the Table Viewer.</li>
+<li><strong>Materialization selection</strong> box allows us to choose a specific version of the dataset.</li>
+</ul>
+<p>As we did earlier, please select <code>aibs_metamodel_celltypes_v661</code> in the Annotation Table selection box. Then paste the Root ID <code>864691135101289504</code> into the Cell ID box and click Submit. This should take &lt;1 minute. You should now see a long list of cells that provide presynaptic inputs to the submitted neuron and a long list of cells that receive postsynaptic outputs from the submitted neuron. These are sorted into “Input and “Output” tabs.</p>
+<p>Now click on the *Plots** tab on the left side of the browser. Before doing anything else, select <code>cell_type</code> in the “Color By Value” selection box below the plots that appear. You should see something that looks like this:</p>
+<p><img src="resources/module_4_dash_ui_3.png" class="img-fluid"></p>
+<p>This tab provides summary information about the synaptic connectivity of our selected neuron. The left panel shows the distribution of the layers in which the neuron is receiving input through its dendrites (red) and sending output through its axon terminals (blue).</p>
+<p>The middle and right panels show data about the target cells that receive output from the selected neuron. In the middle panel, each dot represents one synapse. Each dot is plotted to show the location in which the synapse is located and the location in which the target neuron’s cell body is located. The dots are color-coded to indicate the type of neuron that is receiving input.</p>
+<p>The right panel shows us the total number of neurons of each type that are receiving input from the selected neuron.</p>
+<p>Now search for data for the following Basket Cells and Chandelier Cells. You may wish to screen shot the “Plots” data for each cell and paste it into a document to make comparisons easier. Each query will take about one minute to load.</p>
+<table class="table-bordered caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Basket Cells</strong></td>
+<td><strong>Chandelier Cells</strong></td>
+</tr>
+<tr class="even">
+<td><code>864691135101289504</code></td>
+<td><code>864691135293114294</code></td>
+</tr>
+<tr class="odd">
+<td><code>864691135640484411</code></td>
+<td><code>864691135583296365</code></td>
+</tr>
+<tr class="even">
+<td><code>864691136107670745</code></td>
+<td><code>864691137054708598</code></td>
+</tr>
+<tr class="odd">
+<td><code>864691135996104618</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>Our goal here is to understand how the differences in morphology that we noted for Basket and Chandelier Cells earlier might relate to differences in synaptic connectivity. You should compare the connectivity plots that have been exported for each cell in the table and look for ways in which the Basket Cells and Chandelier Cells differ from one another. I suggest looking at the positions of input and output synapses, the relationships between synapses and cell bodies, and the types of cells that are receiving output.</p>
+<p>For example, for the connectivity data plotted on the previous page, I interpret that cell as having inputs and outputs that occur at roughly the same depth (left plot). I would also argue that it sends most of its axon terminals to pyramidal cells (right plot). For most output cells, there is a strong correlation between synapse depth and soma depth, but for 5P-ET cells, this relationship is a little more variable (center plot).</p>
+<p><mark>Student task #5: Describe the differences in synaptic connectivity between Basket Cells and Chandelier Cells.</mark> Please include screenshots below highlighting specific differences between synaptic connectivity patterns between the two cell types. Don’t include a screenshot for every neuron, but instead use examples to highlight specific observations.</p>
+<section id="final-task---create-a-3d-model-of-chandelier-cell-connectivity" class="level4">
+<h4 class="anchored" data-anchor-id="final-task---create-a-3d-model-of-chandelier-cell-connectivity">Final Task - Create a 3D model of Chandelier Cell Connectivity</h4>
+<p>Your final task for this protocol is to create a 3D render illustrating the connectivity of a Chandelier Cell.</p>
+<ol type="1">
+<li>First, open up a new NeuroGlancer instance and a new Connectivity Viewer Dash App.</li>
+<li>Next, select one of the Chandelier Cell Root IDs from the table above in this protocol.</li>
+<li>Paste the Root ID into the NeuroGlancer Seg. panel and make it visible by click on the eye icon. You may wish to refer to the procedures earlier in this protocol if you need help with this part.</li>
+<li>Now also search for the same Root ID in the Connectivity Viewer. Before you do so, select ““aibs_metamodel_celltypes_v661” in the Table selection box. You should now see Input and Output tabs that list the neurons that connect to your chosen Chandelier Cell.</li>
+<li>Choose three pyramidal cells that receive output from your selected Chandelier Cell and add these to the NeuroGlancer browser and make them visible. Are they located where you thought they would be (relative to the Chandelier Cell soma and dendrites) based on your previous analysis?</li>
+</ol>
+<p>Now provide the following information:</p>
+<p>6a: A link to your NeuroGlancer browser created with Share button at the top right of the browser window.</p>
+<p><br> <br></p>
+<p>6b: A screenshot showing your Chandelier Cell and Three Pyramidal cells with labels indicating each.</p>
+<p><br> <br></p>
+<p>6c: A screenshot zoomed in to a synapse between a Chandelier Cell and Pyramidal Cell. Provide labels to indicate the cell types, axons, dendrites, and synapses. You may need to activate the synapse target prediction layer tab to find synapses. You can do this by left-clicking on it.</p>
+<p><br> <br></p>
+</section>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<p>You can explore the MICrONS dataset further at: <a href="https://www.microns-explorer.org/cortical-mm3">MICrONS-Explorer.org</a></p>
+</section>
+<section id="works-cited" class="level2">
+
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Works Cited</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-elabbady_perisomatic_2025" class="csl-entry" role="listitem">
+Elabbady, Leila, Sharmishtaa Seshamani, Shang Mu, et al. 2025. <span>“Perisomatic Ultrastructure Efficiently Classifies Cells in Mouse Cortex.”</span> <em>Nature</em> 640 (8058): 478–86. <a href="https://doi.org/10.1038/s41586-024-07765-7">https://doi.org/10.1038/s41586-024-07765-7</a>.
+</div>
+<div id="ref-Fino_2013" class="csl-entry" role="listitem">
+Fino, Elodie, Adam M. Packer, and Rafael Yuste. 2013. <span>“The Logic of Inhibitory Connectivity in the Neocortex.”</span> <em>The Neuroscientist</em> 19 (3): 228–37. <a href="https://doi.org/10.1177/1073858412456743">https://doi.org/10.1177/1073858412456743</a>.
+</div>
+<div id="ref-Jiang_2015" class="csl-entry" role="listitem">
+Jiang, Xiaolong, Shan Shen, Cathryn R. Cadwell, et al. 2015. <span>“Principles of Connectivity Among Morphologically Defined Cell Types in Adult Neocortex.”</span> <em>Science</em> 350 (6264): aac9462. <a href="https://doi.org/10.1126/science.aac9462">https://doi.org/10.1126/science.aac9462</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/AllenInstitute\.github\.io\/Teaching_Connectomics\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

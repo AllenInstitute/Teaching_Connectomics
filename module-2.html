@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -139,9 +158,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#neuron-structure" id="toc-neuron-structure" class="nav-link" data-scroll-target="#neuron-structure">Neuron Structure</a></li>
   <li><a href="#organelles-and-neuronal-ultrastructure" id="toc-organelles-and-neuronal-ultrastructure" class="nav-link" data-scroll-target="#organelles-and-neuronal-ultrastructure">Organelles and Neuronal Ultrastructure</a></li>
   </ul></li>
-  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol">Protocol</a>
+  <li><a href="#laboratory-module" id="toc-laboratory-module" class="nav-link" data-scroll-target="#laboratory-module">Laboratory Module</a>
   <ul class="collapse">
-  <li><a href="#navigating-neuroglancer-panels" id="toc-navigating-neuroglancer-panels" class="nav-link" data-scroll-target="#navigating-neuroglancer-panels">Navigating NeuroGlancer panels</a></li>
+  <li><a href="#navigating-neuroglancer-panels" id="toc-navigating-neuroglancer-panels" class="nav-link" data-scroll-target="#navigating-neuroglancer-panels">Navigating Neuroglancer panels</a></li>
   <li><a href="#navigating-within-the-main-viewing-panel" id="toc-navigating-within-the-main-viewing-panel" class="nav-link" data-scroll-target="#navigating-within-the-main-viewing-panel">Navigating within the main viewing panel</a></li>
   <li><a href="#navigating-within-the-electron-microscopy-em-raw-data" id="toc-navigating-within-the-electron-microscopy-em-raw-data" class="nav-link" data-scroll-target="#navigating-within-the-electron-microscopy-em-raw-data">Navigating within the Electron Microscopy (EM) raw data</a></li>
   <li><a href="#in-class-student-activities" id="toc-in-class-student-activities" class="nav-link" data-scroll-target="#in-class-student-activities">In-Class Student Activities</a></li>
@@ -199,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/luo_neuron_schematic.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 1. (A) Schematic representation of the cell body, dendrites, and axon of a neuron. (B) Representation of a neuron’s interactions with other nervous system cell types. Source: Luo, 2016</figcaption>
+<figcaption>Figure 1. (A) Schematic representation of the cell body, dendrites, and axon of a neuron. (B) Representation of a neuron’s interactions with other nervous system cell types. Source: <span class="citation" data-cites="Luo2016principles">(<a href="#ref-Luo2016principles" role="doc-biblioref">Luo 2016</a>)</span></figcaption>
 </figure>
 </div>
 </section>
@@ -208,10 +227,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Using electron microscopy, we can observe and identify the organelles that support the function of a neuron. These organelles may include: the nucleus, which houses DNA and is the site of transcription and RNA processing; the endoplasmic reticulum, which is a site of protein synthesis and folding; and mitochondria, the so-called powerhouses of the cell. We can also identify other organelles and cell structures such as the cytoskeleton, in addition to features that define a synapse. In this lab section, you will identify these and other structures and consider their contributions to neuronal function.</p>
 </section>
 </section>
-<section id="protocol" class="level2">
-<h2 class="anchored" data-anchor-id="protocol">Protocol</h2>
+<section id="laboratory-module" class="level2">
+<h2 class="anchored" data-anchor-id="laboratory-module">Laboratory Module</h2>
 <section id="navigating-neuroglancer-panels" class="level3">
-<h3 class="anchored" data-anchor-id="navigating-neuroglancer-panels">Navigating NeuroGlancer panels</h3>
+<h3 class="anchored" data-anchor-id="navigating-neuroglancer-panels">Navigating Neuroglancer panels</h3>
 <p>We will be working within the NeuroGlancer browser to identify ultrastructural features within the electron micrographic dataset. You can access NeuroGlancer by clicking on this link or by copying and pasting the following text into your browser:</p>
 <blockquote class="blockquote">
 <p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568</a></p>
@@ -481,11 +500,11 @@ Tip
 <section id="f.-primary-cilia" class="level4">
 <h4 class="anchored" data-anchor-id="f.-primary-cilia">F. Primary Cilia</h4>
 <p>Neurons also contain a less well-known organelle called a primary cilia. While the primary cilia was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment.</p>
-<p>Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling (Sheu et al., 2022). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.</p>
+<p>Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling (<span class="citation" data-cites="Sheu_2022">(<a href="#ref-Sheu_2022" role="doc-biblioref"><span class="nocase">Sheu et al.</span> 2022</a>)</span>). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/lee_gleeson_cilia.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 3. Two types of cilia in the brain. (A) Motile cilia are found on ependymal cells that line the ventricles. These cilia sense and monitor chemicals within the cerebral spinal fluid (CSF), and they are also moved by CSF flow. (B) Primary cilia are found on neuronal soma, and this extension is a neuronal sensor that is not thought to move much. Source: Lee and Gleeson, 2011.</figcaption>
+<figcaption>Figure 3. Two types of cilia in the brain. (A) Motile cilia are found on ependymal cells that line the ventricles. These cilia sense and monitor chemicals within the cerebral spinal fluid (CSF), and they are also moved by CSF flow. (B) Primary cilia are found on neuronal soma, and this extension is a neuronal sensor that is not thought to move much. Adapted from <span class="citation" data-cites="Lee2011">(<a href="#ref-Lee2011" role="doc-biblioref">Lee and Gleeson 2011</a>)</span></figcaption>
 </figure>
 </div>
 <p>Primary cilia are difficult to identify within the raw EM image viewer. They are easier to identify within the segmentation panel by zooming into the cell body and rotating the segmented neuron (see image below, blue arrows).</p>
@@ -543,7 +562,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/luo_synapses.png" class="img-fluid figure-img"></p>
-<figcaption>Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: Luo, 2016</figcaption>
+<figcaption>Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: <span class="citation" data-cites="Luo2016principles">(<a href="#ref-Luo2016principles" role="doc-biblioref">Luo 2016</a>)</span></figcaption>
 </figure>
 </div>
 <p>In electron microscopy, synapses are identified by the presence of synaptic vesicles and pre- and postsynaptic densities (see image below where the blue arrows are pointing to presynaptic vesicles and the yellow arrowheads are pointing to the postsynaptic densities. The synaptic cleft (the space between the pre- and postsynaptic neurons can sometimes be difficult to visualize.</p>
@@ -579,14 +598,15 @@ Tip
 <h4 class="anchored" data-anchor-id="i.-interesting-structures">I. Interesting structures</h4>
 <p>Now, it is your turn to find some interesting structures within the dataset. Explore the raw EM images and identify three structures that seem interesting to you. Center the structure within your viewer.</p>
 <p><mark>Find three interesting structures in the dataset and annotate them using the annotation point tool and holding <kbd title="Ctrl+Left-Click" aria-hidden="true">Ctrl+Left-Click</kbd><span class="visually-hidden">Ctrl+Left-Click</span> (within the synapse layer panel)</mark> . For each interesting structure, add “interesting structure to the description field for each annotation.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-right">
 <figure class="figure">
-<p><img src="resources/neuroglancer_ui_share_annotation.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="resources/neuroglancer_ui_share_annotation.png" class="img-fluid quarto-figure quarto-figure-right figure-img"></p>
 </figure>
 </div>
 <p><mark>When you have completed the search for interesting structures, click “Share” to generate a link</mark> that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.</p>
 <p>Paste that link here:</p>
 <p>URL:</p>
+<p><br> <br></p>
 </section>
 </section>
 </section>
@@ -595,12 +615,23 @@ Tip
 <p>You can explore the MICrONS dataset further at: <a href="https://www.microns-explorer.org/cortical-mm3">MICrONS-Explorer.org</a></p>
 </section>
 <section id="works-cited" class="level2">
-<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+
+
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Works Cited</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Lee2011" class="csl-entry" role="listitem">
+Lee, Ji Eun, and Joseph G Gleeson. 2011. <span>“A Systems-Biology Approach to Understanding the Ciliopathy Disorders.”</span> <em>Genome Medicine</em> 3 (9): 59. <a href="https://doi.org/10.1186/gm275">https://doi.org/10.1186/gm275</a>.
+</div>
+<div id="ref-Luo2016principles" class="csl-entry" role="listitem">
+Luo, Liqun. 2016. <em>Principles of Neurobiology</em>. Garland Science.
+</div>
+<div id="ref-Sheu_2022" class="csl-entry" role="listitem">
+<span class="nocase">Sheu, Shu-Hsien, Yiming Wang, Qinwen Zheng, et al.</span> 2022. <span>“Serotonergic Axon-Cilium Synapse Drives Nuclear Signaling to Alter Chromatin Accessibility.”</span> <em>Cell</em> 185 (18): 3390–3407.e18. <a href="https://doi.org/10.1016/j.cell.2022.07.026">https://doi.org/10.1016/j.cell.2022.07.026</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -688,6 +719,11 @@ Tip
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

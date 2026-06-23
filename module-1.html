@@ -191,7 +191,7 @@ div.csl-indent {
   <li><a href="#background-and-introduction" id="toc-background-and-introduction" class="nav-link" data-scroll-target="#background-and-introduction">Background and Introduction</a></li>
   <li><a href="#organization-of-the-visual-cortex" id="toc-organization-of-the-visual-cortex" class="nav-link" data-scroll-target="#organization-of-the-visual-cortex">Organization of the Visual Cortex</a></li>
   <li><a href="#neuroanatomy-direction-terms" id="toc-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#neuroanatomy-direction-terms">Neuroanatomy Direction Terms</a></li>
-  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol">Protocol</a>
+  <li><a href="#laboratory-module" id="toc-laboratory-module" class="nav-link" data-scroll-target="#laboratory-module">Laboratory Module</a>
   <ul class="collapse">
   <li><a href="#describing-neuroanatomy-direction-terms" id="toc-describing-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#describing-neuroanatomy-direction-terms">1. Describing Neuroanatomy Direction Terms</a></li>
   <li><a href="#visualizing-neuroanatomy-direction-terms" id="toc-visualizing-neuroanatomy-direction-terms" class="nav-link" data-scroll-target="#visualizing-neuroanatomy-direction-terms">2. Visualizing Neuroanatomy Direction Terms</a></li>
@@ -287,8 +287,8 @@ div.csl-indent {
 </figure>
 </div>
 </section>
-<section id="protocol" class="level2">
-<h2 class="anchored" data-anchor-id="protocol">Protocol</h2>
+<section id="laboratory-module" class="level2">
+<h2 class="anchored" data-anchor-id="laboratory-module">Laboratory Module</h2>
 <p>The first section of this protocol will give you an opportunity to become familiar with anatomical direction terms and how they apply to the mouse nervous system.</p>
 <section id="describing-neuroanatomy-direction-terms" class="level3">
 <h3 class="anchored" data-anchor-id="describing-neuroanatomy-direction-terms">1. Describing Neuroanatomy Direction Terms</h3>
@@ -845,6 +845,11 @@ The MICrONS Consortium, J. Alexander Bae, Mahaly Baptiste, et al. 2025. <span>â€
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
