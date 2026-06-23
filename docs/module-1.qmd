@@ -1,20 +1,20 @@
 ---
 title: "Module 1: Neuroanatomy and Introduction to Neuroglancer"
+runningtitle: "HIVE — Module 1: Neuroanatomy"
+version: "v1.0 — June 2026"
+coverimage: "resources/microns_in_ccf.png"
+author: HIVE Educators
 format:
-  html: 
+  html:
     toc: true
-  pdf: 
-    toc: true
-    author: HIVE Educators
-    documentclass: report
-    geometry: margin=1in
-    mainfont: "Roboto"
+  pdf:
+    toc: false
 bibliography: references.bib
 ---
-  
 
+::: {.content-visible when-format="html"}
 ![](resources/microns_in_ccf.png){fig-align="center"}
-
+:::
 
 ## Overview
 
@@ -62,7 +62,9 @@ The first section of this protocol will give you an opportunity to become famili
 
 ### 1.	Describing Neuroanatomy Direction Terms
 
-[Define the direction associated with each of the anatomical direction terms listed below:]{.mark}
+:::{.task}
+Define the direction associated with each of the anatomical direction terms listed below:
+:::
 
 a.	anterior –
 b.	posterior – 
@@ -71,7 +73,9 @@ d.	ventral –
 e.	medial – 
 f. 	lateral –
 
-[Compare the neuroanatomical direction terms in each of the following sets.]{.mark}
+:::{.task}
+Compare the neuroanatomical direction terms in each of the following sets.
+:::
 
 a.	Superficial versus Deep
 b.	Basal versus Apical
@@ -153,7 +157,11 @@ Try to zoom in to the yellow and gray boxes so you can see the three-dimensional
 
 If you hover over any of the segment IDs listed in the options panel with your mouse pointer, the three-dimensional model of that neuron will also be highlighted in the viewing pane. This also works in reverse, if you hover your mouse pointer over any of the models in the viewing pane, the segment ID will be highlighted in the right-hand options panel.
 
-Now you will compare the neuroanatomical positions of the neurons you have added to the browser. You may have to rotate the view and/or zoom out and then back in to see the positions of the neurons relative to the rest of the brain. [For each of the following pairs of cells, indicated which is anterior and which is posterior:]{.mark}  
+Now you will compare the neuroanatomical positions of the neurons you have added to the browser. You may have to rotate the view and/or zoom out and then back in to see the positions of the neurons relative to the rest of the brain.
+
+:::{.task}
+For each of the following pairs of cells, indicate which is anterior and which is posterior:
+:::
 
 :::{.callout-tip}
 Hint: None of the neurons have the same final four digits – so you can use those to search for each neuron in the list
@@ -171,7 +179,9 @@ Hint: None of the neurons have the same final four digits – so you can use tho
 <br>
 
 
-[For each of the following pairs of cells, indicate which is medial and which is lateral:]{.mark}
+:::{.task}
+For each of the following pairs of cells, indicate which is medial and which is lateral:
+:::
 
 |                       |                       |  
 | --------------------- | --------------------- |  
@@ -185,7 +195,9 @@ Hint: None of the neurons have the same final four digits – so you can use tho
 <br>
 
 
-[For each of the following pairs of cells, indicate which is dorsal and which is ventral:]{.mark}
+:::{.task}
+For each of the following pairs of cells, indicate which is dorsal and which is ventral:
+:::
 
 |                       |                       |  
 | --------------------- | --------------------- |  
@@ -238,7 +250,9 @@ As you did before, after each Segment ID is added, click the small eye icon to t
 ![](resources/layers_with_neurons_neuroglancer_ui.png){fig-align="center"}
 
 
-[For each of the following pairs of cells, indicate which has its cell body in a more superficial layer and which has its cell body in a deeper layer:]{.mark}  
+:::{.task}
+For each of the following pairs of cells, indicate which has its cell body in a more superficial layer and which has its cell body in a deeper layer:
+:::  
 
 
 |                       |                       |  
@@ -253,7 +267,9 @@ As you did before, after each Segment ID is added, click the small eye icon to t
 <br>
 <br>
 
-[For the following neurons, indicate which cortical layer the cell body is located in:]{.mark}  
+:::{.task}
+For the following neurons, indicate which cortical layer the cell body is located in:
+:::  
 
 
 |                    |                       |  
@@ -278,7 +294,11 @@ In the right-options panel, click the eye icons to make only the 864691135441796
 
 ![](resources/neuroglancer_pyramidal_assignment.png){fig-align="center"}
 
-[Take a screenshot of the neuron and use it to make a figure for your assignment. Label the figure to indicate the position of the cell body, axon, apical dendrite, and basal dendrite.]{.mark} (Note: In the image above, we have toggled off the layer boundaries.)  
+:::{.task}
+Take a screenshot of the neuron and use it to make a figure for your assignment. Label the figure to indicate the position of the cell body, axon, apical dendrite, and basal dendrite.
+:::
+
+(Note: In the image above, we have toggled off the layer boundaries.)
 
 <br>
 <br>
@@ -316,11 +336,15 @@ In the image, every neuron except for 864691134988722810 was made invisible (Fig
 
 ![Figure 8. Visualization of a cortico-cortical projection neuron.](resources/neuroglancer_projection_neuron.png)
 
-[You will now fill out the table for each other neuron.]{.mark} Here are some hints to consider:
+:::{.task}
+You will now fill out the table for each other neuron.
+:::
 
-* You may need to make some neurons not visible or change neuron colors in order to see what each neuron is doing  
-* Each neuron will either be in Primary visual cortex or a Higher-order visual area.  
-* Remember that the layer boundaries are described earlier in this document and that you are looking for the layer containing the cell body of the neuron
+Here are some hints to consider:
+
+* You may need to make some neurons not visible or change neuron colors in order to see what each neuron is doing
+* Each neuron will either be in Primary visual cortex or a Higher-order visual area.
+* Remember that the layer boundaries are described earlier in this document and that you are looking for the layer containing the cell body of the neuron.
 * You may need to distinguish axons from dendrites. For most neurons in this group, the easiest way to do this is to look for spines that signify dendrites (Figure 9). Axons will generally be smooth, rather than spiny.
 * Neurons may target multiple areas. These include other columns as shown above. Other neurons may send axon branches into the white matter (below the most ventral layer boundary) or have branches that stay within the same column. For these cases, you could suggest that the neuron is targeting subcortical regions (for axons that enter the white matter) or local neurons (for neurons that branch within the same column).
 * Neurons that send axons into other columns are cortico-cortical projection neurons. Neurons that send axons into subcortical regions can be proposed to be cortico-thalamic neurons. Neurons that branch locally can be proposed to be local interneurons.
@@ -343,7 +367,7 @@ In the image, every neuron except for 864691134988722810 was made invisible (Fig
 | `864691136134707851` |                       |                     |                 |                             |
 | `864691136662432990` |                       |                     |                 |                             |
 
-: {.bordered}
+: {.bordered tbl-colwidths="[40,13,13,13,21]"}
 
 <br>
 <br>

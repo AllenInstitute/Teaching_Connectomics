@@ -1,13 +1,21 @@
 ---
 title: "Module 4: Neuron Types and Dash Apps"
+runningtitle: "HIVE — Module 4: Neuron Types"
+version: "v1.0 — June 2026"
+coverimage: "resources/module_4_celltypes_cover.png"
+author: HIVE Educators
 format:
-  html: 
+  html:
     toc: true
+  pdf:
+    toc: false
 bibliography: references.bib
 ---
   
 
+::: {.content-visible when-format="html"}
 [![Click the image to view the cells in Neuroglancer.](resources/module_4_celltypes_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5853606858194944)
+:::
 
 
 ## Overview
@@ -57,6 +65,7 @@ For this lab we will be working with Dash Apps associated with the MICrONS datas
 We will use the Table Viewer first. You can access it by clicking the following link: [Table Viewer](https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22)
 
 You can also cut and paste the following URL into your browser:
+
 > <https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22>
 
 :::{.callout-tip}
@@ -99,7 +108,9 @@ You can now navigate back to your previous Table Viewer tab or window. In the ta
 ![](resources/module_3_neuroglancer_3.png){fig-align="right"}
 
 
-[Student Task #1: please find five Root IDs in the Table Viewer, each representing a different cell type. One at a time, enter each into the NeuroGgancer browser and observe the morphology and synapse distribution of the cell. ]{.mark} (You may find some Root IDs for which a morphology mesh and/or synapses do not appear in the browser. If this happens, please switch to a different Root ID. The cause of this is constant updates to the dataset that sometimes lead to the browser and database being unsynchronized.)
+:::{.task}
+Please find five Root IDs in the Table Viewer, each representing a different cell type. One at a time, enter each into the Neuroglancer browser and observe the morphology and synapse distribution of the cell. (You may find some Root IDs for which a morphology mesh and/or synapses do not appear in the browser. If this happens, please switch to a different Root ID. The cause of this is constant updates to the dataset that sometimes lead to the browser and database being unsynchronized.)
+:::
 
 Is the cell highly branched or relatively unbranched? Is it large or small? Does it have dendritic spines? Does it make many synapses or just a handful? Are those synapses nearby to the cell body or distant?
 
@@ -115,7 +126,7 @@ For each of your five cells, enter the Root ID, Cell Type, and notes into the fo
 |                          |                     |                 |
 |                          |                     |                 |
 
-: {.bordered}
+: {.bordered tbl-colwidths="[36,18,46]"}
 
 <br>
 <br>
@@ -145,7 +156,9 @@ Take some time to explore these neurons in the 3D viewer. You might consider mak
 
 ![](resources/module_4_neuroglancer_ui_2.png){fig-align="right"}
 
-[Student task #2: How do the neurons compare to one another in terms of morphology and position? ]{.mark} Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?
+:::{.task}
+How do the neurons compare to one another in terms of morphology and position? Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?
+:::
 
 #### Corticothalamic
 
@@ -157,7 +170,9 @@ You can also cut and paste the following URL into your browser:
 
 As you did before, take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.
 
-[Student task #3: How do the neurons compare to one another in terms of morphology and position? ]{.mark}  Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?
+:::{.task}
+How do the neurons compare to one another in terms of morphology and position? Consider the positions of their cell bodies, the morphology of their dendritic field (spiny processes), and the branching pattern of their axons (aspiny processes). Which aspects are similar between all six neurons? Which aspects are more variable?
+:::
 
 #### Inhibitory interneurons
 
@@ -171,7 +186,9 @@ This Neuroglancer instance contains seven neurons. The neurons with Root IDs tha
 
 Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time. Consider comparing the Basket Cells to other Basket Cells and Chandelier Cells to other Chandelier Cells. Then compare Basket Cells to Chandelier Cells.
 
-[Student task #4: Can you find differences in the morphology of Basket Cells and Chandelier Cells? How do these cell types seem to differ from one another? Are there ways in which they are similar? ]{.mark} (You can ignore differences in cell body position)
+:::{.task}
+Can you find differences in the morphology of Basket Cells and Chandelier Cells? How do these cell types seem to differ from one another? Are there ways in which they are similar? (You can ignore differences in cell body position)
+:::
 
 ## Connectivity Viewer Dash App
 
@@ -213,7 +230,7 @@ Now search for data for the following Basket Cells and Chandelier Cells. You may
 | `864691136107670745` | `864691137054708598` |     
 | `864691135996104618` |                    |      
 
-: {.bordered}
+: {.bordered tbl-colwidths="[50,50]"}
 
 <br>
 <br>
@@ -222,11 +239,15 @@ Our goal here is to understand how the differences in morphology that we noted f
 
 For example, for the connectivity data plotted on the previous page, I interpret that cell as having inputs and outputs that occur at roughly the same depth (left plot). I would also argue that it sends most of its axon terminals to pyramidal cells (right plot). For most output cells, there is a strong correlation between synapse depth and soma depth, but for 5P-ET cells, this relationship is a little more variable (center plot).
 
-[Student task #5: Describe the differences in synaptic connectivity between Basket Cells and Chandelier Cells. ]{.mark} Please include screenshots below highlighting specific differences between synaptic connectivity patterns between the two cell types. Don’t include a screenshot for every neuron, but instead use examples to highlight specific observations.
+:::{.task}
+Describe the differences in synaptic connectivity between Basket Cells and Chandelier Cells. Please include screenshots below highlighting specific differences between synaptic connectivity patterns between the two cell types. Don’t include a screenshot for every neuron, but instead use examples to highlight specific observations.
+:::
 
 #### Final Task - Create a 3D model of Chandelier Cell Connectivity
 
-Your final task for this protocol is to create a 3D render illustrating the connectivity of a Chandelier Cell. 
+:::{.task}
+Your final task for this protocol is to create a 3D render illustrating the connectivity of a Chandelier Cell.
+:::
 
 1. First, open up a new Neuroglancer instance and a new Connectivity Viewer Dash App. 
 2. Next, select one of the Chandelier Cell Root IDs from the table above in this protocol. 

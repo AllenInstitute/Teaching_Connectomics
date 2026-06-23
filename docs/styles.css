@@ -1,7 +1,29 @@
 /* css styles */
 
 /* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+body {
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Student-task callout (matches the PDF "task" box: warm tint + left accent bar,
+   auto-numbered "Task N.") */
+body { counter-reset: taskcounter; }
+.task {
+  background: #FAEEDA;
+  border-left: 4px solid #BA7517;
+  border-radius: 0;
+  padding: 0.6rem 0.9rem;
+  margin: 1rem 0;
+  counter-increment: taskcounter;
+}
+.task > :first-child { margin-top: 0; }
+.task > :last-child { margin-bottom: 0; }
+.task > :first-child::before {
+  content: "Task " counter(taskcounter) ". ";
+  font-weight: 600;
+}
 
 
 /* all formats */
