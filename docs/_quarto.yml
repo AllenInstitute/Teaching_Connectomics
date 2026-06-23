@@ -16,6 +16,11 @@ website:
             url:  https://github.com/AllenInstitute/Teaching_Connectomics
   back-to-top-navigation: true
   
+filters:
+  - _filters/task.lua
+  - quarto
+  - _filters/gridtables.lua
+
 format:
   html:
     theme:
@@ -25,4 +30,18 @@ format:
     toc: true
     link-external-newwindow: true
   pdf:
-    pdf-engine: 'lualatex' 
+    pdf-engine: lualatex
+    documentclass: report
+    geometry: margin=1in
+    fontsize: 11pt
+    toc: false
+    number-sections: false
+    mainfont: "SourceSans3-Regular.otf"
+    mainfontoptions:
+      - "Path=fonts/"
+      - "ItalicFont=SourceSans3-It.otf"
+      - "BoldFont=SourceSans3-Bold.otf"
+      - "BoldItalicFont=SourceSans3-BoldIt.otf"
+    include-in-header: "tex/preamble.tex"
+    template-partials:
+      - "tex/before-body.tex"

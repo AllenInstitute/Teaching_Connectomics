@@ -1,0 +1,46 @@
+% ===== HIVE education module — PDF preamble =====
+
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{array}
+\usepackage{tabularray}
+\UseTblrLibrary{varwidth}
+\usepackage{caption}
+
+% Figure captions in these modules are numbered by hand ("Figure 1. ..."), so
+% suppress LaTeX's automatic "Figure N:" label to avoid doubled numbering in PDF.
+\captionsetup[figure]{labelformat=empty}
+
+% These are student answer tables, not figures: suppress longtblr's automatic
+% "Table N:" caption tag and the "Continued on next page" header/footer.
+\DefTblrTemplate{caption}{default}{}
+\DefTblrTemplate{caption-tag}{default}{}
+\DefTblrTemplate{caption-sep}{default}{}
+\DefTblrTemplate{caption-text}{default}{}
+\DefTblrTemplate{capcont}{default}{}
+\DefTblrTemplate{conthead}{default}{}
+\DefTblrTemplate{contfoot}{default}{}
+\DefTblrTemplate{conthead-text}{default}{}
+\DefTblrTemplate{contfoot-text}{default}{}
+
+% --- Student-task callout colors (warm amber, "style C") ---
+\definecolor{taskbg}{HTML}{FAEEDA}
+\definecolor{taskbar}{HTML}{BA7517}
+
+% --- Student-task callout: warm tint, left accent bar, auto-numbered "Task N." ---
+\newtcolorbox[auto counter]{task}{
+  enhanced, breakable,
+  colback=taskbg,
+  colframe=taskbar,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=0pt, outer arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  boxsep=2pt,
+  before upper={\textbf{Task \thetcbcounter.}\ },
+}
+
+% --- Roomier table rows so printed tables have space to write in ---
+\renewcommand{\arraystretch}{1.7}
+
+\setlength{\headheight}{15pt}

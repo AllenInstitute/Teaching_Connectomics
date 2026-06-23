@@ -1,19 +1,21 @@
 ---
 title: "Module 2: Ultrastructure and Cytology"
+runningtitle: "HIVE — Module 2: Ultrastructure"
+version: "v1.0 — June 2026"
+coverimage: "resources/module_2_em_cover.png"
+author: HIVE Educators
 format:
   html: 
     toc: true
   pdf: 
-    toc: true
-    author: HIVE Educators
-    documentclass: report
-    geometry: margin=1in
-    mainfont: "Roboto"
+    toc: false
 bibliography: references.bib
 ---
   
 
+::: {.content-visible when-format="html"}
 ![](resources/module_2_em_cover.png){fig-align="center"}
+:::
 
 
 ## Overview
@@ -147,7 +149,9 @@ Notice that there is a scale bar in the bottom left corner of the image. The sca
 
 ![](resources/neuroglancer_2D_UI_5_scale_bar.png){fig-align="center"}
 
+:::{.task}
 Now, it’s your turn to find some nuclei in the data set. Scan around the raw EM image viewer by {{< kbd Left-Click >}} dragging (move in xy), {{< kbd scroll-wheel >}} (move in z), {{< kbd Ctrl+scroll-wheel >}}(zoom), and identify three additional nuclei in the dataset. You can annotate these structures yourself by clicking on the point annotator in the Annotations tab on the right, and then holding {{< kbd Ctrl+Left-Click >}} clicking on the raw EM image. This will make an annotation point on the structure you click on, and you will see a new annotation will be added to the annotation panel on the right.
+:::
 
 ![](resources/neuroglancer_ui_annotation_menu_1.png){fig-align="right"}
 
@@ -179,7 +183,9 @@ You can adjust the brightness and contrast of the imagery layer by activating th
 
 After you get a sense for what mitochondria look like, it is your turn to find some more. 
 
-[Find three more mitochondria in the dataset, click on the point annotation tool and hold {{< kbd Ctrl+Left-Click >}} on the raw EM image, and add an annotation point to the mitochondria you have found.]{.mark} Then, add an estimation of its size in the description field for each annotation.   
+:::{.task}
+Find three more mitochondria in the dataset, click on the point annotation tool and hold {{< kbd Ctrl+Left-Click >}} on the raw EM image, and add an annotation point to the mitochondria you have found. Then, add an estimation of its size in the description field for each annotation.
+:::   
 
 #### C. Smooth ER
 
@@ -197,7 +203,9 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 After you get a sense for what smooth ER looks like, it is your turn to find some more. 
 
-[Find three more smooth ER in the dataset, and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and place that estimation in the description field for each annotation.
+:::{.task}
+Find three more smooth ER in the dataset, and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and place that estimation in the description field for each annotation.
+:::
 
 
 #### D.	Golgi apparatus
@@ -216,7 +224,9 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 After you get a sense for what golgi apparatus looks like, it is your turn to find some more. 
 
-[Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation.
+:::{.task}
+Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. For each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation.
+:::
 
 #### E.	Microtubules
 
@@ -234,7 +244,9 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 After you get a sense for what microtubules looks like, it is your turn to find some more. 
 
-[Find three more microtubules in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . It is difficult to measure the size of microtubules, as they are typically ~25nm in diameter, so for this each microtubule, provide the width of the axon that the microtubules are found in the description field for each annotation. 
+:::{.task}
+Find three more microtubules in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. It is difficult to measure the size of microtubules, as they are typically ~25nm in diameter, so for each microtubule, provide the width of the axon that the microtubules are found in the description field for each annotation.
+::: 
 
 #### F.	Primary Cilia
 
@@ -262,7 +274,9 @@ It is difficult to measure the length of cilia using the raw EM panel. To activa
 
 ![](resources/EM_cilia_orthographic.png){fig-align="center"}
 
-[Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each cilium, you should determine the approximate length of the cilium, and place that estimation in the description field for each primary cilium annotation.
+:::{.task}
+Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. For each cilium, you should determine the approximate length of the cilium, and place that estimation in the description field for each primary cilium annotation.
+:::
 
 #### G.	Myelinated axons
 
@@ -284,7 +298,9 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 {{< kbd win=Right-Click  mac=Ctrl-Click >}}  on each of the Myelinated axons annotations to center them in the image viewer to get a sense for what they look like. Try zooming in and out of the raw electron microscopic image to get a sense for how the myelinated axons are visualized in this dataset.
 
-[Find three more myelinated axons in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each axon, determine the approximate diameter of the axon (including the myelin sheath), and place that estimation in the description field for each annotation.
+:::{.task}
+Find three more myelinated axons in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. For each axon, determine the approximate diameter of the axon (including the myelin sheath), and place that estimation in the description field for each annotation.
+:::
 
 #### H.	Synapses
 
@@ -315,18 +331,24 @@ Then {{< kbd double-left-click >}} on the raw electron microscopic image to acti
 Rotate the 3D panel to get a sense for what a synapse looks like in 3D.
 
 
-[Find three more synapses in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each synapse determine the approximate width of the pre- and post-synaptic contact, and place that estimation in the description field for each annotation. 
+:::{.task}
+Find three more synapses in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}. For each synapse, determine the approximate width of the pre- and post-synaptic contact, and place that estimation in the description field for each annotation.
+::: 
 
 
 #### I.	Interesting structures
 
 Now, it is your turn to find some interesting structures within the dataset. Explore the raw EM images and identify three structures that seem interesting to you. Center the structure within your viewer. 
 
-[Find three interesting structures in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}}  (within the synapse layer panel) ]{.mark} . For each interesting structure, add “interesting structure to the description field for each annotation.
+:::{.task}
+Find three interesting structures in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} (within the synapse layer panel). For each interesting structure, add “interesting structure” to the description field for each annotation.
+:::
 
 ![](resources/neuroglancer_ui_share_annotation.png){fig-align="right"}
 
-[When you have completed the search for interesting structures, click “Share” to generate a link]{.mark} that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.
+:::{.task}
+When you have completed the search for interesting structures, click “Share” to generate a link that will include all of the annotations, for all the organelles that you found, and will allow your instructor to view each annotation.
+:::
 
 Paste that link here:
 
