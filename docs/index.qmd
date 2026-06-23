@@ -53,3 +53,43 @@ In this ultrastructure and cytology module, students delve into the intricate wo
 :::
 
 ::::
+
+### Module 3: Dendritic Spines and Synaptic Integration
+::::{.grid}
+
+:::{.g-col-6}
+![](resources/module_3_spines_cover.png)
+
+<center> [Online module](module-3.html) </center>
+
+
+
+:::
+
+:::{.g-col-6}
+
+This laboratory module introduces students to the structure-function relationship of dendritic spines using large-scale volumetric electron microscopy (EM) data. Students will use Neuroglancer to explore the MICrONS EM dataset, allowing them to identify and classify dendritic spines, in addition to examining how dendritic spine morphology varies across synapses. Through guided analysis, this module emphasizes how differences in spine shape, size, and connectivity relate to synaptic strength and circuit connectivity, providing hands-on experience with modern connectomics tools and quantitative neuroanatomy. 
+
+:::
+
+::::
+
+
+### Module 4: Neuron Types and Dash Apps
+::::{.grid}
+
+:::{.g-col-6}
+![](resources/module_2_em_cover.png)
+
+<center> [Online module](module-4.html) </center>
+
+
+:::
+
+:::{.g-col-6}
+
+This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the NeuroGlancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.
+
+:::
+
+::::
