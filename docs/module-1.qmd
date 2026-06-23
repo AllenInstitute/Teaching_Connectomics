@@ -1,5 +1,5 @@
 ---
-title: "Module 1 : Neuroanatomy and Introduction to Neuroglancer"
+title: "Module 1: Neuroanatomy and Introduction to Neuroglancer"
 format:
   html: 
     toc: true
@@ -18,19 +18,19 @@ bibliography: references.bib
 
 ## Overview
 
-In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform. 
+In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the Neuroglancer platform. 
 
 ## Learning Goals 
 
 * Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites  
 * Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information  
-* Navigate a connectomics data set within the NeuroGlancer platform 
+* Navigate a connectomics data set within the Neuroglancer platform 
 
 ## Background and Introduction 
 
 In this module, you will use the Neuroglancer software to navigate an open-access data set that was created by the Machine Intelligence from Cortical Networks (MICrONS) program, which sought to use reverse engineer brain circuits to improve the ability of computers to recognize patterns. This dataset consists of a cubic millimeter of mouse visual cortex that was sliced into 28,000 serial sections (Figure 1). These slices were imaged using transmission electron microscopy, and the images were assembled into a three-dimensional volume. This dataset has allowed scientists to reconstruct three-dimensional models of neurons from the electron microscopy data and analyze patterns of synaptic connections between the neurons. In total, the dataset contains 200,000 cells and over 500 million synapses [@the_microns_consortium_functional_2025].
 
-![Figure 1. The position and orintation of the MICrONS dataset in the mouse brain. The lower panel shows a top view of the dataset with cortical area boundaries indicated by black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex) ](resources/microns_volume_topdown.png) 
+![Figure 1. The position and orientation of the MICrONS dataset in the mouse brain. The lower panel shows a top view of the dataset with cortical area boundaries indicated by black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex) ](resources/microns_volume_topdown.png) 
 
 
 ## Organization of the Visual Cortex 
@@ -41,21 +41,19 @@ The primary visual cortex receives visual information from the dorsal lateral ge
 ![](resources/human_visual_system.png){fig-align="center"}
 
 
-In general, neurons in Layer 4 receive the majority of the synapses coming from the lateral geniculate nucleus, while excitatory Layer 3 neurons send axons out into other cortical areas. Excitatory neurons in Layers 5 and 6 send axons carrying feedback into lateral geniculate nucleus and other areas. About 20% of neurons in all layers are inhibitory interneurons that make local synaptic connections (i.e. don’t send out or receive synapses from other brain regions).
-
 ![ Figure 2. Organization of cortical neurons into columns and layers. Layer 1 is the most superficial layer, positioned at the cortical surface. Layer 6 is the deepest layer, positioned adjacent to the white matter. ](resources/oberlander_cortical_column.png)
 
 
 ## Neuroanatomy Direction Terms
 
 To work effectively with this neuroanatomical dataset, you will need to have a clear understanding of anatomical direction terms and how they relate to the nervous system of a rodent and to that of a human. 
-The body axis and neuraxis of organisms with four or more legs, such as dogs or rodents, share the same plane. This differs from the human body, in which the neuroaxis is rotated 90° from the plane of the body axis (Figure X).  
+The body axis and neuraxis of organisms with four or more legs, such as dogs or rodents, share the same plane. This differs from the human body, in which the neuroaxis is rotated 90° from the plane of the body axis (Figure 3).  
 
 ![Figure 3. The body axis and neuraxis of dogs (and rodents) have the same planar organization, and terms that describe the body axis are conserved when describing the brain. Humans have a curved neuraxis. For example, dorsal parts of the body and spinal cord of humans are towards the back of the torso, while dorsal parts of the brain are towards the top of the head (image: adapted from https://en.wikipedia.org/wiki/Neuraxis).](resources/body_axis_diagram.png)
 
 Because many parts of the vertebrate brain have a layered organization, scientists also use neuroanatomical direction terms that describe the positions of cells or cellular structures related to the layers of the brain.
 
-![Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclodia of Neuroscience and [@Bekkers_2011])](resources/bekkers_pyramidal_layers.png)
+![Figure 4. Layered organization of the cortex and apical/basal organization of neurons.(Adapted from Springer Nature Encyclopedia of Neuroscience and [@Bekkers_2011])](resources/bekkers_pyramidal_layers.png)
 
 
 ## Laboratory Module
@@ -81,9 +79,9 @@ b.	Basal versus Apical
 
 ### 2.  Visualizing Neuroanatomy Direction Terms
 
-We will use the NeuroGlancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.
+We will use the Neuroglancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.
 
-Access NeuroGlancer by clicking on the following link:
+Access Neuroglancer by clicking on the following link:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736>
 
@@ -99,10 +97,10 @@ You should see the following screen:
 :::{.callout-caution}
 MICrONS Terms of Service Error
 
-If the neuroglancer does not render, follow these steps:
+If the Neuroglancer does not render, follow these steps:
 
 1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer. 
+2)	Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer. 
 :::
 
 
@@ -116,7 +114,7 @@ To the left of the main viewing pane is a panel that lets you adjust the setting
 
 ![](resources/neuroglancer_ui_seg_menu_1.png){fig-align="right"}
 
-Visual elements in NeuroGlancer are described as segments. Every reconstructed neuron in the data set has a unique Segment ID. Now, you will add neuron segments to the viewer using their Segment IDs. First, {{< kbd win=Right-Click  mac=Ctrl-Click >}} on the `6seg65` layer tab to bring up a list of display options in the options panel. {{< kbd Left-Click >}} on the Seg tab in the right-hand panel to select it. Segment IDs can be pasted into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.
+Visual elements in Neuroglancer are described as segments. Every reconstructed neuron in the data set has a unique Segment ID. Now, you will add neuron segments to the viewer using their Segment IDs. First, {{< kbd win=Right-Click  mac=Ctrl-Click >}} on the `6seg65` layer tab to bring up a list of display options in the options panel. {{< kbd Left-Click >}} on the Seg tab in the right-hand panel to select it. Segment IDs can be pasted into the text box that says “Enter ID, name prefix or /regexp” to add them to a list of segments available to be viewed.
 
 ![](resources/neuroglancer_ui_seg_menu_2.png){fig-align="right"}
 
@@ -146,7 +144,7 @@ Once you have added each of the neurons to the viewer, you will need to navigate
 * You can slide the view by {{< kbd Shift-Left-Click >}} and dragging your mouse pointer
 * You can zoom the view in small increments by using the {{< kbd scroll-wheel >}}
 * You can zoom the view in large increments by holding {{< kbd Ctrl >}} and using the {{< kbd scroll-wheel >}}
-* You can also {{< kbd win=Right-Click mac=Ctrl-Click >}} on any of the segment IDs listed in the options panel to center the via on that neuron segment (if you are zoomed far out, this may not be obvious)
+* You can also {{< kbd win=Right-Click mac=Ctrl-Click >}} on any of the segment IDs listed in the options panel to center the view on that neuron segment (if you are zoomed far out, this may not be obvious)
 
 Try to zoom in to the yellow and gray boxes so you can see the three-dimensional reconstructions of the neurons you have added. You should be able to see something like this in the main viewing pane. 
 
@@ -205,7 +203,7 @@ Hint: None of the neurons have the same final four digits – so you can use tho
 
 As described above, the visual cortex is divided into layers. Each layer contains specific types of neurons, each with their own shape, size, and pattern of connections. In this section, you will visualize and describe the neurons in different layers of the cortex.
 
-First, click on the following link to open a new NeuroGlancer window:
+First, click on the following link to open a new Neuroglancer window:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6518965183447040>  
 
@@ -292,7 +290,7 @@ We will now look at how neurons are organized into columns and layers in order t
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968> 
 
 When this link opens, you should see the layer boundaries and several three-dimensional neuron models present in the main viewing pane. If you use your mouse to slide and rotate around these models, you will see that these neurons are organized into two groups. These represent cortical columns, groups of neurons that span all six cortical layers and that respond to stimuli with specific coordinates within the visual field.
--Click >}} on the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane. This will call up two sets of column boundaries (Figure 6). In this case, V1 indicates a column in the primary visual cortex and HVA indicates a column in a higher-order visual area, which is a cortical area that receives information coming from the primary visual cortex.
+Now, {{< kbd Left-Click >}} on the “V1_cylinder” and “HVA_cylinder” tabs above the main viewing pane. This will call up two sets of column boundaries (Figure 6). In this case, V1 indicates a column in the primary visual cortex and HVA indicates a column in a higher-order visual area, which is a cortical area that receives information coming from the primary visual cortex.
 
 ![Figure 6. Visualization of the V1 (blue circles) and HVA (green circles) column boundaries.](resources/v1_hva_column_neuroglancer.png)
 
@@ -306,7 +304,7 @@ For questions that follow, you can {{< kbd Left-Click >}} the tabs above the mai
 ![Figure 7. Visualization of cortical region borders.](resources/layers_and_area_meshes_neuroglancer.png)
 
 
-For the next section, you may want to reset your NeuroGlancer window by clicking on the following link:
+For the next section, you may want to reset your Neuroglancer window by clicking on the following link:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5142016942931968>  
 

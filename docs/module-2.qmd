@@ -24,7 +24,7 @@ In this ultrastructure and cytology module, students delve into the intricate wo
 
 After completing this module you will be able to:
  
-* Engage with the electron micrograph browser of NeuroGlancer and associated layers and panels.
+* Engage with the electron micrograph browser of Neuroglancer and associated layers and panels.
 * Identify organelles such as nuclei, mitochondria, and endoplasmic reticulum in electron microscopy data sets. Additionally, you will be able to identify synaptic ultrastructural features such as vesicles, postsynaptic densities, and synaptic clefts.
 * Explain and discuss how specific organelles and ultrastructure contribute to the specialized functions of axons, dendrites, cell bodies, and synapses.
 
@@ -47,7 +47,7 @@ Using electron microscopy, we can observe and identify the organelles that suppo
 
 ### Navigating Neuroglancer panels
 
-We will be working within the NeuroGlancer browser to identify ultrastructural features within the electron micrographic dataset. You can access NeuroGlancer by clicking on this link or by copying and pasting the following text into your browser:
+We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568>
 
@@ -63,10 +63,10 @@ Once logged in, you should see the following screen:
 :::{.callout-caution}
 MICrONS Terms of Service Error
 
-If the neuroglancer does not render, follow these steps:
+If the Neuroglancer does not render, follow these steps:
 
 1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer. 
+2)	Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer. 
 :::
 
 
@@ -76,7 +76,7 @@ To orient yourself, the left-most panel displays the electron micrographic (EM) 
 In the left-most panel, you are looking directly into the nucleus of a neuron, and the middle panel shows you the morphology of that neuron reconstructed in its entirety. 
 :::
 
-In NeuroGlancer, the middle panel displays the 3D segmentation of the neurons and glial cells that are clicked on within the raw EM images. The neuron you are looking at is a pyramidal neuron within visual cortex. Notice the elaborate dendritic arbor (with one long apical dendrite), and a thin axon that extends out from the bottom of the soma. 
+In Neuroglancer, the middle panel displays the 3D segmentation of the neurons and glial cells that are clicked on within the raw EM images. The neuron you are looking at is a pyramidal neuron within visual cortex. Notice the elaborate dendritic arbor (with one long apical dendrite), and a thin axon that extends out from the bottom of the soma. 
 
 Notice the boxes across the top of the main EM viewing panel. These are called **layer** tabs, and the `img` tab is the raw EM image panel:
 
@@ -216,7 +216,7 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 After you get a sense for what golgi apparatus looks like, it is your turn to find some more. 
 
-[Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each smooth ER, you should determine their approximate size (estimate total width of smooth ER in the plane of section), and plaFor each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation. 
+[Find three more golgi apparati in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each golgi, you should determine the approximate width of the entire apparatus in the plane of section you are viewing and place that estimation in the description field for each annotation.
 
 #### E.	Microtubules
 
@@ -238,9 +238,9 @@ After you get a sense for what microtubules looks like, it is your turn to find 
 
 #### F.	Primary Cilia
 
-Neurons also contain a less well-known organelle called a primary cilia. While the primary cilia was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment. 
+Neurons also contain a less well-known organelle called a primary cilium. While the primary cilium was anatomically identified over a century ago, it is only recently that the functional role of this organelle has been defined. Neuronal primary cilia are small, antenna-like organelles that extend from the surface of most neuronal cell bodies. These structures play critical roles in cellular signaling by acting as hubs for the reception and processing of extracellular signals. For example, you might remember that paramecium use cilia to monitor and move around their environment. 
 
-Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilia, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling ([@Sheu_2022]). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.
+Primary cilia, however, extend forth from the cell body and are not motile (Figure 3). Each neuron has one primary cilium, and this protrusion is different from dendrites and axons, which are processes that we normally associate with extending out from the cell body. While the precise role that primary cilia play in brain function remains to be determined, neuronal primary cilia have been shown to play a role in neuronal signaling ([@Sheu_2022]). Moreover, there are several genetic diseases caused by mutations in primary cilia-specific proteins highlighting the necessity of primary cilia in normal brain function.
 
 ![Figure 3. Two types of cilia in the brain. (A) Motile cilia are found on ependymal cells that line the ventricles. These cilia sense and monitor chemicals within the cerebral spinal fluid (CSF), and they are also moved by CSF flow. (B) Primary cilia are found on neuronal soma, and this extension is a neuronal sensor that is not thought to move much. Adapted from [@Lee2011] ](resources/lee_gleeson_cilia.png)
 
@@ -254,15 +254,15 @@ We have pre-selected three examples of primary cilia for you  in the Annotation 
 
 Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activate the cilia annotations in the Annotations panel.
 
-{{< kbd win=Right-Click  mac=Ctrl-Click >}}  on each of the cilia annotations to center the microtubules in the image viewer. Zoom in and out to get a sense for where this structure is found. They are most easily located by zooming in and rotating within the segmentation panel.
+{{< kbd win=Right-Click  mac=Ctrl-Click >}}  on each of the cilia annotations to center the cilia in the image viewer. Zoom in and out to get a sense for where this structure is found. They are most easily located by zooming in and rotating within the segmentation panel.
 
-After you get a sense for what primary cilia looks like, it is your turn to find some more. You will most likely have to find cell bodies in the EM panel, {{< kbd double-left-click >}} on them to populate these neurons in the segmentation/3D viewer, and then zoom into these neuronal cell bodies to find the cilia.
+After you get a sense for what a primary cilium looks like, it is your turn to find some more. You will most likely have to find cell bodies in the EM panel, {{< kbd double-left-click >}} on them to populate these neurons in the segmentation/3D viewer, and then zoom into these neuronal cell bodies to find the cilia.
 
 It is difficult to measure the length of cilia using the raw EM panel. To activate a scale bar in the 3D/segmentation viewer, toggle the "orthographic" view with {{< kbd o >}} . This will flatten the 3D panel and allow you to better estimate the size of the cilia. Click {{< kbd o >}} again to revert back to the default projection 3D viewer, without the scale bar.
 
 ![](resources/EM_cilia_orthographic.png){fig-align="center"}
 
-[Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each cilia, you should determine the approximate length of the cilia, and place that estimation in the description field for each primary cilia annotation.
+[Find three more primary cilia in the dataset and annotate them using the annotation point tool and holding {{< kbd Ctrl+Left-Click >}} ]{.mark} . For each cilium, you should determine the approximate length of the cilium, and place that estimation in the description field for each primary cilium annotation.
 
 #### G.	Myelinated axons
 
@@ -290,7 +290,7 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 Now that we have explored the organelles and features of neurons, let’s focus on the ultrastructure of the primary site of communication between neurons and other brain cells: the synapse.  In Figure 5, we can see the contents of the pre- and postsynaptic sides of chemical and electrical synapses. We can see organelles such as mitochondria, which provide energy for neurotransmitter release, and synaptic vesicles, which are membrane-bound packets that contain neurotransmitter molecules. We can also see structures like the synaptic cleft that separates the sides of a chemical synapse, and the tight junctions between the sides of an electrical synapse.
 
-![Figure 4. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: [@Luo2016principles] ](resources/luo_synapses.png)
+![Figure 5. Electron micrographs of chemical (A) and electrical (B) synapses. Mitochondria are indicated by asterisks. In the left panel, the pink arrow indicates a synaptic vesicle. In the right panel, the pink arrows indicate a cell-cell junction between neurons. Source: [@Luo2016principles] ](resources/luo_synapses.png)
 
 In electron microscopy, synapses are identified by the presence of synaptic vesicles and pre- and postsynaptic densities (see image below where the blue arrows are pointing to presynaptic vesicles and the yellow arrowheads are pointing to the postsynaptic densities. The synaptic cleft (the space between the pre- and postsynaptic neurons can sometimes be difficult to visualize. 
 
@@ -308,7 +308,7 @@ Then {{< kbd win=Right-Click  mac=Ctrl-Click >}} on that same layer tab to activ
 
 {{< kbd win=Right-Click  mac=Ctrl-Click >}}  on each of the Synapse annotations to center them in the image viewer to get a sense for what they look like. Try zooming in and out of the raw electron microscopic image to get a sense for how the synapses are visualized in this dataset. 
 
-Then {{< kbd double-left-click >}}} on the raw electron microscopic image to activate the pre and postsynaptic neurons in the volumetric 3D panel. Synapse-1 is shown below:
+Then {{< kbd double-left-click >}} on the raw electron microscopic image to activate the pre and postsynaptic neurons in the volumetric 3D panel. Synapse-1 is shown below:
 
 ![](resources/EM_synapse_mesh_2.png){fig-align="center"}
 

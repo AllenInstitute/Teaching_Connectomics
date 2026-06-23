@@ -18,7 +18,7 @@ This laboratory module introduces students to the structure-function relationshi
 
  After completing this module, you will be able to:
  
-* Engage with NeuroGlancer and associated electron microscopy layers/panels to identify neurons, dendrites, and individual dendritic spines.
+* Engage with Neuroglancer and associated electron microscopy layers/panels to identify neurons, dendrites, and individual dendritic spines.
 * Identify and describe the major classes of dendritic spine morphologies.
 * Locate excitatory synapses in EM data and distinguish between pre- and post-synaptic elements based on ultrastructural features.
 * Interpret how spine morphology reflects differences in synaptic connectivity.
@@ -43,7 +43,7 @@ Dendritic spines are small protrusions that extend from neuronal dendrites and s
 
 ### Navigating Neuroglancer panels
 
-We will be working within the NeuroGlancer browser to identify ultrastructural features within the electron micrographic dataset. You can access NeuroGlancer by clicking on this link or by copying and pasting the following text into your browser:
+We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6722224001122304>
 
@@ -59,10 +59,10 @@ Once logged in, you should see the following screen:
 :::{.callout-caution}
 MICrONS Terms of Service Error
 
-If the neuroglancer does not render, follow these steps:
+If the Neuroglancer does not render, follow these steps:
 
 1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Once you have logged in through google and accepted the terms of service your login will be valid for neuroglancer. 
+2)	Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer. 
 :::
 
 To orient yourself, the left-most panel displays the electron micrographic (EM) images. This is the raw data generated from the cutting, sectioning, staining, and imaging of the one micrometer cubed chunk of mouse visual cortex that serves as the basis of this dataset. Note: In the left-most panel, you are looking at a cross-section of the soma and the apical dendrite extending forth from the top of the soma (shaded in green). The middle panel displays the 3D segmentation of the neuron that is clicked on within the raw EM images, and this view shows the morphology of that green neuron reconstructed in its entirety. 
@@ -99,7 +99,7 @@ The neuron you are looking at contains structures called dendritic spines which 
 
 ### Axons vs Dendrites
 
-Upon close inspection of this neuron, you can observe that not every process extending form the soma contains spines. This is because only dendrites have spines – axons do not. Below (right) is a pseudocolored representation of this pyramidal neuron where the dendrites are colored red, and the axons are colored blue. If you zoom in on the location highlighted with the dashed circle, you can see something that looks like this
+Upon close inspection of this neuron, you can observe that not every process extending from the soma contains spines. This is because only dendrites have spines – axons do not. Below (right) is a pseudocolored representation of this pyramidal neuron where the dendrites are colored red, and the axons are colored blue. If you zoom in on the location highlighted with the dashed circle, you can see something that looks like this
 
 ![](resources/dendrite_vs_axon.png){fig-align="center"}
 
@@ -252,7 +252,7 @@ Copy the segment ID of each presynaptic neuron and paste that ID into the Table 
 
 |      |                       |                     |                 |                  |  
 | -----| --------------------- | ------------------- | --------------- | --------------- | 
-| **Synapse**    | **Color of marker (red, yellow, cyan)**      | **Postsynaptic structure (Soma, proximal dendritic shaft, distal dendritic shaft, spine ** | **Presynaptic neuron classification (Excitatory or inhibitory)** | **Cell Type** |
+| **Synapse**    | **Color of marker (red, yellow, cyan)**      | **Postsynaptic structure (Soma, proximal dendritic shaft, distal dendritic shaft, spine)** | **Presynaptic neuron classification (Excitatory or inhibitory)** | **Cell Type** |
 | 1 |                       |                     |                 |                   |  
 | 2 |                       |                     |                 |                   |  
 | 3 |                       |                     |                 |                   |  

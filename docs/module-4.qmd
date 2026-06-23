@@ -12,7 +12,7 @@ bibliography: references.bib
 
 ## Overview
 
-This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the NeuroGlancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.
+This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the Neuroglancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.
 
 ## Learning Goals
 
@@ -40,9 +40,9 @@ Basket Cells and Chandelier Cells are interesting examples of cells that might l
 
 ### Classification of Neurons in Visual Cortex
 
-Massive connectomics datasets, such as the MICrONS dataset, provide huge amounts of information with which to classify and analyze neuron types. In a recent study, researchers were able to classify multiple cell types of visual cortex by analyzing their nuclei and perisomatic regions (i.e. the areas around the cell body) (Elabaddy et al., 2025) (Figure 3). Using this approach, researchers were able to predict the cell type of all of the cells in the dataset with a high level of accuracy and reliability.
+Massive connectomics datasets, such as the MICrONS dataset, provide huge amounts of information with which to classify and analyze neuron types. In a recent study, researchers were able to classify multiple cell types of visual cortex by analyzing their nuclei and perisomatic regions (i.e. the areas around the cell body) [@elabbady_perisomatic_2025] (Figure 3). Using this approach, researchers were able to predict the cell type of all of the cells in the dataset with a high level of accuracy and reliability.
 
-![Figure 3. Nuclei and perisomatic features used in the classification of cell types in the MICrONS dataset (Elabaddy et al., 2025)](resources/perisomatic_features_elabbady.png)
+![Figure 3. Nuclei and perisomatic features used in the classification of cell types in the MICrONS dataset [@elabbady_perisomatic_2025]](resources/perisomatic_features_elabbady.png)
 
 ### Dash Apps
 
@@ -90,11 +90,11 @@ You can also cut and paste the following URL into your browser:
 You may be prompted to provide a Google login. Please login with your e-mail address.
 :::
 
-You should now see a familiar NeuroGlancer window. In the right panel, you will see a space where you can paste a Root ID.
+You should now see a familiar Neuroglancer window. In the right panel, you will see a space where you can paste a Root ID.
 
 ![](resources/module_4_neuroglancer_ui_1.png)
 
-You can now navigate back to your previous Table Viewer tab or window. In the table you can left-click on a Root ID box to highlight it and then right-click on it to Copy the Root ID (Note: You can also use CTRL-C to do this). You can then bring that copied Root ID back to the NeuroGlancer window and paste it into the “Enter ID…” space. This will populate the segments list with your Root ID. You can click the eye icon next to the Root ID to make it visible in the viewer. If you have entered the Root ID for a neuron, you can also left-click the “synapse_target_predictions” tab above the EM window to add dots wherever the selected neuron is making a presynaptic terminal.
+You can now navigate back to your previous Table Viewer tab or window. In the table you can left-click on a Root ID box to highlight it and then right-click on it to Copy the Root ID (Note: You can also use CTRL-C to do this). You can then bring that copied Root ID back to the Neuroglancer window and paste it into the “Enter ID…” space. This will populate the segments list with your Root ID. You can click the eye icon next to the Root ID to make it visible in the viewer. If you have entered the Root ID for a neuron, you can also left-click the “synapse_target_predictions” tab above the EM window to add dots wherever the selected neuron is making a presynaptic terminal.
 
 ![](resources/module_3_neuroglancer_3.png){fig-align="right"}
 
@@ -135,7 +135,7 @@ All of the cell-type classifications that we have worked with thus far have been
 
 #### Cortico-cortical
 
-First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a NeuroGlancer window containing a selection of Layer 2 Pyramidal Cells: [Layer 2 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976)
+First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a Neuroglancer window containing a selection of Layer 2 Pyramidal Cells: [Layer 2 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976)
 
 You can also cut and paste the following URL into your browser:
 
@@ -149,7 +149,7 @@ Take some time to explore these neurons in the 3D viewer. You might consider mak
 
 #### Corticothalamic
 
-Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a NeuroGlancer window containing a selection of Layer 6 Pyramidal Cells: [Layer 6 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312)
+Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a Neuroglancer window containing a selection of Layer 6 Pyramidal Cells: [Layer 6 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312)
 
 You can also cut and paste the following URL into your browser:
 
@@ -161,13 +161,13 @@ As you did before, take some time to explore these neurons in the 3D viewer. You
 
 #### Inhibitory interneurons
 
-Finally, we will look at some inhibitory cell populations in the dataset. The following NeuroGlancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. [Basket and Chandelier Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432)
+Finally, we will look at some inhibitory cell populations in the dataset. The following Neuroglancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. [Basket and Chandelier Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432)
 
 You can also cut and paste the following URL into your browser:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432>
 
-This NeuroGlancer instance contains seven neurons. The neurons with Root IDs that end in 504, 411, 618, and 745 are Basket Cells. The neurons with Root IDs that end in 294, 364, and 598 are Chandelier Cells (these are invisible by default, but you can make them visible by clicking the eye icon).
+This Neuroglancer instance contains seven neurons. The neurons with Root IDs that end in 504, 411, 618, and 745 are Basket Cells. The neurons with Root IDs that end in 294, 364, and 598 are Chandelier Cells (these are invisible by default, but you can make them visible by clicking the eye icon).
 
 Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time. Consider comparing the Basket Cells to other Basket Cells and Chandelier Cells to other Chandelier Cells. Then compare Basket Cells to Chandelier Cells.
 
@@ -192,7 +192,7 @@ After you have followed the link, you should see a screen that looks like this:
 
 As we did earlier, please select `aibs_metamodel_celltypes_v661` in the Annotation Table selection box. Then paste the Root ID `864691135101289504` into the Cell ID box and click Submit. This should take <1 minute. You should now see a long list of cells that provide presynaptic inputs to the submitted neuron and a long list of cells that receive postsynaptic outputs from the submitted neuron. These are sorted into “Input and “Output” tabs.
 
-Now click on the *Plots** tab on the left side of the browser. Before doing anything else, select `cell_type` in the "Color By Value" selection box below the plots that appear. You should see something that looks like this:
+Now click on the **Plots** tab on the left side of the browser. Before doing anything else, select `cell_type` in the "Color By Value" selection box below the plots that appear. You should see something that looks like this:
 
 ![](resources/module_4_dash_ui_3.png)
 
@@ -228,15 +228,15 @@ For example, for the connectivity data plotted on the previous page, I interpret
 
 Your final task for this protocol is to create a 3D render illustrating the connectivity of a Chandelier Cell. 
 
-1. First, open up a new NeuroGlancer instance and a new Connectivity Viewer Dash App. 
+1. First, open up a new Neuroglancer instance and a new Connectivity Viewer Dash App. 
 2. Next, select one of the Chandelier Cell Root IDs from the table above in this protocol. 
-3. Paste the Root ID into the NeuroGlancer Seg. panel and make it visible by click on the eye icon. You may wish to refer to the procedures earlier in this protocol if you need help with this part.
-4. Now also search for the same Root ID in the Connectivity Viewer. Before you do so, select ““aibs_metamodel_celltypes_v661” in the Table selection box. You should now see Input and Output tabs that list the neurons that connect to your chosen Chandelier Cell.
-5. Choose three pyramidal cells that receive output from your selected Chandelier Cell and add these to the NeuroGlancer browser and make them visible. Are they located where you thought they would be (relative to the Chandelier Cell soma and dendrites) based on your previous analysis?
+3. Paste the Root ID into the Neuroglancer Seg. panel and make it visible by click on the eye icon. You may wish to refer to the procedures earlier in this protocol if you need help with this part.
+4. Now also search for the same Root ID in the Connectivity Viewer. Before you do so, select `aibs_metamodel_celltypes_v661` in the Table selection box. You should now see Input and Output tabs that list the neurons that connect to your chosen Chandelier Cell.
+5. Choose three pyramidal cells that receive output from your selected Chandelier Cell and add these to the Neuroglancer browser and make them visible. Are they located where you thought they would be (relative to the Chandelier Cell soma and dendrites) based on your previous analysis?
 
 Now provide the following information:
 
-6a: A link to your NeuroGlancer browser created with Share button at the top right of the browser window.
+6a: A link to your Neuroglancer browser created with Share button at the top right of the browser window.
 
 <br>
 <br>

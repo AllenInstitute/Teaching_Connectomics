@@ -8,7 +8,7 @@ format:
 
 
 
-### Module 1 : Neuroanatomy and Introduction to Neuroglancer
+### Module 1: Neuroanatomy and Introduction to Neuroglancer
 ::::{.grid}
 
 :::{.g-col-6}
@@ -22,13 +22,13 @@ format:
 
 :::{.g-col-6}
 
-In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the NeuroGlancer platform. 
+In this neuroanatomy and introduction to Neuroglancer module, students delve into the neuroanatomy of the rodent visual cortex and receive an introduction to navigation in the Neuroglancer platform. 
 
 Learning Goals:
 
 * Use neuroanatomical direction terms to describe spatial relationships between neurons, axons, and dendrites  
 * Observe the organization of visual cortex neurons into regions, columns, and layers that carry visual information  
-* Navigate a connectomics data set within the NeuroGlancer platform 
+* Navigate a connectomics data set within the Neuroglancer platform 
 :::
 
 ::::
@@ -79,7 +79,7 @@ This laboratory module introduces students to the structure-function relationshi
 ::::{.grid}
 
 :::{.g-col-6}
-![](resources/module_2_em_cover.png)
+![](resources/module_4_celltypes_cover.png)
 
 <center> [Online module](module-4.html) </center>
 
@@ -88,7 +88,7 @@ This laboratory module introduces students to the structure-function relationshi
 
 :::{.g-col-6}
 
-This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the NeuroGlancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.
+This lab module provides an introduction to the different types of neurons that populate the cortex and the patterns of connectivity between them. Students will explore neurons of different types using the Neuroglancer browser and Dash Apps that allow all the neurons in the MICrONS dataset to be queried based on their type, classification, and other metadata. Particular focus will be on the connectivity patterns of major inhibitory interneuron types, such as Basket Cells and Chandelier Cells.
 
 :::
 
