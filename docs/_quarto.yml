@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "notebooks/*.ipynb"
+    - "!notebooks/caveclient_setup_colab.ipynb"
 website:
   title: "Teaching Connectomics"
   navbar:
