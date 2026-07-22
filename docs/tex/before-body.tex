@@ -18,11 +18,15 @@ $if(coverimage)$\includegraphics[width=0.62\textwidth]{$coverimage$}\par$endif$
 \vfill
 
 $if(version)${\normalsize $version$\par}$endif$
+
+\vspace{0.9cm}
+
+\includegraphics[width=0.40\textwidth]{resources/ai_logos/AI_medium_black.png}
 \end{titlepage}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{$if(version)$$version$$endif$}
+\fancyhead[L]{\raisebox{-0.32\height}{\includegraphics[height=12pt]{resources/ai_logos/AI_lens_black.png}}\hspace{5pt}$if(version)$$version$$endif$}
 \fancyhead[R]{$if(runningtitle)$$runningtitle$$else$$title$$endif$}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}

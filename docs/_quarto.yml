@@ -7,7 +7,10 @@ project:
     - "!notebooks/caveclient_setup_colab.ipynb"
 website:
   title: "Teaching Connectomics"
+  favicon: resources/ai_logos/AI_lens_blue.svg
   navbar:
+    logo: resources/ai_logos/AI_lens_blue.svg
+    logo-alt: "Allen Institute"
     left:
       - about.qmd
       - href: index.qmd
