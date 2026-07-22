@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./resources/ai_logos/AI_lens_blue.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,6 +83,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo light-content">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Teaching Connectomics</span>
     </a>
@@ -132,8 +137,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#coding-modules" id="toc-coding-modules" class="nav-link active" data-scroll-target="#coding-modules">Coding Modules:</a>
   <ul class="collapse">
-  <li><a href="#setting-up-data-access" id="toc-setting-up-data-access" class="nav-link" data-scroll-target="#setting-up-data-access">Setting up data access</a></li>
   <li><a href="#introduction-to-microns" id="toc-introduction-to-microns" class="nav-link" data-scroll-target="#introduction-to-microns">Introduction to MICrONS</a></li>
+  <li><a href="#optional-setting-up-persistent-data-access" id="toc-optional-setting-up-persistent-data-access" class="nav-link" data-scroll-target="#optional-setting-up-persistent-data-access">(Optional) Setting up persistent data access</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -171,8 +176,36 @@ ul.task-list li input[type="checkbox"] {
 <p>The MICrONS dataset, spanning one cubic millimeter of mouse cortex, is comprised of petabytes of data from electron microscopy images at nanometer resolution, dense segmentation of 200,000 brain cells, half a billion synapses, and hundreds of thousands of other annotations to label the data.</p>
 <p>To enable systematic analysis without downloading hundreds of gigabytes of data, users can selectively access cloud-based data programmatically through a collection of open source Python clients.</p>
 <p>This collection of Ipython Notebooks introduces data access to the <strong>Connectome Annotation Versioning Engin (CAVE).</strong></p>
-<section id="setting-up-data-access" class="level3">
-<h3 class="anchored" data-anchor-id="setting-up-data-access">Setting up data access</h3>
+<section id="introduction-to-microns" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-microns">Introduction to MICrONS</h3>
+<p>These notebooks introduce core concepts of analysis for connectivity, cell typing, and morphology.There are two options</p>
+<div class="grid">
+<div class="g-col-6">
+<center>
+<strong>Cloud Access with Google Colab</strong>
+</center>
+<center>
+<a href="https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/docs/notebooks/microns_data_access_education.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid"></a>
+</center>
+<center>
+This is will run in the browser. Go to File &gt; Save to Drive to keep a working copy.
+</center>
+</div>
+<div class="g-col-6">
+<center>
+<strong>Local setup notebook</strong>
+</center>
+<center>
+<a href="./notebooks/microns_data_access_education.html">Ipython Notebook</a>
+</center>
+<center>
+This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu.
+</center>
+</div>
+</div>
+</section>
+<section id="optional-setting-up-persistent-data-access" class="level3">
+<h3 class="anchored" data-anchor-id="optional-setting-up-persistent-data-access">(Optional) Setting up persistent data access</h3>
 <p>These notebooks are foundational for accessing the data, but only need to be completed once per user. There are two options:</p>
 <ul>
 <li><strong>Cloud Access</strong>, for setting up access in Google Colab</li>
@@ -196,34 +229,6 @@ This is will run in the browser. Go to File &gt; Save to Drive to keep a working
 </center>
 <center>
 <a href="./notebooks/caveclient-setup-local.html">Ipython Notebook</a>
-</center>
-<center>
-This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu.
-</center>
-</div>
-</div>
-</section>
-<section id="introduction-to-microns" class="level3">
-<h3 class="anchored" data-anchor-id="introduction-to-microns">Introduction to MICrONS</h3>
-<p>These notebooks introduce core concepts of analysis for connectivity, cell typing, and morphology.There are two options</p>
-<div class="grid">
-<div class="g-col-6">
-<center>
-<strong>Cloud Access with Google Colab</strong>
-</center>
-<center>
-<a href="https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/docs/notebooks/microns_data_access_education.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid"></a>
-</center>
-<center>
-This is will run in the browser. Go to File &gt; Save to Drive to keep a working copy.
-</center>
-</div>
-<div class="g-col-6">
-<center>
-<strong>Local setup notebook</strong>
-</center>
-<center>
-<a href="./notebooks/microns_data_access_education.html">Ipython Notebook</a>
 </center>
 <center>
 This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu.

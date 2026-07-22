@@ -88,6 +88,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./resources/ai_logos/AI_lens_blue.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -139,6 +140,10 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo light-content">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Teaching Connectomics</span>
     </a>
@@ -321,46 +326,30 @@ div.csl-indent {
 <section id="visualizing-neuroanatomy-direction-terms" class="level3">
 <h3 class="anchored" data-anchor-id="visualizing-neuroanatomy-direction-terms">2. Visualizing Neuroanatomy Direction Terms</h3>
 <p>We will use the Neuroglancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.</p>
-<p>Access Neuroglancer by clicking on the following link:</p>
-<blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736</a></p>
-</blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>Neuroglancer Login
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may be prompted to provide a Google login. This should only be required the first time you access the site.</p>
+<p>You may be prompted for a login. Click ‘Request Login’ to trigger Google authentication. <strong>You may use any Google account</strong>. However, to activate your access you need to accept the MICrONS Terms of Service.</p>
+<p>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept the TOS, or check if you have already done so.</p>
+<p>You only need to accept TOS once per account.</p>
 </div>
 </div>
+<p>Access Neuroglancer by clicking on the following link:</p>
+<blockquote class="blockquote">
+<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736</a></p>
+</blockquote>
 <p>You should see the following screen:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="resources/microns_in_ccf_neuroglancer_ui.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>MICrONS Terms of Service Error</p>
-<p>If the Neuroglancer does not render, follow these steps:</p>
-<ol type="1">
-<li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your google authorized account</li>
-<li>Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer.</li>
-</ol>
-</div>
 </div>
 <p>The main viewing pane shows a three-dimensional model of the mouse brain (light gray shading). The visual cortex regions acquired by the MICrONS data set are shown as blue-green objects in the brain volume. The dimensions of the MICrONS data are indicated by the yellow and gray boxes located in the visual cortex.</p>
 <p>The boxes across the top of the main viewing pane are known as layer tabs. These allow the different visual elements in the main viewing pane to be selected or turned on and off. You can <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> the “ccf_outline” to turn the whole-brain volume element on and off in the viewing pane or <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> on the “AllenCCF” tab to turn the visual cortex elements on and off in the viewing pane.</p>
@@ -391,6 +380,24 @@ Caution
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136123773222</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">864691135617972371</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">864691136031763387</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>If segmentation does not render
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the segmentation does not render, follow these steps:</p>
+<ol type="1">
+<li>Go here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a> to accept terms of service on your Google-authorized account</li>
+<li>Hard refresh your Neuroglancer window.</li>
+<li>If the righthand menu segmentation window still shows a red error message, call your instructor/TA</li>
+</ol>
+</div>
+</div>
 <p>After each Segment ID is added, click the small eye icon to the left of the Segment ID when it shows up on the list. This will make a three-dimensional model of the neuron visible in the main viewing pane.</p>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
