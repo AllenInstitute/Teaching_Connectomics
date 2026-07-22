@@ -88,9 +88,9 @@ We will use the Neuroglancer browser to observe how these neuroanatomical direct
 :::{.callout-tip}
 ## Neuroglancer Login
 
-You may be prompted for a login. Click 'Request Login' to trigger Google authentication. **You may use any google account**. However, to activate your access you need accept the MICrONS Terms of Service. 
+You may be prompted for a login. Click 'Request Login' to trigger Google authentication. **You may use any Google account**. However, to activate your access you need to accept the MICrONS Terms of Service. 
 
-Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept to TOS, or check if you have already done so.
+Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept the TOS, or check if you have already done so.
 
 You only need to accept TOS once per account. 
 :::
@@ -139,9 +139,9 @@ Paste the following Segment IDs into the text box one at a time and press Enter 
 
 If the segmentation does not render, follow these steps:
 
-1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Hard refresh your neuroglancer window. 
-3)  If the righthand menu segmentation window still shows a red error message, call your instructor/TA
+1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your Google-authorized account
+2)	Hard refresh your Neuroglancer window.
+3)	If the righthand menu segmentation window still shows a red error message, call your instructor/TA
 :::
 
 After each Segment ID is added, click the small eye icon to the left of the Segment ID when it shows up on the list. This will make a three-dimensional model of the neuron visible in the main viewing pane.

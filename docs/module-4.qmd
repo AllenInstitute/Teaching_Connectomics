@@ -69,7 +69,7 @@ You can also cut and paste the following URL into your browser:
 > <https://minnie.microns-daf.com/dash/datastack/minnie65_public/apps/table_viewer/?datastack=%22minnie65_public%22>
 
 :::{.callout-tip}
-You may be prompted to provide a Google login. Please login with your e-mail address.
+You may be prompted to provide a Google login. You may use any Google account.
 :::
 
 Once logged in, you should see the following screen:
@@ -96,7 +96,7 @@ You can also cut and paste the following URL into your browser:
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448>
 
 :::{.callout-tip}
-You may be prompted to provide a Google login. Please login with your e-mail address.
+You may be prompted to provide a Google login. You may use any Google account.
 :::
 
 You should now see a familiar Neuroglancer window. In the right panel, you will see a space where you can paste a Root ID.
