@@ -63,12 +63,13 @@ Once logged in, you should see the following screen:
 ![](resources/neuroglancer_2D_UI.png){fig-align="center"}
 
 :::{.callout-caution}
-MICrONS Terms of Service Error
+## If segmentation does not render
 
-If the Neuroglancer does not render, follow these steps:
+If the segmentation does not render, follow these steps:
 
 1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer. 
+2)	Hard refresh your neuroglancer window. 
+3)  If the righthand menu segmentation window still shows a red error message, call your instructor/TA
 :::
 
 

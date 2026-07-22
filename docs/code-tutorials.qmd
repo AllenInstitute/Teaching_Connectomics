@@ -15,7 +15,37 @@ To enable systematic analysis without downloading hundreds of gigabytes of data,
 This collection of Ipython Notebooks introduces data access to the **Connectome Annotation Versioning Engin (CAVE).**
 
 
-### Setting up data access
+### Introduction to MICrONS
+
+These notebooks introduce core concepts of analysis for connectivity, cell typing, and morphology.There are two options
+
+
+::::{.grid}
+
+:::{.g-col-6}
+
+<center> **Cloud Access with Google Colab** </center>
+
+<center> [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/docs/notebooks/microns_data_access_education.ipynb) </center>
+
+<center> This is will run in the browser. Go to File > Save to Drive to keep a working copy. </center>
+
+:::
+
+:::{.g-col-6}
+
+<center> **Local setup notebook** </center>
+
+<center> [Ipython Notebook](notebooks/microns_data_access_education.ipynb) </center>
+
+<center> This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu. </center>
+
+:::
+
+::::
+
+
+### (Optional) Setting up persistent data access
 
 These notebooks are foundational for accessing the data, but only need to be completed once per user. There are two options: 
 
@@ -39,36 +69,6 @@ These notebooks are foundational for accessing the data, but only need to be com
 <center> **Local setup notebook** </center>
 
 <center> [Ipython Notebook](notebooks/caveclient-setup-local.ipynb) </center>
-
-<center> This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu. </center>
-
-:::
-
-::::
-
-
-### Introduction to MICrONS
-
-These notebooks introduce core concepts of analysis for connectivity, cell typing, and morphology.There are two options
-
-
-::::{.grid}
-
-:::{.g-col-6}
-
-<center> **Cloud Access with Google Colab** </center>
-
-<center> [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AllenInstitute/Teaching_Connectomics/blob/main/docs/notebooks/microns_data_access_education.ipynb) </center>
-
-<center> This is will run in the browser. Go to File > Save to Drive to keep a working copy. </center>
-
-:::
-
-:::{.g-col-6}
-
-<center> **Local setup notebook** </center>
-
-<center> [Ipython Notebook](notebooks/microns_data_access_education.ipynb) </center>
 
 <center> This is a notebook rendered to the broswer in .html. will run in the browser. Download the notebook from the link in the right menu. </center>
 

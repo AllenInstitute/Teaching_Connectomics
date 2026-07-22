@@ -85,28 +85,25 @@ b.	Basal versus Apical
 
 We will use the Neuroglancer browser to observe how these neuroanatomical direction terms can be used to describe the spatial relationships between neurons and neural structures in the visual cortex.
 
+:::{.callout-tip}
+## Neuroglancer Login
+
+You may be prompted for a login. Click 'Request Login' to trigger Google authentication. **You may use any google account**. However, to activate your access you need accept the MICrONS Terms of Service. 
+
+Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept to TOS, or check if you have already done so.
+
+You only need to accept TOS once per account. 
+:::
+
+
 Access Neuroglancer by clicking on the following link:
 
 > <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5796589900660736>
 
 
-:::{.callout-tip}
-You may be prompted to provide a Google login. This should only be required the first time you access the site.
-:::
-
 You should see the following screen: 
 
 ![](resources/microns_in_ccf_neuroglancer_ui.png){fig-align="center"}
-
-:::{.callout-caution}
-MICrONS Terms of Service Error
-
-If the Neuroglancer does not render, follow these steps:
-
-1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
-2)	Once you have logged in through google and accepted the terms of service your login will be valid for Neuroglancer. 
-:::
-
 
 The main viewing pane shows a three-dimensional model of the mouse brain (light gray shading). The visual cortex regions acquired by the MICrONS data set are shown as blue-green objects in the brain volume. The dimensions of the MICrONS data are indicated by the yellow and gray boxes located in the visual cortex. 
 
@@ -137,6 +134,15 @@ Paste the following Segment IDs into the text box one at a time and press Enter 
 864691136031763387
 ```
 
+:::{.callout-caution}
+## If segmentation does not render
+
+If the segmentation does not render, follow these steps:
+
+1)	Go here: <https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept> to accept terms of service on your google authorized account
+2)	Hard refresh your neuroglancer window. 
+3)  If the righthand menu segmentation window still shows a red error message, call your instructor/TA
+:::
 
 After each Segment ID is added, click the small eye icon to the left of the Segment ID when it shows up on the list. This will make a three-dimensional model of the neuron visible in the main viewing pane.
 
