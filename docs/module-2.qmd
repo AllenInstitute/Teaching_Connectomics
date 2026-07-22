@@ -1,7 +1,7 @@
 ---
 title: "Module 2: Ultrastructure and Cytology"
 runningtitle: "HIVE — Module 2: Ultrastructure"
-version: "v1.0 — June 2026"
+version: "v1.1 — July 2026"
 coverimage: "resources/module_2_em_cover.png"
 author: HIVE Educators
 format:

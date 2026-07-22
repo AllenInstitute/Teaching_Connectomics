@@ -1,7 +1,7 @@
 ---
 title: "Module 4: Neuron Types and Dash Apps"
 runningtitle: "HIVE — Module 4: Neuron Types"
-version: "v1.0 — June 2026"
+version: "v1.1 — July 2026"
 coverimage: "resources/module_4_celltypes_cover.png"
 author: HIVE Educators
 format:

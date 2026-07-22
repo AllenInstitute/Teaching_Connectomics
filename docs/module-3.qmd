@@ -1,7 +1,7 @@
 ---
 title: "Module 3: Dendritic Spines and Synaptic Integration"
 runningtitle: "HIVE — Module 3: Dendritic Spines"
-version: "v1.0 — June 2026"
+version: "v1.1 — July 2026"
 coverimage: "resources/module_3_spines_cover.png"
 author: HIVE Educators
 format:
