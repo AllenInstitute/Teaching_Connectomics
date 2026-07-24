@@ -10,6 +10,11 @@ format:
   pdf: 
     toc: false
 bibliography: references.bib
+other-links:
+  - text: Report Issue
+    href: https://github.com/AllenInstitute/Teaching_Connectomics/issues/new
+    target: _blank
+    icon: bug
 ---
   
 

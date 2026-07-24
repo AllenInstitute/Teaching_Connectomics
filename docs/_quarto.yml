@@ -19,8 +19,15 @@ website:
     tools: 
       - icon: github
         menu:
+          - text: Report Issue
+            href: https://github.com/AllenInstitute/Teaching_Connectomics/issues/new
+            target: _blank
+          - text: Join Discussion
+            href: https://github.com/AllenInstitute/Teaching_Connectomics/discussions
+            target: _blank
           - text: Tutorial Code
-            url:  https://github.com/AllenInstitute/Teaching_Connectomics
+            href: https://github.com/AllenInstitute/Teaching_Connectomics/tree/main/docs/notebooks
+            target: _blank
   back-to-top-navigation: true
   
 filters:
