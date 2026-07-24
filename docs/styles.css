@@ -7,6 +7,12 @@ body {
   font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
+/* Version shown under the title-block byline on module HTML pages */
+.quarto-title-meta.module-version {
+  margin-top: -1.25rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Student-task callout (matches the PDF "task" box: warm tint + left accent bar,
    auto-numbered "Task N.") */
 body { counter-reset: taskcounter; }

@@ -34,6 +34,7 @@ filters:
   - _filters/task.lua
   - quarto
   - _filters/gridtables.lua
+  - _filters/version.lua
 
 format:
   html:
