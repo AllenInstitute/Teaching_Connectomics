@@ -2,3 +2,4 @@
 /docs/notebooks/.ipynb_checkpoints/
 /docs/.quarto/
 /docs/_site/
+*.json
