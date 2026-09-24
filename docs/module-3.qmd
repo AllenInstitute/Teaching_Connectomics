@@ -19,7 +19,7 @@ other-links:
   
 
 ::: {.content-visible when-format="html"}
-[![Click the image to view the cells in Neuroglancer.](resources/module_3_spines_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5669296259727360)
+[![Click the image to view the cells in Neuroglancer.](resources/module_3_spines_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spines-cover.json)
 :::
 
 
@@ -58,7 +58,7 @@ Dendritic spines are small protrusions that extend from neuronal dendrites and s
 
 We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6722224001122304>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spine-walkthrough.json>
 
 
 :::{.callout-tip}
@@ -227,7 +227,7 @@ So far, we have primarily focused on the output of an excitatory pyramidal neuro
 
 To explore this connectivity, let’s visualize the presynaptic neurons onto our pyramidal neuron by clicking this link: (Note: this curated link contains fewer synapses than the previous link to simplify exploration). 
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6362457307086848>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-known-inputs.json>
 
 Zoom into the soma of the neuron in the 3D viewer, and you can see the cyan (somatic) synapses. 
 

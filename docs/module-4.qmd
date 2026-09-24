@@ -19,7 +19,7 @@ other-links:
   
 
 ::: {.content-visible when-format="html"}
-[![Click the image to view the cells in Neuroglancer.](resources/module_4_celltypes_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5853606858194944)
+[![Click the image to view the cells in Neuroglancer.](resources/module_4_celltypes_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-celltypes-cover.json)
 :::
 
 
@@ -94,11 +94,11 @@ Predicted cell types are listed in the “cell_type” column, while the broader
 
 ## Cell Type Exploration
 
-Now we can pull some cells out of the table that we created in the previous section and see what they look like in Neuroglancer. In a separate browser tab or window, you can navigate to the following link: [Neuroglancer](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448)
+Now we can pull some cells out of the table that we created in the previous section and see what they look like in Neuroglancer. In a separate browser tab or window, you can navigate to the following link: [Neuroglancer](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-cells-from-table.json)
 
 You can also cut and paste the following URL into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-cells-from-table.json>
 
 :::{.callout-tip}
 You may be prompted to provide a Google login. You may use any Google account.
@@ -151,11 +151,11 @@ All of the cell-type classifications that we have worked with thus far have been
 
 #### Cortico-cortical
 
-First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a Neuroglancer window containing a selection of Layer 2 Pyramidal Cells: [Layer 2 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976)
+First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a Neuroglancer window containing a selection of Layer 2 Pyramidal Cells: [Layer 2 Pyramidal Cells](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer2-pyramidal.json)
 
 You can also cut and paste the following URL into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer2-pyramidal.json>
 
 Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.
 
@@ -167,11 +167,11 @@ How do the neurons compare to one another in terms of morphology and position? C
 
 #### Corticothalamic
 
-Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a Neuroglancer window containing a selection of Layer 6 Pyramidal Cells: [Layer 6 Pyramidal Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312)
+Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a Neuroglancer window containing a selection of Layer 6 Pyramidal Cells: [Layer 6 Pyramidal Cells](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer6-corticothalamic.json)
 
 You can also cut and paste the following URL into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer6-corticothalamic.json>
 
 As you did before, take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.
 
@@ -181,11 +181,11 @@ How do the neurons compare to one another in terms of morphology and position? C
 
 #### Inhibitory interneurons
 
-Finally, we will look at some inhibitory cell populations in the dataset. The following Neuroglancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. [Basket and Chandelier Cells](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432)
+Finally, we will look at some inhibitory cell populations in the dataset. The following Neuroglancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. [Basket and Chandelier Cells](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-basket-chandelier.json)
 
 You can also cut and paste the following URL into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-basket-chandelier.json>
 
 This Neuroglancer instance contains seven neurons. The neurons with Root IDs that end in 504, 411, 618, and 745 are Basket Cells. The neurons with Root IDs that end in 294, 364, and 598 are Chandelier Cells (these are invisible by default, but you can make them visible by clicking the eye icon).
 

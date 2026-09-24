@@ -56,7 +56,7 @@ Using electron microscopy, we can observe and identify the organelles that suppo
 
 We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5957188943085568>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-2-organelles.json>
 
 
 :::{.callout-tip}
