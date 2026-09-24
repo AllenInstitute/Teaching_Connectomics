@@ -16,6 +16,8 @@ website:
       - href: index.qmd
         text: Education Modules
       - code-tutorials.qmd
+      - href: patch-notes.qmd
+        text: Patch Notes
     tools: 
       - icon: github
         menu:
