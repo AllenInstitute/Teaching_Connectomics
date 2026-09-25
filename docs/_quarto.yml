@@ -16,8 +16,13 @@ website:
       - href: index.qmd
         text: Education Modules
       - code-tutorials.qmd
-      - href: optional-layers.qmd
-        text: Optional Layers
+      - text: Resources
+        menu:
+          - href: optional-layers.qmd
+            text: Layer Catalogue
+          - text: Notes from the Neuropil
+            href: https://bdpedigo.github.io/nftn/   # may be aliased in future
+            target: _blank
       - href: patch-notes.qmd
         text: Patch Notes
     tools: 
