@@ -1,7 +1,7 @@
 ---
 title: "Module 3: Dendritic Spines and Synaptic Integration"
 runningtitle: "HIVE — Module 3: Dendritic Spines"
-version: "v1.1 — July 2026"
+version: "v1.2 — September 2026"
 coverimage: "resources/module_3_spines_cover.png"
 author: HIVE Educators
 format:
@@ -19,7 +19,7 @@ other-links:
   
 
 ::: {.content-visible when-format="html"}
-[![Click the image to view the cells in Neuroglancer.](resources/module_3_spines_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5669296259727360)
+[![Click the image to view the cells in Neuroglancer.](resources/module_3_spines_cover.png){fig-align="center"}](https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spines-cover.json)
 :::
 
 
@@ -58,7 +58,7 @@ Dendritic spines are small protrusions that extend from neuronal dendrites and s
 
 We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6722224001122304>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spine-walkthrough.json>
 
 
 :::{.callout-tip}
@@ -227,7 +227,7 @@ So far, we have primarily focused on the output of an excitatory pyramidal neuro
 
 To explore this connectivity, let’s visualize the presynaptic neurons onto our pyramidal neuron by clicking this link: (Note: this curated link contains fewer synapses than the previous link to simplify exploration). 
 
-> <https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6362457307086848>
+> <https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-known-inputs.json>
 
 Zoom into the soma of the neuron in the 3D viewer, and you can see the cyan (somatic) synapses. 
 
@@ -267,6 +267,13 @@ You should see something like this
 
 ![](resources/module_3_dash_table_viewer.png){fig-align="center"}
 
+:::{.callout-note}
+If a **yellow warning banner** appears after you submit, that is fine! The Table Viewer automatically 
+substitutes correct Root ID for the version it is has selected in the dropdown. The **Materialization**
+version defaults to "Latest"; the neurons in this module's Neuroglancer scenes are
+from version **v1300**, so select v1300 if you want the results to match exactly.
+More on dataset versions is in the [Troubleshooting FAQ](faq.qmd#versions).
+:::
 
 Notice the two middle columns labelled `cell_type` and `classification`. From these fields, you can see that this neuron is an inhibitory neuron of the BC cell type. BC stands for **basket cell**, a GABAergic inhibitory neuron commonly found in the cerebral cortex. Also note that this basket cell forms two somatic synapses close together on the pyramidal neuron’s soma, a configuration that likely provides especially strong inhibitory control over the neuron’s excitability. 
 
