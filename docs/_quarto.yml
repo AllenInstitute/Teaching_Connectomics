@@ -16,6 +16,8 @@ website:
       - href: index.qmd
         text: Education Modules
       - code-tutorials.qmd
+      - href: optional-layers.qmd
+        text: Optional Layers
       - href: patch-notes.qmd
         text: Patch Notes
     tools: 
