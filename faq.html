@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Teaching Connectomics</title>
+<title>Troubleshooting FAQ – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -163,26 +163,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#open-connectomics-data-for-learning-neuroscience" id="toc-open-connectomics-data-for-learning-neuroscience" class="nav-link active" data-scroll-target="#open-connectomics-data-for-learning-neuroscience">Open connectomics data for learning neuroscience</a></li>
-  <li><a href="#program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." id="toc-program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." class="nav-link" data-scroll-target="#program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive.">Program: Center for whole mouse brain connectomics using <strong>high-throughput integrated volumetric electron microscopy (HIVE)</strong>.</a>
-  <ul class="collapse">
-  <li><a href="#contributor-list" id="toc-contributor-list" class="nav-link" data-scroll-target="#contributor-list">Contributor List:</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Troubleshooting FAQ</h1>
 </div>
 
 
@@ -199,33 +188,148 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="open-connectomics-data-for-learning-neuroscience" class="level2">
-<h2 class="anchored" data-anchor-id="open-connectomics-data-for-learning-neuroscience">Open connectomics data for learning neuroscience</h2>
+<p>Common issues and questions when working with the Neuroglancer scenes and Dash Apps. Click a question to expand it. If something is not covered here, contact your instructor or TA, or <a href="https://github.com/AllenInstitute/Teaching_Connectomics/issues/new">report an issue</a>.</p>
+<div id="browser" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Which browser should I use?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use <strong>Google Chrome</strong> or <strong>Mozilla Firefox</strong>. <strong>Avoid Safari</strong> — it sometimes fails to render the Neuroglancer scene, or will not let you copy Root IDs into or out of the viewer. If a scene or Dash App is misbehaving, switching to Chrome or Firefox is the first thing to try.</p>
+</div>
+</div>
+</div>
+<div id="login" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>I am asked to log in — what do I do?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you open a Neuroglancer scene or a Dash App you may be prompted to log in. Click <strong>“Request Login”</strong> and sign in with <strong>any Google account</strong>. To activate your access you must also accept the MICrONS Terms of Service, which you only need to do once per account:</p>
+<blockquote class="blockquote">
+<p>Accept the TOS here: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="render" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The segmentation or meshes do not render
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If neurons or meshes do not appear in a scene, follow these steps:</p>
+<ol type="1">
+<li>Accept the Terms of Service on your Google-authorized account: <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept" class="uri">https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept</a></li>
+<li>Hard-refresh your Neuroglancer window.</li>
+<li>If the right-hand segmentation panel still shows a red error message, contact your instructor or TA.</li>
+</ol>
+<p>If only a specific neuron fails to render, see <a href="#root-ids">A Root ID does not appear</a> below, and confirm you are using a <a href="#browser">recommended browser</a>.</p>
+</div>
+</div>
+</div>
+<div id="versions" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is a dataset “version” (materialization)?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The MICrONS dataset is <strong>continuously proofread</strong>, so the reconstruction changes over time. To keep results reproducible, the data is periodically frozen into numbered snapshots called <strong>materialization versions</strong>. Each version fixes the segmentation, the Root IDs, and the annotation tables at a single moment in time.</p>
+<p>These modules use <strong>version v1300</strong> so that every student sees the same cells and the same Root IDs. Newer versions — including the <strong>“Latest”</strong> option in the Dash Apps — contain more proofreading, but their Root IDs differ from v1300.</p>
+</div>
+</div>
+</div>
+<div id="graphene" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Static vs.&nbsp;dynamic (Graphene) segmentation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The dataset has two kinds of segmentation layer:</p>
+<ul>
+<li><strong>Static (flat) layer</strong> — a frozen segmentation for a single version. The module Neuroglancer scenes use the <strong>v1300 static layer</strong>. It loads quickly, never changes, and its Root IDs match v1300. This is what the module links use.</li>
+<li><strong>Dynamic (Graphene) layer</strong> — the live, editable segmentation that reflects the most recent proofreading. Its Root IDs can change as cells are merged or split. <strong>Neuroglancer links generated from the Dash Apps use the Graphene layer</strong>, so they show the latest data, not v1300.</li>
+</ul>
+<p>Because of this, a Root ID copied from a v1300 scene can differ from the “same” cell’s Root ID in a Graphene / latest scene. The Dash Apps handle this substitution automatically — see <a href="#warning">the yellow warning</a>.</p>
+</div>
+</div>
+</div>
+<div id="root-ids" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A Root ID does not appear, or has no mesh or synapses
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Every neuron has a unique <strong>Root ID</strong>, but proofreading edits create new Root IDs over time, so a Root ID that is valid in one version may not be valid in another. In a Neuroglancer scene this can show up as a neuron with no mesh, or a cell with no synapses. If that happens:</p>
+<ul>
+<li>Try a different Root ID, <strong>or</strong></li>
+<li>Make sure the version you are viewing matches the version the Root ID came from.</li>
+</ul>
+<p>This mismatch is a normal consequence of the dataset being updated; it does not mean you did anything wrong.</p>
+</div>
+</div>
+</div>
+<div id="warning" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What is the yellow warning in the Dash Apps?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you enter a Root ID in a Dash App (the Table Viewer or the Connectivity Viewer) that is not valid at the selected <strong>Materialization</strong> version, the app automatically looks up the most-overlapping valid Root ID and shows <em>that</em> cell’s data, along with a <strong>yellow warning banner</strong>. This warning is <strong>expected and intended</strong> — it tells you the app substituted the correct Root ID for the version you queried, so you do not need to do anything about it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="resources/microns_in_ccf.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>MICrONS volume within the mouse common coordinate framework</figcaption>
+<p><img src="resources/module_4_dash_table_warning.png" class="img-fluid figure-img"></p>
+<figcaption>The Table Viewer warns when a Root ID is not valid at the queried version and shows the most-overlapping valid Root ID instead.</figcaption>
 </figure>
 </div>
-<p>This educational material teaches neuroscience concepts using the mouse visual cortex connectome in the MICrONS open access dataset. Neuroscience concepts will come to life through the exploration of the 3D dataset starting with neuroanatomy and diving into ultrastructure and identification of cell types, and analysis of synaptic connectivity.</p>
-<p>This instructional material is intended for students at the undergraduate level working in a standard computer lab. While there are coding tutorials, no coding experience is required or expected.</p>
-</section>
-<section id="program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." class="level2">
-<h2 class="anchored" data-anchor-id="program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive.">Program: Center for whole mouse brain connectomics using <strong>high-throughput integrated volumetric electron microscopy (HIVE)</strong>.</h2>
-<section id="contributor-list" class="level3">
-<h3 class="anchored" data-anchor-id="contributor-list">Contributor List:</h3>
-<div class="line-block">Ken Colodner. Mount Holyoke College.<br>
-Andrew Bellemer. Appalachian State University.<br>
-Divya Sitaraman. California State University, East Bay.<br>
-Bethanny Danskin. Allen Institute/Brain/Connectomics.</div>
-</section>
-<section id="acknowledgements" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
-<p>This curriculum was developed, and workshop was funded in part, by the BRAIN Initiative through the CONNECTS program through the National Institute of Neurological Disorders and Stroke (NINDS) of the National Institutes of Health under the HIVE grant-Award number UM1NS132253 including subawards to Ken Colodner (Mt Holyoke), Andrew Bellemer (Appalachian State) and Divya Sitaraman (CSU East Bay).</p>
+<p>The <strong>Materialization</strong> dropdown defaults to <strong>“Latest.”</strong> If you want your Dash App results to match the cells shown in the module scenes, select <strong>v1300</strong>.</p>
+</div>
+</div>
+</div>
 
 
-</section>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

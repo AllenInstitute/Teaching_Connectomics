@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Teaching Connectomics</title>
+<title>Patch Notes – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./patch-notes.html"> 
+    <a class="nav-link active" href="./patch-notes.html" aria-current="page"> 
 <span class="menu-text">Patch Notes</span></a>
   </li>  
 </ul>
@@ -168,12 +168,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#open-connectomics-data-for-learning-neuroscience" id="toc-open-connectomics-data-for-learning-neuroscience" class="nav-link active" data-scroll-target="#open-connectomics-data-for-learning-neuroscience">Open connectomics data for learning neuroscience</a></li>
-  <li><a href="#program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." id="toc-program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." class="nav-link" data-scroll-target="#program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive.">Program: Center for whole mouse brain connectomics using <strong>high-throughput integrated volumetric electron microscopy (HIVE)</strong>.</a>
+  <li><a href="#v1.2-september-2026" id="toc-v1.2-september-2026" class="nav-link active" data-scroll-target="#v1.2-september-2026">v1.2 — September 2026</a>
   <ul class="collapse">
-  <li><a href="#contributor-list" id="toc-contributor-list" class="nav-link" data-scroll-target="#contributor-list">Contributor List:</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#neuroglancer-scenes-and-segmentation" id="toc-neuroglancer-scenes-and-segmentation" class="nav-link" data-scroll-target="#neuroglancer-scenes-and-segmentation">Neuroglancer scenes and segmentation</a></li>
+  <li><a href="#module-2-organelles" id="toc-module-2-organelles" class="nav-link" data-scroll-target="#module-2-organelles">Module 2 — Organelles</a></li>
+  <li><a href="#module-3-known-inputs" id="toc-module-3-known-inputs" class="nav-link" data-scroll-target="#module-3-known-inputs">Module 3 — Known Inputs</a></li>
+  <li><a href="#dash-apps" id="toc-dash-apps" class="nav-link" data-scroll-target="#dash-apps">Dash apps</a></li>
+  <li><a href="#new-resource-pages" id="toc-new-resource-pages" class="nav-link" data-scroll-target="#new-resource-pages">New resource pages</a></li>
   </ul></li>
+  <li><a href="#v1.1-july-2026" id="toc-v1.1-july-2026" class="nav-link" data-scroll-target="#v1.1-july-2026">v1.1 — July 2026</a></li>
+  <li><a href="#v1.0" id="toc-v1.0" class="nav-link" data-scroll-target="#v1.0">v1.0</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Patch Notes</h1>
 </div>
 
 
@@ -199,32 +203,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="open-connectomics-data-for-learning-neuroscience" class="level2">
-<h2 class="anchored" data-anchor-id="open-connectomics-data-for-learning-neuroscience">Open connectomics data for learning neuroscience</h2>
+<p>This page records changes to the education modules and coding tutorials. The version and date shown at the top of each module correspond to the entries below.</p>
+<section id="v1.2-september-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v1.2-september-2026">v1.2 — September 2026</h2>
+<section id="neuroglancer-scenes-and-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="neuroglancer-scenes-and-segmentation">Neuroglancer scenes and segmentation</h3>
+<ul>
+<li><strong>Stable, hosted scenes.</strong> Every module’s Neuroglancer link now loads a static scene hosted in a public cloud bucket rather than a link-shortener state. The links are permanent and no longer depend on the state server.</li>
+<li><strong>Pinned to one dataset version.</strong> All scenes now use the flat (static) segmentation for a single materialization version (v1300) instead of the dynamic segmentation layer, so every module shows the same, consistent state of the data.</li>
+<li><strong>Consistent look.</strong> Imagery shading, segment opacity, axis lines, and the 3D view are now standardized across scenes.</li>
+<li><strong>Updated neuron IDs (Module 1).</strong> The V1/HVA column exercise now lists the root IDs as they exist in v1300. Root-ID lists are also <strong>comma-separated</strong> so they can be pasted directly into the dash apps (Neuroglancer accepts either, but the dash apps expect commas).</li>
+<li><strong>Synapse layer (Module 4).</strong> The cell-type scenes now include a static v1300 synapse-prediction layer. It is <strong>off by default</strong> — turning it on is part of the exercise.</li>
+</ul>
+</section>
+<section id="module-2-organelles" class="level3">
+<h3 class="anchored" data-anchor-id="module-2-organelles">Module 2 — Organelles</h3>
+<ul>
+<li>Moved Synapse-1 to reflect a typical synapse.</li>
+</ul>
+</section>
+<section id="module-3-known-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="module-3-known-inputs">Module 3 — Known Inputs</h3>
+<ul>
+<li>The Known Inputs annotations now include only inputs whose presynaptic partner is a valid, proofread cell at v1300 (333 of the original 355 are retained).</li>
+</ul>
+</section>
+<section id="dash-apps" class="level3">
+<h3 class="anchored" data-anchor-id="dash-apps">Dash apps</h3>
+<ul>
+<li><strong>Table Viewer now auto-resolves root IDs.</strong> When a pasted root ID is not valid at the queried materialization version, the Table Viewer automatically looks up and shows data for the most-overlapping valid root ID, and displays a warning noting the substitution. This means an out-of-date root ID will still return the intended cell.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="resources/microns_in_ccf.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>MICrONS volume within the mouse common coordinate framework</figcaption>
+<p><img src="resources/module_4_dash_table_warning.png" class="img-fluid figure-img"></p>
+<figcaption>The Table Viewer warns when a root ID is not valid at the queried version and shows the most-overlapping valid root ID instead.</figcaption>
 </figure>
 </div>
-<p>This educational material teaches neuroscience concepts using the mouse visual cortex connectome in the MICrONS open access dataset. Neuroscience concepts will come to life through the exploration of the 3D dataset starting with neuroanatomy and diving into ultrastructure and identification of cell types, and analysis of synaptic connectivity.</p>
-<p>This instructional material is intended for students at the undergraduate level working in a standard computer lab. While there are coding tutorials, no coding experience is required or expected.</p>
 </section>
-<section id="program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive." class="level2">
-<h2 class="anchored" data-anchor-id="program-center-for-whole-mouse-brain-connectomics-using-high-throughput-integrated-volumetric-electron-microscopy-hive.">Program: Center for whole mouse brain connectomics using <strong>high-throughput integrated volumetric electron microscopy (HIVE)</strong>.</h2>
-<section id="contributor-list" class="level3">
-<h3 class="anchored" data-anchor-id="contributor-list">Contributor List:</h3>
-<div class="line-block">Ken Colodner. Mount Holyoke College.<br>
-Andrew Bellemer. Appalachian State University.<br>
-Divya Sitaraman. California State University, East Bay.<br>
-Bethanny Danskin. Allen Institute/Brain/Connectomics.</div>
+<section id="new-resource-pages" class="level3">
+<h3 class="anchored" data-anchor-id="new-resource-pages">New resource pages</h3>
+<p>Two reference pages were added under the <strong>Resources</strong> menu:</p>
+<ul>
+<li><strong><a href="./optional-layers.html">Layer Catalogue</a></strong> — every optional Neuroglancer layer used across the modules (reference meshes, column boundaries, synapse layers, organelle markers, CCF context), what each shows, and how to add it to a scene.</li>
+<li><strong><a href="./faq.html">Troubleshooting FAQ</a></strong> — common issues: recommended browser, login and Terms of Service, why scenes may not render, dataset versions, static vs.&nbsp;dynamic (Graphene) segmentation, and the Dash-App root-ID warning.</li>
+</ul>
 </section>
-<section id="acknowledgements" class="level3">
-<h3 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h3>
-<p>This curriculum was developed, and workshop was funded in part, by the BRAIN Initiative through the CONNECTS program through the National Institute of Neurological Disorders and Stroke (NINDS) of the National Institutes of Health under the HIVE grant-Award number UM1NS132253 including subawards to Ken Colodner (Mt Holyoke), Andrew Bellemer (Appalachian State) and Divya Sitaraman (CSU East Bay).</p>
+</section>
+<section id="v1.1-july-2026" class="level2">
+<h2 class="anchored" data-anchor-id="v1.1-july-2026">v1.1 — July 2026</h2>
+<ul>
+<li>Added troubleshooting guidance for Neuroglancer login and the MICrONS Terms of Service.</li>
+<li>Added support links (Report Issue, Join Discussion) to the navigation bar and module pages.</li>
+<li>Added version information to each module page.</li>
+</ul>
+</section>
+<section id="v1.0" class="level2">
+<h2 class="anchored" data-anchor-id="v1.0">v1.0</h2>
+<ul>
+<li>Initial release of the four education modules and the coding tutorials.</li>
+</ul>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

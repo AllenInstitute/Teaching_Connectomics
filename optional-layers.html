@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup a persistent token for CAVE authentication – Teaching Connectomics</title>
+<title>Optional Neuroglancer Layers – Teaching Connectomics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,61 +23,29 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./resources/ai_logos/AI_lens_blue.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -117,7 +85,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo light-content">
+    <img src="./resources/ai_logos/AI_lens_blue.svg" alt="Allen Institute" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Teaching Connectomics</span>
     </a>
   </div>
@@ -128,16 +100,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Education Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../code-tutorials.html"> 
+    <a class="nav-link" href="./code-tutorials.html"> 
 <span class="menu-text">Coding Tutorials</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="./faq.html">
+ <span class="dropdown-text">Troubleshooting FAQ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./optional-layers.html">
+ <span class="dropdown-text">Layer Catalogue</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://bdpedigo.github.io/nftn/" target="_blank">
+ <span class="dropdown-text">Notes from the Neuropil</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./patch-notes.html"> 
+<span class="menu-text">Patch Notes</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -146,7 +141,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics/issues/new" target="_blank">
+            Report Issue
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics/discussions" target="_blank">
+            Join Discussion
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/AllenInstitute/Teaching_Connectomics/tree/main/docs/notebooks" target="_blank">
             Tutorial Code
             </a>
           </li>
@@ -165,17 +170,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up-your-cave-access" id="toc-set-up-your-cave-access" class="nav-link active" data-scroll-target="#set-up-your-cave-access">1. Set up your CAVE access</a></li>
-  <li><a href="#confirm-cave-access" id="toc-confirm-cave-access" class="nav-link" data-scroll-target="#confirm-cave-access">2. Confirm CAVE access</a></li>
+  <li><a href="#adding-a-layer-by-dragging-between-windows" id="toc-adding-a-layer-by-dragging-between-windows" class="nav-link active" data-scroll-target="#adding-a-layer-by-dragging-between-windows">Adding a layer by dragging between windows</a></li>
+  <li><a href="#adding-a-hosted-layer" id="toc-adding-a-hosted-layer" class="nav-link" data-scroll-target="#adding-a-hosted-layer">Adding a hosted layer</a></li>
+  <li><a href="#layer-catalogue" id="toc-layer-catalogue" class="nav-link" data-scroll-target="#layer-catalogue">Layer catalogue</a>
+  <ul class="collapse">
+  <li><a href="#reference-meshes" id="toc-reference-meshes" class="nav-link" data-scroll-target="#reference-meshes">Reference meshes</a></li>
+  <li><a href="#column-boundary-annotations" id="toc-column-boundary-annotations" class="nav-link" data-scroll-target="#column-boundary-annotations">Column boundary annotations</a></li>
+  <li><a href="#synapse-layers" id="toc-synapse-layers" class="nav-link" data-scroll-target="#synapse-layers">Synapse layers</a></li>
+  <li><a href="#organelle-annotations-module-2" id="toc-organelle-annotations-module-2" class="nav-link" data-scroll-target="#organelle-annotations-module-2">Organelle annotations (Module 2)</a></li>
+  <li><a href="#ccf-context-layers-module-1-overview" id="toc-ccf-context-layers-module-1-overview" class="nav-link" data-scroll-target="#ccf-context-layers-module-1-overview">CCF context layers (Module 1 overview)</a></li>
+  </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="caveclient_setup_colab.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup a persistent token for CAVE authentication</h1>
+<h1 class="title">Optional Neuroglancer Layers</h1>
 </div>
 
 
@@ -192,83 +205,192 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>This is written for a Google Colab notebook.</strong> If you are running this tutorial locally with Jupyter or VScode, consider the alternative notebook: <a href="https://alleninstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html">Local CAVEclient Setup</a></p>
-<p>The <strong>Connectome Annotation Versioning Engine (CAVE)</strong> is a suite of tools developed at the Allen Institute and Seung Lab to manage large connectomics data.</p>
-<p>The CAVEclient is the main way to programmatically access the MICrONS data using Python. In particular, the CAVEclient provides an interface to query the CAVE database for annotations such as synapses, as well as to get a variety of other kinds of information.</p>
-<p>This notebook adds your Connectome Annotation Versioning Engine (CAVE) access token to you Google Colab ‘Secrets’ panel. Once you have setup a CAVE token in this way, you can access CAVE in any other colab notebook with the following:</p>
-<pre><code>from google.colab import userdata
-import caveclient
-client = caveclient.CAVEclient('minnie65_public',
-                               auth_token=userdata.get('CAVE_TOKEN'))</code></pre>
-<p>The first time you run a notebook, you will be prompted the to grant it access to you ‘Secrets’</p>
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="08070df4-3caf-4dce-cae9-50a488d40722" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>uv pip install caveclient</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> caveclient <span class="im">import</span> CAVEclient</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> userdata</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>datastack_name <span class="op">=</span> <span class="st">"minnie65_public"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>server_address<span class="op">=</span><span class="st">'https://global.daf-apis.com/'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre>Using Python 3.12.13 environment at: /usr
-
-Resolved <span style="font-weight:bold;opacity:0.7">36 packages</span> in 1.70s
-
-Prepared <span style="font-weight:bold;opacity:0.7">2 packages</span> in 1.63s
-
-Installed <span style="font-weight:bold;opacity:0.7">2 packages</span> in 90ms
-
- <span class="ansi-green-fg">+</span> <span class="ansi-bold">caveclient</span>==8.1.0
-
- <span class="ansi-green-fg">+</span> <span class="ansi-bold">jedi</span>==0.20.0
-</pre>
-</div>
-</div>
-</div>
-<section id="set-up-your-cave-access" class="level1">
-<h1>1. Set up your CAVE access</h1>
+<p>Each module’s Neuroglancer scene includes several <strong>optional layers</strong> in addition to the electron-microscopy imagery and the neuron segmentation. They appear as tabs across the top of the viewer; <kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> a tab to toggle the layer on or off, and <kbd title="mac: Ctrl-Click, windows: Right-Click" aria-hidden="true" data-mac="Ctrl-Click" data-windows="Right-Click"></kbd><span class="visually-hidden"></span> a tab to open its settings.</p>
+<p>There are two kinds of optional layer:</p>
+<ul>
+<li><strong>Hosted layers</strong> load from a public data source (a <code>precomputed://</code> path), so they can be added to any scene by pasting that path.</li>
+<li><strong>Local annotation layers</strong> (points or lines) are drawn directly into a specific scene and have no source path — the only way to reuse one is to drag it from a scene that already contains it.</li>
+</ul>
+<p>The <a href="#layer-catalogue">layer catalogue</a> below lists every optional layer, what it shows, its source path (for hosted layers), and an example scene you can open to see it or drag it from. First, the two ways to add a layer to your own scene.</p>
+<section id="adding-a-layer-by-dragging-between-windows" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-layer-by-dragging-between-windows">Adding a layer by dragging between windows</h2>
+<p>You can copy <strong>any</strong> layer — hosted <em>or</em> local — from one Neuroglancer window into another by dragging its layer tab. This is the only way to reuse a local annotation layer (the column boundaries, organelle markers, and <code>KnownInputs</code>), since those have no source path.</p>
 <ol type="1">
-<li>Check to ensure you have accepted <a href="https://global.daf-apis.com/sticky_auth/api/v1/tos/2/accept">MICrONS Terms of Service</a></li>
-<li>Visit <a href="https://global.daf-apis.com//sticky_auth/settings/tokens" class="uri">https://global.daf-apis.com//sticky_auth/settings/tokens</a></li>
-<li>Copy a “token” if one exists, or create a new one (upper right corner) if none are listed. Just copy the long alphanumeric part, not the quote marks.</li>
-<li>Click the Key icon along the left of the page. Click + Add new secret.</li>
+<li>Open two Neuroglancer windows: the scene that has the layer, and the scene you want to add it to.</li>
+<li><kbd title="Left-Click" aria-hidden="true">Left-Click</kbd><span class="visually-hidden">Left-Click</span> and hold the layer’s tab in the top bar of the source window, then drag it onto the top bar of the destination window and release.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/AllenInstitute/Teaching_Connectomics/blob/main/docs/resources/colab_set_token.png?raw=1" class="img-fluid figure-img"></p>
-<figcaption>Access Colab ‘Secrets’ panel and set your CAVE_TOKEN</figcaption>
+<p><img src="resources/neuroglancer_move_tabs.gif" class="img-fluid figure-img"></p>
+<figcaption>Dragging a layer tab from one Neuroglancer window into another.</figcaption>
 </figure>
 </div>
-<ol start="5" type="1">
-<li>Set the Name of the token to CAVE_TOKEN and paste the token as the Value.</li>
-<li>Toggle “Notebook access” along the left side to be on.</li>
-</ol>
 </section>
-<section id="confirm-cave-access" class="level1">
-<h1>2. Confirm CAVE access</h1>
-<p>Run the following cell. Click the link that is shown, and click through with your Google login credentials that you used previously when generating your token. You may need to accept a terms of service for the dataset.</p>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ced2bc4f-92ad-48ac-854a-7c4b1c69535d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gclient <span class="op">=</span> CAVEclient(server_address<span class="op">=</span>server_address, auth_token<span class="op">=</span>userdata.get(<span class="st">'CAVE_TOKEN'</span>), global_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>info_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>gclient<span class="sc">.</span>server_address<span class="sc">}</span><span class="ss">info/datastack/</span><span class="sc">{</span>datastack_name<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> CAVEclient(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  datastack_name<span class="op">=</span>datastack_name,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  server_address<span class="op">=</span>server_address,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  auth_token<span class="op">=</span>userdata.get(<span class="st">'CAVE_TOKEN'</span>),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">isinstance</span>(client.info.get_datastack_info(), <span class="bu">dict</span>):</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"All set up! You can also access:</span><span class="ch">\n</span><span class="st">"</span>, info_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Please go to:
- https://global.daf-apis.com/info/datastack/minnie65_public</code></pre>
+<section id="adding-a-hosted-layer" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-hosted-layer">Adding a hosted layer</h2>
+<p>To add a hosted (<code>precomputed://</code>) layer using its source path:</p>
+<ol type="1">
+<li>Click the <strong><code>+</code></strong> at the top of the viewer to create a new layer.</li>
+<li>Paste the layer’s source path (from the catalogue) into the box that says <em>“Enter a layer source…”</em> and press <kbd title="Enter" aria-hidden="true">Enter</kbd><span class="visually-hidden">Enter</span>.</li>
+<li>Neuroglancer picks the layer type automatically (imagery, segmentation, or mesh). Meshes appear once you toggle them on.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/neuroglancer_add_layer_path.gif" class="img-fluid figure-img"></p>
+<figcaption>Adding a hosted layer by pasting its source path.</figcaption>
+</figure>
+</div>
+</section>
+<section id="layer-catalogue" class="level1">
+<h1>Layer catalogue</h1>
+<section id="reference-meshes" class="level2">
+<h2 class="anchored" data-anchor-id="reference-meshes">Reference meshes</h2>
+<p>3D surfaces that provide anatomical context around the neurons.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Shows</th>
+<th>Source (paste to add)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cortical layer boundaries</strong> (<code>layermeshes</code>)</td>
+<td>The boundaries between cortical layers — L1/L2‑3, L2‑3/L4, L4/L5, L5/L6, and L6/white matter (six surfaces).</td>
+<td><code>precomputed://gs://allen-minnie-phase3/layermeshes_smooth_v2#type=MESH</code></td>
+</tr>
+<tr class="even">
+<td><strong>Cortical area boundaries</strong> (<code>areameshes</code>)</td>
+<td>Rough boundaries between primary visual cortex (V1) and the higher-order visual areas (HVA).</td>
+<td><code>precomputed://gs://allen-minnie-phase3/areameshes#type=MESH</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>How they were generated:</em> meshed from the corresponding layer/area boundary segmentation for the MICrONS volume (Allen <code>minnie-phase3</code>).</p>
+<p><em>Example scenes:</em> <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-1-cortical-layers.json">Cortical Layers</a> (<code>layermeshes</code>) · <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-1-v1-hva-columns.json">V1 and HVA Columns</a> (<code>layermeshes</code> + <code>areameshes</code>).</p>
+</section>
+<section id="column-boundary-annotations" class="level2">
+<h2 class="anchored" data-anchor-id="column-boundary-annotations">Column boundary annotations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Shows</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>V1_cylinder</code></strong></td>
+<td>The cylindrical boundary of the sampled V1 cortical column (blue points).</td>
+<td>Local annotation — drag from the example scene</td>
+</tr>
+<tr class="even">
+<td><strong><code>HVA_cylinder</code></strong></td>
+<td>The cylindrical boundary of the sampled higher-order visual area column (green points).</td>
+<td>Local annotation — drag from the example scene</td>
+</tr>
+</tbody>
+</table>
+<p><em>Example scene:</em> <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-1-v1-hva-columns.json">V1 and HVA Columns</a>.</p>
+</section>
+<section id="synapse-layers" class="level2">
+<h2 class="anchored" data-anchor-id="synapse-layers">Synapse layers</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Shows</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Synapse predictions</strong> (<code>synapse_target_predictions_ssa</code>)</td>
+<td>Synapses onto the selected cell, colored by predicted postsynaptic compartment: <strong>spine</strong> (coral), <strong>shaft</strong> (cyan), <strong>soma</strong> (gray). Filters to the selected cell; off by default in Module 4.</td>
+<td><code>gs://keith-dev/ng_precomputed_annotations/synapses/mat-v1300_w_types_idx-v1/</code></td>
+</tr>
+<tr class="even">
+<td><strong><code>KnownInputs</code></strong></td>
+<td>Input synapses onto the displayed neuron whose presynaptic partner is a proofread cell, colored by target compartment (spine / shaft / soma) via tags.</td>
+<td>Local annotation — drag from the example scene</td>
+</tr>
+</tbody>
+</table>
+<p><em>How they were generated:</em> the synapse-prediction layer is a static, precomputed export of the v1300 synapse table with target-type predictions. <code>KnownInputs</code> was built from a CAVE query for input synapses whose presynaptic partner is proofread (<code>proofreading_status_and_strategy</code>), restricted to partners valid at the v1300 materialization version.</p>
+<p><em>Example scenes:</em> <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spine-walkthrough.json">Spine Walkthrough</a> (<code>synapse_target_predictions_ssa</code>) · <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-known-inputs.json">Known Inputs</a> (<code>KnownInputs</code>).</p>
+</section>
+<section id="organelle-annotations-module-2" class="level2">
+<h2 class="anchored" data-anchor-id="organelle-annotations-module-2">Organelle annotations (Module 2)</h2>
+<p>Small local point layers marking example locations of a subcellular structure, for identification practice: <code>Nucleus</code>, <code>Mitochondria</code>, <code>Smooth ER</code>, <code>Golgi</code>, <code>Microtubules</code>, <code>Cilia</code>, <code>Myelinated axons</code>, and <code>Synapses</code>. Each is a local annotation — drag it from the example scene.</p>
+<p><em>Example scene:</em> <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-2-organelles.json">Organelles</a>.</p>
+</section>
+<section id="ccf-context-layers-module-1-overview" class="level2">
+<h2 class="anchored" data-anchor-id="ccf-context-layers-module-1-overview">CCF context layers (Module 1 overview)</h2>
+<p>The Module 1 overview scene places the MICrONS volume inside the whole mouse brain using the Allen Common Coordinate Framework (CCF).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Shows</th>
+<th>Source (paste to add)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>average_template_10_8bit</code></strong></td>
+<td>The Allen CCF average-template mouse brain (grayscale imagery).</td>
+<td><code>precomputed://gs://allen_neuroglancer_ccf/average_template_10_8bit</code></td>
+</tr>
+<tr class="even">
+<td><strong><code>AllenCCF</code></strong> / <strong><code>ccf_outline</code></strong></td>
+<td>CCF brain-region meshes and the whole-brain outline.</td>
+<td><code>precomputed://gs://allen_neuroglancer_ccf/ccf_test1</code></td>
+</tr>
+<tr class="odd">
+<td><strong><code>seg35</code></strong></td>
+<td>The MICrONS <code>minnie35</code> segmentation (a second, smaller EM volume).</td>
+<td><code>precomputed://gs://iarpa_microns/minnie/minnie35/seg</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<p>If you you see a page loading that shows “Datastack:” a description and several service links, you should be all set up!</p>
-<p>If you get a <code>HTTPError: 401 Client Error: UNAUTHORIZED for url</code> error, re-enter your token in Step 5 above</p>
+<div class="callout-body-container callout-body">
+<p>The CCF overview scene is being revised, so it is not yet published to the layer bucket. The sources above are listed for reference; their exact configuration may change in a future update.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

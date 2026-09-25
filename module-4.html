@@ -129,6 +129,29 @@ div.csl-indent {
     <a class="nav-link" href="./code-tutorials.html"> 
 <span class="menu-text">Coding Tutorials</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="./faq.html">
+ <span class="dropdown-text">Troubleshooting FAQ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./optional-layers.html">
+ <span class="dropdown-text">Layer Catalogue</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://bdpedigo.github.io/nftn/" target="_blank">
+ <span class="dropdown-text">Notes from the Neuropil</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./patch-notes.html"> 
+<span class="menu-text">Patch Notes</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -215,12 +238,12 @@ div.csl-indent {
 </header>
 
 
-<div class="quarto-title-meta module-version"><div><div class="quarto-title-meta-heading">Version</div><div class="quarto-title-meta-contents"><p>v1.1 — July 2026</p></div></div></div>
+<div class="quarto-title-meta module-version"><div><div class="quarto-title-meta-heading">Version</div><div class="quarto-title-meta-contents"><p>v1.2 — September 2026</p></div></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5853606858194944"><img src="resources/module_4_celltypes_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-celltypes-cover.json"><img src="resources/module_4_celltypes_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 <figcaption>Click the image to view the cells in Neuroglancer.</figcaption>
@@ -308,16 +331,35 @@ Tip
 <li><strong>Cell IDs</strong> box allows us to search for specific neurons.</li>
 <li><strong>Value Search</strong> box allows us to search for specific data points that have been attached to the neuron.</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Dataset versions and the root-ID warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Both Dash Apps will update the given Root ID to match the version selected in their drop down. If the ID you provide doesn’t match the version selected, the root will update and you will see a <strong>yellow warning banner</strong>. This warning is fine — it is telling you the app substituted the correct Root ID for the version you queried. You do not need to do anything about it.</p>
+<p>Two things to keep in mind:</p>
+<ul>
+<li>The <strong>Materialization dropdown defaults to “Latest”</strong>, not to the version used by the previous links in these modules. If you want your Dash App results to match the cells shown in the module links, select <strong>v1300</strong> in the Materialization dropdown.</li>
+<li>Neuroglancer links generated <em>from</em> the Dash Apps use the dynamic (Graphene) segmentation layer, not the static layer used in the module scenes.</li>
+</ul>
+<p>The difference between the static and dynamic (Graphene) layers, and why versions matter, is explained in the <a href="./faq.html#graphene">Troubleshooting FAQ</a>.</p>
+</div>
+</div>
 <p>For now, please select <code>aibs_metamodel_celltypes_v661</code> in the Annotation Table selection box and then click the “Submit” button. After the app processes this request (&lt;1 minute), it will return a giant table of cell Root IDs and the predicted cell type for each.</p>
 <p>Predicted cell types are listed in the “cell_type” column, while the broader classification of the cell is listed in the “classification_system” column. You can left-click on the heading of any of these columns to sort the table based on the data in that column. All of the cell types in this table were predicted using a machine-learning algorithm that analyzed features of the cell body in electron microscopy data <span class="citation" data-cites="elabbady_perisomatic_2025">(<a href="#ref-elabbady_perisomatic_2025" role="doc-biblioref">Elabbady et al. 2025</a>)</span> .</p>
 </section>
 </section>
 <section id="cell-type-exploration" class="level2">
 <h2 class="anchored" data-anchor-id="cell-type-exploration">Cell Type Exploration</h2>
-<p>Now we can pull some cells out of the table that we created in the previous section and see what they look like in Neuroglancer. In a separate browser tab or window, you can navigate to the following link: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448">Neuroglancer</a></p>
+<p>Now we can pull some cells out of the table that we created in the previous section and see what they look like in Neuroglancer. In a separate browser tab or window, you can navigate to the following link: <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-cells-from-table.json">Neuroglancer</a></p>
 <p>You can also cut and paste the following URL into your browser:</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6448634630504448</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-cells-from-table.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-cells-from-table.json</a></p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -397,10 +439,10 @@ Tip
 <p>All of the cell-type classifications that we have worked with thus far have been based on computer algorithm predictions that used perisomatic features (the electron microscope data in and around the cell body) as their starting point. Thus, it is interesting to consider that these predictions do not use the typical data that researchers have used to classify neurons for decades (e.g.&nbsp;morphology, gene expression, electrophysiological data). With this in mind, it would be interesting to see how well the algorithm performed by comparing some neurons that it classified into the same category.</p>
 <section id="cortico-cortical" class="level4">
 <h4 class="anchored" data-anchor-id="cortico-cortical">Cortico-cortical</h4>
-<p>First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a Neuroglancer window containing a selection of Layer 2 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976">Layer 2 Pyramidal Cells</a></p>
+<p>First, we will look at some cortico-cortical pyramidal cells. These are excitatory neurons that project to other cortical regions. The following link will take you to a Neuroglancer window containing a selection of Layer 2 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer2-pyramidal.json">Layer 2 Pyramidal Cells</a></p>
 <p>You can also cut and paste the following URL into your browser:</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5037233433214976</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer2-pyramidal.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer2-pyramidal.json</a></p>
 </blockquote>
 <p>Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.</p>
 <div class="quarto-figure quarto-figure-right">
@@ -414,10 +456,10 @@ Tip
 </section>
 <section id="corticothalamic" class="level4">
 <h4 class="anchored" data-anchor-id="corticothalamic">Corticothalamic</h4>
-<p>Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a Neuroglancer window containing a selection of Layer 6 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312">Layer 6 Pyramidal Cells</a></p>
+<p>Next, we will look at some Layer 6 corticothalamic pyramidal cells. These are excitatory neurons that project from the visual cortex back to the thalamus to provide feedback within the visual system. The following link will take you to a Neuroglancer window containing a selection of Layer 6 Pyramidal Cells: <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer6-corticothalamic.json">Layer 6 Pyramidal Cells</a></p>
 <p>You can also cut and paste the following URL into your browser:</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6604773955469312</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer6-corticothalamic.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-layer6-corticothalamic.json</a></p>
 </blockquote>
 <p>As you did before, take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time.</p>
 <div class="task">
@@ -426,10 +468,10 @@ Tip
 </section>
 <section id="inhibitory-interneurons" class="level4">
 <h4 class="anchored" data-anchor-id="inhibitory-interneurons">Inhibitory interneurons</h4>
-<p>Finally, we will look at some inhibitory cell populations in the dataset. The following Neuroglancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432">Basket and Chandelier Cells</a></p>
+<p>Finally, we will look at some inhibitory cell populations in the dataset. The following Neuroglancer link displays Basket Cells and Chandelier Cells, two of the well-described inhibitory interneuron cell types. These cells release GABA to inhibit the activity of their synaptic targets. <a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-basket-chandelier.json">Basket and Chandelier Cells</a></p>
 <p>You can also cut and paste the following URL into your browser:</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5220264739602432</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-basket-chandelier.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-4-basket-chandelier.json</a></p>
 </blockquote>
 <p>This Neuroglancer instance contains seven neurons. The neurons with Root IDs that end in 504, 411, 618, and 745 are Basket Cells. The neurons with Root IDs that end in 294, 364, and 598 are Chandelier Cells (these are invisible by default, but you can make them visible by clicking the eye icon).</p>
 <p>Take some time to explore these neurons in the 3D viewer. You might consider making one or more of the neurons invisible using the “eye” icons at the top right. This will help you make comparisons between just a couple of neurons at a time. Consider comparing the Basket Cells to other Basket Cells and Chandelier Cells to other Chandelier Cells. Then compare Basket Cells to Chandelier Cells.</p>

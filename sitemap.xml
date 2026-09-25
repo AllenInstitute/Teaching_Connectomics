@@ -2,27 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/microns_data_access_education.html</loc>
-    <lastmod>2026-07-24T16:49:17.320Z</lastmod>
+    <lastmod>2026-09-25T02:51:19.574Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/Tutorial_NGLUI.html</loc>
     <lastmod>2026-07-24T14:53:53.359Z</lastmod>
   </url>
   <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/optional-layers.html</loc>
+    <lastmod>2026-09-25T01:34:35.389Z</lastmod>
+  </url>
+  <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-3.html</loc>
-    <lastmod>2026-07-24T14:49:42.516Z</lastmod>
+    <lastmod>2026-09-25T02:11:50.948Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-1.html</loc>
-    <lastmod>2026-07-24T14:49:38.433Z</lastmod>
+    <lastmod>2026-09-24T23:27:40.267Z</lastmod>
   </url>
   <url>
-    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/code-tutorials.html</loc>
-    <lastmod>2026-07-22T21:12:13.388Z</lastmod>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/faq.html</loc>
+    <lastmod>2026-09-25T02:15:19.152Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/about.html</loc>
     <lastmod>2026-06-17T21:02:22.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/code-tutorials.html</loc>
+    <lastmod>2026-07-22T21:12:13.388Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/index.html</loc>
@@ -30,11 +38,15 @@
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-2.html</loc>
-    <lastmod>2026-07-24T14:49:40.487Z</lastmod>
+    <lastmod>2026-09-24T23:27:40.268Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/module-4.html</loc>
-    <lastmod>2026-07-24T14:49:44.388Z</lastmod>
+    <lastmod>2026-09-25T02:11:48.220Z</lastmod>
+  </url>
+  <url>
+    <loc>https://AllenInstitute.github.io/Teaching_Connectomics/patch-notes.html</loc>
+    <lastmod>2026-09-25T02:52:06.013Z</lastmod>
   </url>
   <url>
     <loc>https://AllenInstitute.github.io/Teaching_Connectomics/notebooks/caveclient-setup-local.html</loc>

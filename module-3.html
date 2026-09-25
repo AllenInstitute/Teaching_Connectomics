@@ -131,6 +131,29 @@ div.csl-indent {
     <a class="nav-link" href="./code-tutorials.html"> 
 <span class="menu-text">Coding Tutorials</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="./faq.html">
+ <span class="dropdown-text">Troubleshooting FAQ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./optional-layers.html">
+ <span class="dropdown-text">Layer Catalogue</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://bdpedigo.github.io/nftn/" target="_blank">
+ <span class="dropdown-text">Notes from the Neuropil</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./patch-notes.html"> 
+<span class="menu-text">Patch Notes</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -216,12 +239,12 @@ div.csl-indent {
 </header>
 
 
-<div class="quarto-title-meta module-version"><div><div class="quarto-title-meta-heading">Version</div><div class="quarto-title-meta-contents"><p>v1.1 — July 2026</p></div></div></div>
+<div class="quarto-title-meta module-version"><div><div class="quarto-title-meta-heading">Version</div><div class="quarto-title-meta-contents"><p>v1.2 — September 2026</p></div></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5669296259727360"><img src="resources/module_3_spines_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spines-cover.json"><img src="resources/module_3_spines_cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 <figcaption>Click the image to view the cells in Neuroglancer.</figcaption>
@@ -271,7 +294,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="navigating-neuroglancer-panels">Navigating Neuroglancer panels</h3>
 <p>We will be working within the Neuroglancer browser to identify ultrastructural features within the electron micrographic dataset. You can access Neuroglancer by clicking on this link or by copying and pasting the following text into your browser:</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6722224001122304" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6722224001122304</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spine-walkthrough.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-spine-walkthrough.json</a></p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -500,7 +523,7 @@ Caution
 <p>So far, we have primarily focused on the output of an excitatory pyramidal neuron. However, whether or not this neuron becomes active depends on the inputs it receives from its own presynaptic partners. In many cases, excitatory neurons are also targeted by inhibitory synapses which act as a brake on neuronal excitability. These inhibitory inputs are often located on or near the soma, positioning them to exert strong control over spike generation.</p>
 <p>To explore this connectivity, let’s visualize the presynaptic neurons onto our pyramidal neuron by clicking this link: (Note: this curated link contains fewer synapses than the previous link to simplify exploration).</p>
 <blockquote class="blockquote">
-<p><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6362457307086848" class="uri">https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6362457307086848</a></p>
+<p><a href="https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-known-inputs.json" class="uri">https://spelunker.cave-explorer.org/#!gs://microns-static-links/mm3/education/module-3-known-inputs.json</a></p>
 </blockquote>
 <p>Zoom into the soma of the neuron in the 3D viewer, and you can see the cyan (somatic) synapses.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -548,6 +571,19 @@ Caution
 <figure class="figure">
 <p><img src="resources/module_3_dash_table_viewer.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a <strong>yellow warning banner</strong> appears after you submit, that is fine! The Table Viewer automatically substitutes correct Root ID for the version it is has selected in the dropdown. The <strong>Materialization</strong> version defaults to “Latest”; the neurons in this module’s Neuroglancer scenes are from version <strong>v1300</strong>, so select v1300 if you want the results to match exactly. More on dataset versions is in the <a href="./faq.html#versions">Troubleshooting FAQ</a>.</p>
+</div>
 </div>
 <p>Notice the two middle columns labelled <code>cell_type</code> and <code>classification</code>. From these fields, you can see that this neuron is an inhibitory neuron of the BC cell type. BC stands for <strong>basket cell</strong>, a GABAergic inhibitory neuron commonly found in the cerebral cortex. Also note that this basket cell forms two somatic synapses close together on the pyramidal neuron’s soma, a configuration that likely provides especially strong inhibitory control over the neuron’s excitability.</p>
 <div class="task">
