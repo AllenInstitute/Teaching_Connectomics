@@ -47,6 +47,17 @@ version and date shown at the top of each module correspond to the entries below
 
 ![The Table Viewer warns when a root ID is not valid at the queried version and shows the most-overlapping valid root ID instead.](resources/module_4_dash_table_warning.png)
 
+### New resource pages
+
+Two reference pages were added under the **Resources** menu:
+
+- **[Layer Catalogue](optional-layers.qmd)** — every optional Neuroglancer layer used
+  across the modules (reference meshes, column boundaries, synapse layers, organelle
+  markers, CCF context), what each shows, and how to add it to a scene.
+- **[Troubleshooting FAQ](faq.qmd)** — common issues: recommended browser, login and
+  Terms of Service, why scenes may not render, dataset versions, static vs. dynamic
+  (Graphene) segmentation, and the Dash-App root-ID warning.
+
 ## v1.1 — July 2026
 
 - Added troubleshooting guidance for Neuroglancer login and the MICrONS Terms of
