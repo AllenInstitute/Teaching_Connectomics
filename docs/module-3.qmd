@@ -272,7 +272,7 @@ If a **yellow warning banner** appears after you submit, that is fine! The Table
 substitutes correct Root ID for the version it is has selected in the dropdown. The **Materialization**
 version defaults to "Latest"; the neurons in this module's Neuroglancer scenes are
 from version **v1300**, so select v1300 if you want the results to match exactly.
-More on dataset versions is in the **Troubleshooting FAQ**.
+More on dataset versions is in the [Troubleshooting FAQ](faq.qmd#versions).
 :::
 
 Notice the two middle columns labelled `cell_type` and `classification`. From these fields, you can see that this neuron is an inhibitory neuron of the BC cell type. BC stands for **basket cell**, a GABAergic inhibitory neuron commonly found in the cerebral cortex. Also note that this basket cell forms two somatic synapses close together on the pyramidal neuron’s soma, a configuration that likely provides especially strong inhibitory control over the neuron’s excitability. 

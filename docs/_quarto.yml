@@ -18,6 +18,8 @@ website:
       - code-tutorials.qmd
       - text: Resources
         menu:
+          - href: faq.qmd
+            text: Troubleshooting FAQ
           - href: optional-layers.qmd
             text: Layer Catalogue
           - text: Notes from the Neuropil

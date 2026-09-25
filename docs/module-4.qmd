@@ -106,7 +106,7 @@ Two things to keep in mind:
   segmentation layer, not the static layer used in the module scenes.
 
 The difference between the static and dynamic (Graphene) layers, and why versions
-matter, is explained in the **Troubleshooting FAQ**.
+matter, is explained in the [Troubleshooting FAQ](faq.qmd#graphene).
 :::
 
 For now, please select `aibs_metamodel_celltypes_v661` in the Annotation Table selection box and then click the "Submit" button. After the app processes this request (<1 minute), it will return a giant table of cell Root IDs and the predicted cell type for each. 
